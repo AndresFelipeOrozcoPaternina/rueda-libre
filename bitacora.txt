@@ -3,3 +3,10 @@
 - estado: 304
 -host: localhost
 -protocolo: http
+
+- con un puerto que o existe sale Cannot GET /rueda-libre/promociones.html, esto significa que no pudo encontrar ningun puerto con esa dirreccion
+
+- HTML: el html es el cuerpo del la pagina.
+- CSS: El css agrega los estilos de esta.
+- JavaScript: Define lo que hace la pagina cunado se interactua con ella
+
