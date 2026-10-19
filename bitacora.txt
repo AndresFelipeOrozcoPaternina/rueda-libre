@@ -1,0 +1,5 @@
+- puerto: 5500
+- metodo: GET
+- estado: 304
+-host: localhost
+-protocolo: http
