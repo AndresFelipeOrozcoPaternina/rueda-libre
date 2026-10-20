@@ -1,2 +1,2 @@
 # rueda-libre
-Hubo errores con una rama global en el github, por eso el nombre diferente
+Hubo errores con una rama global en el git, por eso el nombre diferente
