@@ -19,3 +19,5 @@ Rutas utilizadas
         <li><a href="/paginas/Reservas.html">Reservar ahora</a></li>
     </ul>
 </nav>
+
+- En tarifas es span ya que es un texto corto dando un contexto debajo en la tabla
