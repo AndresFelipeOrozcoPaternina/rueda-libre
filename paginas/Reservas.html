@@ -26,12 +26,142 @@
                     <th scope="col">Horario</th>
                 </tr>
             </thead>
-             <tbody>
+            <tbody>
                 <tr><th>Lunes a viernes</th><th>7:00 a.m. - 7:00 p.m.</th></tr>
                 <tr><th>Sábados y domingos</th><th>6:00 a.m. - 2:00 p.m.</th></tr>
              </tbody>
         </table>
     </section>
+
+    <section>
+    
+        <h2>Formulario de reserva</h2>
+<form action="/paginas/Reservas.html" method="post">
+
+   
+    <fieldset>
+        <legend>Tus datos</legend> 
+        
+        <label for="nombre">Nombre completo:</label>
+        <br>
+        <input type="text" id="nombre" name="nombre" minlength="3" required>
+        <br>
+        <br>
+
+        <label for="documento">Documento de identidad:</label><br>
+        <input type="text" id="documento" name="documento" required>
+        <br>
+        <br>
+
+       
+        <label for="email">Correo electronico:</label><br>
+        <input type="email" id="email" name="email" title="Debe ingresar un correo electrónico válido" required><br><br>
+
+        <label for="telefono">Celular:</label><br>
+        <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" title="Debe tener 10 dígitos y comenzar por 3" required ><br><br>
+    </fieldset>
+
+    
+    <fieldset>
+        <legend>Detalles de la reserva</legend>
+        
+
+        <label for="bicicleta">Tipo de bicicleta:</label><br>
+        <select id="bicicleta" name="bicicleta" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="urbana">Urbana</option>
+            <option value="montana">Montaña</option>
+            <option value="electrica">Eléctrica</option>
+        </select>
+        <br>
+        <br>
+
+  
+        <label for="cantidad">Cantidad de bicicletas:</label><br>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="6" required>
+        <br>
+        <br>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Tipo de recorrido / Plan</legend>
+
+        <input type="radio" id="recorrido1" name="recorrido" value="rio_parques" required>
+        <label for="recorrido1">Río y Parques</label>
+        <br>
+        
+        <input type="radio" id="recorrido2" name="recorrido" value="sabores_barrio" required>
+        <label for="recorrido2">Sabores de Barrio</label>
+        <br>
+        
+        <input type="radio" id="recorrido3" name="recorrido" value="reto_palmas" required>
+        <label for="recorrido3">Reto las Palmas</label>
+        <br>
+        <br> 
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Fecha de reserva</legend>
+        <label for="fecha">Fecha del alquiler:</label><br>
+        <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" title="Debe seleccionar una fecha entre el 1 de noviembre y el 31 de diciembre de 2026" required><br><br>
+    </fieldset>
+
+
+    <fieldset>
+        <legend>Información adicional</legend>
+        
+        <label for="comentarios">Comentarios (opcional):</label><br>
+        <textarea id="comentarios" name="comentarios"  maxlength="300" title="Se necesita mas de 300 caracteres" placeholder="Máximo 300 caracteres"></textarea>
+        <br>
+        <br>
+
+        <input type="checkbox" id="politicas" name="politicas" required>
+        <label for="politicas">Acepto las políticas de alquiler</label><br><br>
+    </fieldset>
+
+    <button type="submit">Reservar</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer>
         <dl>

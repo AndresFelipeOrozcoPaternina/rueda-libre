@@ -11,13 +11,16 @@
 - JavaScript: Define lo que hace la pagina cuando se interactua con ella
 
 Rutas utilizadas
-<nav>
-    <ul>
-        <li><a href="/paginas/tarifas.html">Tarifas</a></li>
-        <li><a href="/paginas/encuentranos.html">Encuentranos</a></li>
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/paginas/Reservas.html">Reservar ahora</a></li>
-    </ul>
-</nav>
 
-- En tarifas es span ya que es un texto corto dando un contexto debajo en la tabla
+    /paginas/tarifas.html
+    /paginas/encuentranos.html
+    /index.html
+    /paginas/Reservas.html
+   
+
+
+- En tarifas es span ya que es un texto corto dando un contexto debajo en la tabla.
+- Utilice required en todos los campos ya que todos estos son necesarios para la reserva.
+- Utilice radio en recorido ya que solo puedo escoger uno de estos, y radio hace que a escoger otro opcion quite la anterior.
+- Select para escoger uno de las bicicicletas.
+
