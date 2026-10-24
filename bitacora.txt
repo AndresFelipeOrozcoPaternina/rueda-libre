@@ -24,3 +24,46 @@ Rutas utilizadas
 - Utilice radio en recorido ya que solo puedo escoger uno de estos, y radio hace que a escoger otro opcion quite la anterior.
 - Select para escoger uno de las bicicicletas.
 
+
+Arreglos de accesibilidad:
+Idioma: Le puse lang="es" a las tres paginas para que no quede en ingles.
+Imágenes: Les puse texto real en el alt para que se sepa qué hay en la foto.
+Enlaces: Quite las palabras raras como "aquí" o "maps" y le puse nombres claros como ver ubicación en Google Maps
+Títulos: Organicé los h1, h2 y h3 en orden para no saltarme ninguno
+Teclado: Probe presionar la tecla Tab y se puede navegar por todo el sitio sin problema
+
+Pruebas de color:
+Blanco sobre Verde Ruta: Solo sirve si la letra es grande.
+Blanco sobre Naranja Pedal: No sirve, no se lee bien.
+Azul Noche sobre Naranja Pedal: Si sirve.
+Azul Noche sobre Crema: Si sirve
+Gris Asfalto sobre Crema: Si sirve
+Verde Ruta sobre Crema: Si sirve
+Naranja Pedal sobre Crema: No sirve para parrafos
+Blanco sobre Azul Noche: Si sirve
+
+Donde uso cada color:
+Texto: Gris Asfalto o Azul Noche sobre fondo Crema.
+Títulos: Azul Noche sobre fondo Crema.
+Fondos: Crema para la pagina y Azul Noche para partes destacadas.
+Botones: Azul Noche con letra blanca, o naranja Pedal con letra Azul Noche.
+Enlaces: Verde Ruta o azul Noche
+
+Solución al conflicto de especificidad y estados interactivos
+
+1. ¿Por qué no funcionaba la clase .activo?
+Causa:El selector del compañero #menu a usa un ID , por lo que tiene una especificidad de (0, 1, 0, 1). En cambio, el selector .activo solo usa una clase, con una especificidad de (0, 0, 1, 0).
+2. ¿Cómo se corrigió sin usar !important?
+Se cambió el selector a #menu a.activo al combinar el ID, la etiqueta y la clase.
+3. Verificación de Focus y Hover
+Se uso la herramienta :hov en DevTools para probar los estados :hover y :focus.
+Se agregaron bordes visibles (`outline`) al usar la tecla `Tab` en enlaces, botones y campos de texto para garantizar accesibilidad.
+
+Cierre de Bitácora - Rueda Libre 
+
+Resumen de desarrollo semanal
+Estructura HTML y Semántica:Se crearon las tres páginas del sitio respetando etiquetas semánticas y corrigiendo el idioma a lang="es".
+Estilos globales y Variables CSS: Se centralizaron colores, fuentes de Google Fonts  y una escala de espaciados en rem dentro de :root.
+Accesibilidad:Se solucionaron textos alternativos en imágenes, jerarquía de encabezados , textos explicativos en enlaces y contrastes aprobados .
+Cascada y Especificidad:Se corrigieron conflictos con el menú de navegación  garantizando un estado activo visible sin !important.
+Box Model y Posicionamiento: Se implementó box-sizing: border-box, se ordenaron las tarjetas con position: relative, se añadio la etiqueta Nuevo con position: absolute y el botón de WhatsApp con position: fixed.

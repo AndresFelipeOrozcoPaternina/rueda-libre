@@ -1,0 +1,119 @@
+:root {
+  --color-primario: #0284c7;  
+  --color-secundario: #0f172a; 
+  --color-acento: #f59e0b;     
+  --color-texto: #334155;     
+  --color-fondo: #f8fafc;      
+
+  --fuente-titulos: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
+
+  --espacio-sm: 0.5rem;
+  --espacio-md: 1rem;
+  --espacio-lg: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-cuerpo);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 67.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: var(--espacio-md);
+}
+
+.portada {
+  width: 100%;
+  min-height: 50vh;
+  object-fit: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-secundario);
+  margin-bottom: var(--espacio-sm);
+}
+
+a {
+  color: var(--color-primario);
+}
+
+a:hover {
+  color: var(--color-acento);
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu li {
+  display: inline-block;
+  margin-right: var(--espacio-sm);
+}
+
+#menu a {
+  color: var(--color-texto);
+  text-decoration: none;
+  padding: var(--espacio-sm) var(--espacio-md);
+  border-radius: 4px;
+}
+
+#menu a.activo {
+  color: var(--color-primario);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-primario);
+}
+
+#menu a:hover,
+#menu a:focus {
+  color: var(--color-acento);
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+.tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: var(--espacio-md);
+  margin-bottom: var(--espacio-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.btn-whatsapp:hover,
+.btn-whatsapp:focus {
+  background-color: #128c7e;
+  color: #ffffff;
+  outline: 2px solid var(--color-secundario);
+  outline-offset: 2px;
+}
