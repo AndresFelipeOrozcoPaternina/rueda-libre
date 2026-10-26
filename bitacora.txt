@@ -67,3 +67,11 @@ Estilos globales y Variables CSS: Se centralizaron colores, fuentes de Google Fo
 Accesibilidad:Se solucionaron textos alternativos en imágenes, jerarquía de encabezados , textos explicativos en enlaces y contrastes aprobados .
 Cascada y Especificidad:Se corrigieron conflictos con el menú de navegación  garantizando un estado activo visible sin !important.
 Box Model y Posicionamiento: Se implementó box-sizing: border-box, se ordenaron las tarjetas con position: relative, se añadio la etiqueta Nuevo con position: absolute y el botón de WhatsApp con position: fixed.
+
+Prueba de diseño responsive y flexbox
+- Al abrir la página en pantalla ancha, el nombre del negocio queda a la izquierda y el menú a la derecha, alineados verticalmente con `align-items: center` y separados con `justify-content: space-between`.
+- El menú se comporta como un contenedor flexible con `display: flex`, `flex-wrap: wrap` y `gap`, sin depender de márgenes ni `inline-block` para separar cada enlace.
+- Cuando se estrecha la ventana, los enlaces del menú bajan a la siguiente línea en lugar de desbordarse. El contenedor mantiene el flujo con `flex-wrap: wrap` y el ancho se adapta sin romper la estructura.
+- El pie se organiza en tres bloques visuales en una fila: marca, contacto y horario. Con `display: flex`, `flex-direction: row`, `justify-content: space-between` y `gap`, cada bloque queda alineado arriba y con separación uniforme.
+- El comportamiento observado confirma que el encabezado y el pie responden bien a la reducción del ancho, manteniendo legibilidad y orden visual en las tres páginas porque todos los estilos se comparten desde la misma hoja CSS.
+

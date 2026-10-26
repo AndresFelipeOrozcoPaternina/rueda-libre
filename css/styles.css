@@ -1,175 +1,94 @@
+
 :root {
-  --color-primario: #0284c7;  
-  --color-secundario: #0f172a; 
-  --color-acento: #f59e0b;     
-  --color-texto: #334155;     
-  --color-fondo: #f8fafc;      
-
-  --fuente-titulos: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
-  --fuente-cuerpo: 'Open Sans', system-ui, -apple-system, sans-serif;
-
-  --espacio-sm: 0.5rem;
-  --espacio-md: 1rem;
-  --espacio-lg: 2rem;
+  --color-principal: #0284c7;   /* Azul */
+  --color-oscuro: #0f172a;      /* Texto importante */
+  --color-texto: #334155;       /* Texto normal */
+  --color-fondo: #f8fafc;       /* Fondo de pantalla */
+  --color-blanco: #ffffff;      /* Fondo de tarjetas */
+  --color-borde: #e2e8f0;       /* Líneas finas */
+  --fuente: Arial, sans-serif;  /* Fuente estándar simple */
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
+* {
+  box-sizing: border-box; 
 }
 
 body {
-  font-family: var(--fuente-cuerpo);
-  color: var(--color-texto);
-  background-color: var(--color-fondo);
   margin: 0;
-  padding: var(--espacio-md);
-  line-height: 1.6;
-  text-align: center;
+  padding: 16px;
+  font-family: var(--fuente);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
 }
 
-main {
-  max-width: 67.5rem;
-  margin: 0 auto;
-  padding: var(--espacio-md);
+header, main, section, footer{
+  max-width: 800px;
+  margin: 0 auto 24px;
 }
 
-body > header,
-body > section,
-body > footer {
-  max-width: 67.5rem;
-  margin: 0 auto var(--espacio-lg);
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: var(--espacio-md) auto;
-}
-
-ul,
-ol {
-  list-style-position: inside;
-  padding: 0;
-}
-
-table {
-  margin: var(--espacio-md) auto;
-  border-collapse: collapse;
-}
-
-th,
-td {
-  padding: var(--espacio-sm);
-}
-
-form,
-fieldset {
-  margin: var(--espacio-md) auto;
-}
-
-fieldset {
-  max-width: 42rem;
-  text-align: center;
-}
-
-label {
-  display: inline-block;
-}
-
-input,
-select,
-textarea {
-  margin: var(--espacio-sm) auto;
-}
-
-textarea {
-  max-width: 100%;
-}
-
-.portada {
-  width: 100%;
-  min-height: 50vh;
-  object-fit: cover;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--fuente-titulos);
-  color: var(--color-secundario);
-  margin-bottom: var(--espacio-sm);
+h1, h2, h3 {
+  color: var(--color-oscuro);
+  margin-top: 0;
 }
 
 a {
-  color: var(--color-primario);
+  color: var(--color-principal);
+  text-decoration: none;
 }
 
-a:hover {
-  color: var(--color-acento);
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
+
 
 #menu {
   list-style: none;
   padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-#menu li {
-  display: inline-block;
-  margin-right: var(--espacio-sm);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 #menu a {
-  color: var(--color-texto);
-  text-decoration: none;
-  padding: var(--espacio-sm) var(--espacio-md);
-  border-radius: 4px;
+  padding: 8px 16px;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 20px;
+  font-weight: bold;
 }
 
-#menu a.activo {
-  color: var(--color-primario);
-  font-weight: 600;
-  border-bottom: 2px solid var(--color-primario);
+#menu a:hover {
+  background: var(--color-principal);
+  color: var(--color-blanco);
 }
 
-#menu a:hover,
-#menu a:focus {
-  color: var(--color-acento);
-  outline: 2px solid var(--color-acento);
-  outline-offset: 2px;
+
+section {
+  background: var(--color-blanco);
+  padding: 20px;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
 }
 
-.tarjeta {
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  padding: var(--espacio-md);
-  margin-bottom: var(--espacio-lg);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+
+footer {
+  text-align: center;
+  border-top: 1px solid var(--color-borde);
+  padding-top: 20px;
 }
+
 
 .btn-whatsapp {
   position: fixed;
   bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #25d366;
-  color: #ffffff;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
-}
-
-.btn-whatsapp:hover,
-.btn-whatsapp:focus {
-  background-color: #128c7e;
-  color: #ffffff;
-  outline: 2px solid var(--color-secundario);
-  outline-offset: 2px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
 }
