@@ -75,3 +75,10 @@ Prueba de diseño responsive y flexbox
 - El pie se organiza en tres bloques visuales en una fila: marca, contacto y horario. Con `display: flex`, `flex-direction: row`, `justify-content: space-between` y `gap`, cada bloque queda alineado arriba y con separación uniforme.
 - El comportamiento observado confirma que el encabezado y el pie responden bien a la reducción del ancho, manteniendo legibilidad y orden visual en las tres páginas porque todos los estilos se comparten desde la misma hoja CSS.
 
+SEMANA 2
+
+- A 1280 px : Se observan 6 columnas alineadas en la cuadrícula.
+
+- A 900 px : La cuadrícula se reorganiza automáticamente a 2 columnas.
+
+- A 500 px : La cuadrícula se reduce a 1 columna 

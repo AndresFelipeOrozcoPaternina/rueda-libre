@@ -31,7 +31,25 @@ header, main, section, footer{
 h1, h2, h3 {
   color: var(--color-oscuro);
   margin-top: 0;
+  text-align: center;
 }
+
+p, span {
+  text-align: center;
+}
+
+
+
+ ul, ol {
+  width: fit-content;     
+  margin-left: auto;        
+  margin-right: auto;      
+  text-align: left;         
+  margin-bottom: 20px;
+}    
+  
+
+
 
 a {
   color: var(--color-principal);
