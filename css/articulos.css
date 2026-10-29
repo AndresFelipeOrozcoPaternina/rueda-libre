@@ -1,0 +1,53 @@
+
+h2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+
+#nuestra-flota {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.modelo {
+  display: flex;
+  flex-direction: column;
+  
+
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+.modelo img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.modelo h3 {
+  margin: 12px 0 8px 0;
+}
+
+
+.modelo p {
+  color: #555;
+  margin-bottom: 12px;
+}
+
+
+.modelo p.precio {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #000;
+  margin-bottom: 16px;
+}
+
+
+
