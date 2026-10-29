@@ -1,170 +1,251 @@
+/* ========================================================================== */
+/* TITULO: HOJA DE ESTILOS MOBILE-FIRST PARA PAGINA DE TARIFAS (TARIFAS.CSS)   */
+/* ========================================================================== */
+
+/* Variables de diseno y colores globales */
 :root {
-  --color-principal: #0284c7;   /* Azul */
-  --color-oscuro: #0f172a;      /* Texto importante */
-  --color-texto: #334155;       /* Texto normal */
-  --color-fondo: #f8fafc;       /* Fondo de pantalla */
-  --color-blanco: #ffffff;      /* Fondo de tarjetas */
-  --color-borde: #e2e8f0;       /* Líneas finas */
-  --fuente: Arial, sans-serif;  /* Fuente estándar simple */
-}
+  --color-principal: #0284c7; /* Azul institucional */
+  --color-oscuro: #0f172a; /* Titulos oscuros */
+  --color-texto: #334155; /* Texto normal */
+  --color-fondo: #f8fafc; /* Fondo suave */
+  --color-blanco: #ffffff; /* Blanco */
+  --color-borde: #e2e8f0; /* Borde gris */
+  --fuente: Arial, sans-serif; /* Tipografia estandar */
+} /* Fin de variables */
 
+/* Modelo de caja border-box para todo el documento */
 * {
-  box-sizing: border-box; 
-}
+  box-sizing: border-box; /* Previene scroll horizontal indeseado */
+} /* Fin de regla universal */
 
+/* Estilos de body en movil */
 body {
-  margin: 0;
-  padding: 16px;
-  font-family: var(--fuente);
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-  line-height: 1.5;
-}
+  margin: 0; /* Sin margen predeterminado */
+  padding: 12px; /* Margen de pantalla pequeno */
+  font-family: var(--fuente); /* Fuente sans-serif */
+  background-color: var(--color-fondo); /* Fondo general */
+  color: var(--color-texto); /* Color del texto */
+  line-height: 1.5; /* Altura de linea */
+} /* Fin de body */
 
+/* Contenedores generales */
 header, main, section, footer {
-  max-width: 2000px;
-  margin: 0 auto 24px;
-}
+  max-width: 2000px; /* Limite maximo */
+  margin: 0 auto 20px; /* Centrado y margen inferior */
+} /* Fin de contenedores */
 
+/* Encabezados h1, h2, h3 */
 h1, h2, h3 {
-  color: var(--color-oscuro);
-  margin-top: 0;
-  text-align: center;
-}
+  color: var(--color-oscuro); /* Color oscuro */
+  margin-top: 0; /* Sin margen arriba */
+  text-align: center; /* Centrado */
+} /* Fin de encabezados */
 
+/* Parrafos y textos span */
 p, span {
-  text-align: center;
-}
+  text-align: center; /* Centrado */
+  display: block; /* Muestra como bloque */
+} /* Fin de parrafos */
 
+/* Listas ordenadas y desordenadas */
 ul, ol {
-  width: fit-content;     
-  margin-left: auto;        
-  margin-right: auto;      
-  text-align: left;         
-  margin-bottom: 20px;
-}    
+  width: fit-content; /* Ajuste al contenido */
+  margin-left: auto; /* Centrado a la izquierda */
+  margin-right: auto; /* Centrado a la derecha */
+  text-align: left; /* Lectura a la izquierda */
+  margin-bottom: 20px; /* Margen abajo */
+} /* Fin de listas */
 
+/* Enlaces */
 a {
-  color: var(--color-principal);
-  text-decoration: none;
-}
+  color: var(--color-principal); /* Azul */
+  text-decoration: none; /* Sin subrayado */
+} /* Fin de enlaces */
 
+/* ========================================================================== */
+/* PASO 1: ENCABEZADO Y PIE MOBILE-FIRST                                      */
+/* ========================================================================== */
+
+/* Imagenes fluidas */
 img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
+  max-width: 100%; /* No desborda su contenedor */
+  height: auto; /* Proporcional */
+  display: block; /* Bloque */
+  border-radius: 8px; /* Bordes redondeados */
+} /* Fin de imagenes */
 
+/* Secciones */
 section {
-  background: var(--color-blanco);
-  padding: 20px;
-  border: 1px solid var(--color-borde);
-  border-radius: 12px;
-}
+  background: var(--color-blanco); /* Fondo blanco */
+  padding: 16px; /* Relleno */
+  border: 1px solid var(--color-borde); /* Borde */
+  border-radius: 12px; /* Redondeado */
+  margin-bottom: 20px; /* Margen */
+} /* Fin de section */
 
-/* ============================================================ */
-/* PUNTO 5: Encabezado y Navegación (Flexbox unidimensional)    */
-/* Criterio: Flexbox (1D) para alinear logo, título y menú en  */
-/* un solo eje horizontal con justify-content y align-items     */
-/* ============================================================ */
+/* Encabezado apilado para movil */
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 24px;
-  background-color: rgb(120, 197, 225);
-  padding: 12px 30px;
-  border-radius: 12px;
-}
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Apila logo, nombre y menu en celular */
+  align-items: center; /* Centrado en celular */
+  gap: 12px; /* Separacion vertical */
+  margin-bottom: 20px; /* Margen inferior */
+  background-color: rgb(120, 197, 225); /* Color celeste */
+  padding: 16px 12px; /* Relleno */
+  border-radius: 12px; /* Redondeado */
+  text-align: center; /* Centrado */
+} /* Fin de header movil */
 
+/* Logo */
 #logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
+  width: 50px; /* 50px ancho */
+  height: 50px; /* 50px alto */
+  border-radius: 50%; /* Circulo */
+  object-fit: cover; /* Ajuste limpio */
+} /* Fin de logo */
 
+/* Titulo en header */
 header h1 {
-  text-align: left;
-  margin: 0;
-  margin-right: auto;
-  font-size: 1.8rem;
-}
+  text-align: center; /* Centrado en celular */
+  margin: 0; /* Sin margen */
+  font-size: 1.6rem; /* Tamano celular */
+} /* Fin de header h1 */
 
-nav a {
-  text-decoration: none;
-  color: var(--color-principal);
-}
-
+/* Menu en movil */
 #menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: center;
-}
+  list-style: none; /* Sin puntos */
+  padding: 0; /* Sin padding */
+  margin: 0; /* Sin margen */
+  display: flex; /* Flexbox */
+  gap: 8px; /* Espaciado entre botones */
+  flex-wrap: wrap; /* Salto si no cabe */
+  justify-content: center; /* Centrado bajo el titulo */
+  align-items: center; /* Centrado vertical */
+} /* Fin de menu */
 
+/* Botones del menu */
 #menu a {
-  padding: 8px 16px;
-  background: var(--color-blanco);
-  border: 1px solid var(--color-borde);
-  border-radius: 20px;
-  font-weight: bold;
-}
+  padding: 6px 12px; /* Relleno de boton */
+  background: var(--color-blanco); /* Blanco */
+  border: 1px solid var(--color-borde); /* Borde */
+  border-radius: 20px; /* Capsula */
+  font-weight: bold; /* Negrita */
+  font-size: 0.9rem; /* Tamano comodo */
+} /* Fin de menu a */
 
+/* Hover del menu */
 #menu a:hover {
-  background: var(--color-principal);
-  color: var(--color-blanco);
-}
+  background: var(--color-principal); /* Azul */
+  color: var(--color-blanco); /* Blanco */
+} /* Fin de menu a:hover */
 
-/* Estilos de tablas para Tarifas */
+/* ========================================================================== */
+/* PASO 4: TABLAS DE TARIFAS SIN SCROLL LATERAL EN MOVIL (360 PX)             */
+/* ========================================================================== */
+
+/* Tabla adaptada para que todas las columnas quepan completas en celular */
 table {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto 16px;
-  border-collapse: collapse;
-}
+  width: 100%; /* Ocupa el 100% del contenedor sin sobrepasarlo */
+  border-collapse: collapse; /* Une los bordes de celdas contiguas */
+  font-size: 0.75rem; /* Letra compacta que permite 4 o 5 columnas en 360 px */
+  margin-bottom: 16px; /* Espacio inferior */
+} /* Fin de table movil */
 
+/* Celdas de encabezado y datos en movil */
 th, td {
-  padding: 10px;
-  text-align: center;
-}
+  padding: 5px 3px; /* Relleno muy compacto para evitar desplazamiento lateral */
+  text-align: center; /* Centra el contenido de cada columna */
+  word-break: break-word; /* Rompe palabras largas en varias lineas si es necesario */
+} /* Fin de th, td movil */
 
+/* Titulo explicativo de la tabla */
 caption {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+  font-weight: bold; /* Negrita */
+  font-size: 0.85rem; /* Tamano legible para celular */
+  margin-bottom: 8px; /* Separacion hacia la tabla */
+  color: var(--color-oscuro); /* Color destacado */
+} /* Fin de caption movil */
 
-/* ============================================================ */
-/* PUNTO 5 (Continuación): Pie de página (Flexbox unidimensional)*/
-/* Criterio: Flexbox (1D) para alinear los datos de pie de      */
-/* página en un solo eje con align-items y justify-content      */
-/* ============================================================ */
+/* Pie de pagina en movil */
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-top: 1px solid var(--color-borde);
-  padding: 20px;
-  text-align: center;
-}
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Columna en celular */
+  justify-content: center; /* Centrado */
+  align-items: center; /* Centrado */
+  border-top: 1px solid var(--color-borde); /* Borde */
+  padding: 16px; /* Relleno */
+  text-align: center; /* Centrado */
+  gap: 8px; /* Espacio vertical */
+} /* Fin de footer movil */
 
+/* Lista dl en pie */
 footer dl {
-  margin: 0;
-  text-align: center;
-}
+  margin: 0; /* Sin margen */
+  text-align: center; /* Centrado */
+} /* Fin de footer dl */
 
+/* Boton de WhatsApp */
 .btn-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 25px;
-  font-weight: bold;
-}
+  position: fixed; /* Fijo */
+  bottom: 20px; /* Abajo */
+  right: 20px; /* Derecha */
+  background: #25d366; /* Verde */
+  color: white; /* Blanco */
+  padding: 12px 20px; /* Relleno */
+  border-radius: 25px; /* Capsula */
+  font-weight: bold; /* Negrita */
+} /* Fin de btn-whatsapp */
 
+/* ========================================================================== */
+/* MEDIA QUERY: TABLET Y ESCRITORIO (min-width: 768px)                        */
+/* Encabezado horizontal (MiniReto 1) y tablas con tamano completo            */
+/* ========================================================================== */
+@media (min-width: 768px) {
+  body {
+    padding: 16px; /* Padding exterior aumentado en tablet */
+  } /* Fin de body tablet */
+
+  /* Encabezado horizontal */
+  header {
+    flex-direction: row; /* Fila horizontal */
+    justify-content: space-between; /* Distribucion a los extremos */
+    padding: 12px 30px; /* Relleno amplio */
+    text-align: left; /* Alineado a la izquierda */
+  } /* Fin de header tablet */
+
+  /* Titulo a la izquierda */
+  header h1 {
+    text-align: left; /* Alineado a la izquierda */
+    font-size: 1.8rem; /* Tamano completo */
+  } /* Fin de header h1 tablet */
+
+  /* Menu a la derecha */
+  #menu {
+    justify-content: flex-end; /* Alineado al extremo derecho */
+    gap: 10px; /* Espacio uniforme */
+  } /* Fin de menu tablet */
+
+  /* Tablas restauradas a tamano estandar en pantallas medianas y grandes */
+  table {
+    font-size: 1rem; /* Tamano estandar de fuente */
+    max-width: 850px; /* Ancho maximo comodo */
+    margin: 0 auto 20px; /* Centrado horizontal */
+  } /* Fin de table tablet */
+
+  /* Celdas con relleno amplio en tablet */
+  th, td {
+    padding: 10px 8px; /* Relleno espacioso */
+  } /* Fin de th, td tablet */
+
+  /* Caption destacado */
+  caption {
+    font-size: 1.1rem; /* Titulo amplio */
+    margin-bottom: 12px; /* Margen */
+  } /* Fin de caption tablet */
+
+  /* Pie de pagina horizontal */
+  footer {
+    flex-direction: row; /* Fila horizontal */
+    gap: 20px; /* Separacion entre bloques */
+  } /* Fin de footer tablet */
+} /* Fin de media query 768px */

@@ -108,3 +108,20 @@ DECISIONES DE LAYOUT: CRITERIO DE 1 DIMENSIÓN (FLEXBOX) VS 2 DIMENSIONES (GRID)
 6. Pie de página (Footer):
 - Decisión: Flexbox
 - Justificación: Se utilizó Flexbox por ser unidimensional (1D). Permite centrar y agrupar en un solo eje los datos del negocio y correo mediante justify-content: center y align-items: center de forma directa y limpia.
+
+
+PRUEBAS RESPONSIVE MOBILE-FIRST (360 PX, 768 PX Y 1280 PX)
+
+Problemas identificados y soluciones aplicadas:
+
+1. Desplazamiento horizontal en tablas a 360 px:
+- Problema: Las tablas de tarifas con 4 y 5 columnas generaban scroll lateral en celulares de 360 px debido al relleno y tamaño de letra estándar de escritorio.
+- Solución: Se aplicó un enfoque mobile-first reduciendo la tipografía de la tabla a 0.75rem, disminuyendo el padding de las celdas a 5px 3px y permitiendo word-break: break-word. Las tablas ahora se leen completas a 360 px sin scroll lateral. Desde 768 px se restauran a tamaño 1rem.
+
+2. Desborde del encabezado en una fila en pantallas móviles:
+- Problema: Al abrir el sitio en 360 px, el logo, título y enlaces de navegación colisionaban al estar forzados en una sola fila horizontal.
+- Solución: En los estilos base móviles se configuró flex-direction: column y align-items: center para el header, dejando el nombre arriba y el menú centrado debajo con flex-wrap: wrap. Con la media query a 768 px se restablece la fila horizontal (justify-content: space-between).
+
+3. Colapso de los campos cortos del formulario a 360 px:
+- Problema: Al colocar Documento de identidad y Celular en una sola fila horizontal fija, ambos campos quedaban excesivamente estrechos para ingresar texto en teléfonos pequeños.
+- Solución: Se configuró .fila-campos con flex-direction: column como estilo base móvil para que cada campo ocupe el 100% del ancho apilado. A partir de tablet (min-width: 768px) se activa flex-direction: row con gap: 16px para retomar la visualización en la misma fila.
