@@ -1,4 +1,3 @@
-
 :root {
   --color-principal: #0284c7;   /* Azul */
   --color-oscuro: #0f172a;      /* Texto importante */
@@ -8,7 +7,6 @@
   --color-borde: #e2e8f0;       /* Líneas finas */
   --fuente: Arial, sans-serif;  /* Fuente estándar simple */
 }
-
 
 * {
   box-sizing: border-box; 
@@ -23,7 +21,7 @@ body {
   line-height: 1.5;
 }
 
-header, main, section, footer{
+header, main, section, footer {
   max-width: 2000px;
   margin: 0 auto 24px;
 }
@@ -38,18 +36,13 @@ p, span {
   text-align: center;
 }
 
-
-
- ul, ol {
+ul, ol {
   width: fit-content;     
   margin-left: auto;        
   margin-right: auto;      
   text-align: left;         
   margin-bottom: 20px;
 }    
-  
-
-
 
 a {
   color: var(--color-principal);
@@ -62,13 +55,56 @@ img {
   border-radius: 8px;
 }
 
+section {
+  background: var(--color-blanco);
+  padding: 20px;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+}
+
+/* ============================================================ */
+/* PUNTO 5: Encabezado y Navegación (Flexbox unidimensional)    */
+/* Criterio: Flexbox (1D) para alinear logo, título y menú en  */
+/* un solo eje horizontal con justify-content y align-items     */
+/* ============================================================ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  background-color: rgb(120, 197, 225);
+  padding: 12px 30px;
+  border-radius: 12px;
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header h1 {
+  text-align: left;
+  margin: 0;
+  margin-right: auto;
+  font-size: 1.8rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-principal);
+}
 
 #menu {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 #menu a {
@@ -84,21 +120,24 @@ img {
   color: var(--color-blanco);
 }
 
-
-section {
-  background: var(--color-blanco);
-  padding: 20px;
-  border: 1px solid var(--color-borde);
-  border-radius: 12px;
-}
-
-
+/* ============================================================ */
+/* PUNTO 5 (Continuación): Pie de página (Flexbox unidimensional)*/
+/* Criterio: Flexbox (1D) para alinear los datos de pie de      */
+/* página en un solo eje con align-items y justify-content      */
+/* ============================================================ */
 footer {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-top: 1px solid var(--color-borde);
-  padding-top: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
+footer dl {
+  margin: 0;
+  text-align: center;
+}
 
 .btn-whatsapp {
   position: fixed;
@@ -111,37 +150,3 @@ footer {
   font-weight: bold;
 }
 
-header {
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  margin-bottom: 24px;
-  background-color: rgb(120, 197, 225);
-  padding: 12px 50px;
-
-}
-
-header logo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  justify-content: space-between;
-}
-
-header h1{
-  text-align:center;
-  margin-bottom: 1px;
-  margin-right: auto;
-  margin-top: 5px;
-}
-
-nav a{
-  text-decoration: none;
-  color: var(--color-principal);
-  gap: 50px;
-}
-
-nav ul{
-  display: flex;
-  padding: 300px;
-}

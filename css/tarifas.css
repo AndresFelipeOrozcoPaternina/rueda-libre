@@ -1,0 +1,170 @@
+:root {
+  --color-principal: #0284c7;   /* Azul */
+  --color-oscuro: #0f172a;      /* Texto importante */
+  --color-texto: #334155;       /* Texto normal */
+  --color-fondo: #f8fafc;       /* Fondo de pantalla */
+  --color-blanco: #ffffff;      /* Fondo de tarjetas */
+  --color-borde: #e2e8f0;       /* Líneas finas */
+  --fuente: Arial, sans-serif;  /* Fuente estándar simple */
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: var(--fuente);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
+
+header, main, section, footer {
+  max-width: 2000px;
+  margin: 0 auto 24px;
+}
+
+h1, h2, h3 {
+  color: var(--color-oscuro);
+  margin-top: 0;
+  text-align: center;
+}
+
+p, span {
+  text-align: center;
+}
+
+ul, ol {
+  width: fit-content;     
+  margin-left: auto;        
+  margin-right: auto;      
+  text-align: left;         
+  margin-bottom: 20px;
+}    
+
+a {
+  color: var(--color-principal);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+section {
+  background: var(--color-blanco);
+  padding: 20px;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+}
+
+/* ============================================================ */
+/* PUNTO 5: Encabezado y Navegación (Flexbox unidimensional)    */
+/* Criterio: Flexbox (1D) para alinear logo, título y menú en  */
+/* un solo eje horizontal con justify-content y align-items     */
+/* ============================================================ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+  background-color: rgb(120, 197, 225);
+  padding: 12px 30px;
+  border-radius: 12px;
+}
+
+#logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header h1 {
+  text-align: left;
+  margin: 0;
+  margin-right: auto;
+  font-size: 1.8rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--color-principal);
+}
+
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#menu a {
+  padding: 8px 16px;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+#menu a:hover {
+  background: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+/* Estilos de tablas para Tarifas */
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 16px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ============================================================ */
+/* PUNTO 5 (Continuación): Pie de página (Flexbox unidimensional)*/
+/* Criterio: Flexbox (1D) para alinear los datos de pie de      */
+/* página en un solo eje con align-items y justify-content      */
+/* ============================================================ */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--color-borde);
+  padding: 20px;
+  text-align: center;
+}
+
+footer dl {
+  margin: 0;
+  text-align: center;
+}
+
+.btn-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
