@@ -82,3 +82,29 @@ SEMANA 2
 - A 900 px : La cuadrícula se reorganiza automáticamente a 2 columnas.
 
 - A 500 px : La cuadrícula se reduce a 1 columna 
+
+DECISIONES DE LAYOUT: CRITERIO DE 1 DIMENSIÓN (FLEXBOX) VS 2 DIMENSIONES (GRID)
+
+1. Portada de inicio (Hero):
+- Decisión: Grid
+- Justificación: Se utilizó CSS Grid por ser una estructura bidimensional (2D) dividida en dos columnas principales mediante unidades fr (1fr 1fr). Esto permite controlar la relación espacial entre la columna de texto a la izquierda y la columna de la fotografía a la derecha, facilitando además el alineamiento vertical del contenido con align-items: center sin depender de cálculos manuales de margen.
+
+2. Galería "Nuestras rutas":
+- Decisión: Grid
+- Justificación: Se utilizó CSS Grid porque se requería definir una cuadrícula estricta de tres tarjetas de rutas guiadas en una sola fila. Mediante grid-template-columns: repeat(3, 1fr) y gap se asegura que las tres tarjetas tengan exactamente el mismo ancho, proporción y espaciado homogéneo bidimensional en escritorio.
+
+3. Layout de Reservas:
+- Decisión: Grid
+- Justificación: Se utilizó CSS Grid ya que es un diseño estructural bidimensional (2D) que divide la página en una proporción 2:1. Con grid-template-columns: 2fr 1fr, el formulario ocupa dos tercios del espacio horizontal a la izquierda y la información de contacto junto al horario ocupa el tercio restante a la derecha, manteniendo ambas columnas alineadas arriba con align-items: start.
+
+4. Fila del formulario (documento y celular):
+- Decisión: Flexbox
+- Justificación: Se utilizó Flexbox por tratarse de una distribución estrictamente unidimensional (1D horizontal). Al alinear dos campos cortos relacionados dentro de una misma fila, Flexbox con display: flex, gap y flex: 1 en cada campo permite que ambos se expandan equitativamente ocupando el 50% del ancho del contenedor sin la complejidad de una cuadrícula completa.
+
+5. Encabezado (Header):
+- Decisión: Flexbox
+- Justificación: Se utilizó Flexbox debido a que el encabezado es un flujo unidimensional (1D a lo largo del eje horizontal). Con justify-content: space-between y align-items: center, se posiciona el logo y el nombre a la izquierda y el menú de navegación a la derecha, garantizando flexibilidad y fluidez si los enlaces aumentan o se adaptan de tamaño.
+
+6. Pie de página (Footer):
+- Decisión: Flexbox
+- Justificación: Se utilizó Flexbox por ser unidimensional (1D). Permite centrar y agrupar en un solo eje los datos del negocio y correo mediante justify-content: center y align-items: center de forma directa y limpia.
