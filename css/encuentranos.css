@@ -1,204 +1,169 @@
-/* ========================================================================== */
-/* TITULO: HOJA DE ESTILOS MOBILE-FIRST PARA ENCUENTRANOS (ENCUENTRANOS.CSS)   */
-/* ========================================================================== */
-
-/* Variables de diseno y colores globales */
 :root {
-  --color-principal: #0284c7; /* Azul institucional */
-  --color-oscuro: #0f172a; /* Titulos oscuros */
-  --color-texto: #334155; /* Texto normal */
-  --color-fondo: #f8fafc; /* Fondo suave */
-  --color-blanco: #ffffff; /* Blanco */
-  --color-borde: #e2e8f0; /* Borde gris */
-  --fuente: Arial, sans-serif; /* Tipografia estandar */
-} /* Fin de variables */
+  --color-principal: #0284c7;
+  --color-oscuro: #0f172a;
+  --color-texto: #334155;
+  --color-fondo: #f8fafc;
+  --color-blanco: #ffffff;
+  --color-borde: #e2e8f0;
+  --fuente: Arial, sans-serif;
+}
 
-/* Modelo de caja border-box para todo el documento */
 * {
-  box-sizing: border-box; /* Previene scroll horizontal indeseado */
-} /* Fin de regla universal */
+  box-sizing: border-box;
+}
 
-/* Estilos de body en movil */
 body {
-  margin: 0; /* Sin margen predeterminado */
-  padding: 12px; /* Margen de pantalla pequeno */
-  font-family: var(--fuente); /* Fuente sans-serif */
-  background-color: var(--color-fondo); /* Fondo general */
-  color: var(--color-texto); /* Color del texto */
-  line-height: 1.5; /* Altura de linea */
-} /* Fin de body */
+  margin: 0;
+  padding: 12px;
+  font-family: var(--fuente);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.5;
+}
 
-/* Contenedores generales */
 header, main, section, footer {
-  max-width: 2000px; /* Limite maximo */
-  margin: 0 auto 20px; /* Centrado y margen inferior */
-} /* Fin de contenedores */
+  max-width: 2000px;
+  margin: 0 auto 20px;
+}
 
-/* Encabezados h1, h2, h3 */
 h1, h2, h3 {
-  color: var(--color-oscuro); /* Color oscuro */
-  margin-top: 0; /* Sin margen arriba */
-  text-align: center; /* Centrado */
-} /* Fin de encabezados */
+  color: var(--color-oscuro);
+  margin-top: 0;
+  text-align: center;
+}
 
-/* Parrafos y textos span */
 p, span {
-  text-align: center; /* Centrado */
-} /* Fin de parrafos */
+  text-align: center;
+}
 
-/* Enlaces */
 a {
-  color: var(--color-principal); /* Azul */
-  text-decoration: none; /* Sin subrayado */
-} /* Fin de enlaces */
+  color: var(--color-principal);
+  text-decoration: none;
+}
 
-/* ========================================================================== */
-/* PASO 1: ENCABEZADO Y PIE MOBILE-FIRST                                      */
-/* ========================================================================== */
-
-/* Imagenes fluidas para que nunca superen su contenedor */
 img {
-  max-width: 100%; /* No desborda su contenedor */
-  height: auto; /* Proporcional */
-  display: block; /* Bloque */
-  border-radius: 8px; /* Bordes redondeados */
-} /* Fin de imagenes */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
 
-/* Secciones */
 section {
-  background: var(--color-blanco); /* Fondo blanco */
-  padding: 16px; /* Relleno */
-  border: 1px solid var(--color-borde); /* Borde */
-  border-radius: 12px; /* Redondeado */
-  margin-bottom: 20px; /* Margen */
-} /* Fin de section */
+  background: var(--color-blanco);
+  padding: 16px;
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
 
-/* Encabezado apilado para movil */
 header {
-  display: flex; /* Flexbox */
-  flex-direction: column; /* Apila logo, nombre y menu en celular */
-  align-items: center; /* Centrado en celular */
-  gap: 12px; /* Separacion vertical */
-  margin-bottom: 20px; /* Margen inferior */
-  background-color: rgb(120, 197, 225); /* Color celeste */
-  padding: 16px 12px; /* Relleno */
-  border-radius: 12px; /* Redondeado */
-  text-align: center; /* Centrado */
-} /* Fin de header movil */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  background-color: rgb(120, 197, 225);
+  padding: 16px 12px;
+  border-radius: 12px;
+  text-align: center;
+}
 
-/* Logo */
 #logo {
-  width: 50px; /* 50px ancho */
-  height: 50px; /* 50px alto */
-  border-radius: 50%; /* Circulo */
-  object-fit: cover; /* Ajuste limpio */
-} /* Fin de logo */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-/* Titulo en header */
 header h1 {
-  text-align: center; /* Centrado en celular */
-  margin: 0; /* Sin margen */
-  font-size: 1.6rem; /* Tamano celular */
-} /* Fin de header h1 */
+  text-align: center;
+  margin: 0;
+  font-size: 1.6rem;
+}
 
-/* Menu en movil */
 #menu {
-  list-style: none; /* Sin puntos */
-  padding: 0; /* Sin padding */
-  margin: 0; /* Sin margen */
-  display: flex; /* Flexbox */
-  gap: 8px; /* Espaciado entre botones */
-  flex-wrap: wrap; /* Salto si no cabe */
-  justify-content: center; /* Centrado bajo el titulo */
-  align-items: center; /* Centrado vertical */
-} /* Fin de menu */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-/* Botones del menu */
 #menu a {
-  padding: 6px 12px; /* Relleno de boton */
-  background: var(--color-blanco); /* Blanco */
-  border: 1px solid var(--color-borde); /* Borde */
-  border-radius: 20px; /* Capsula */
-  font-weight: bold; /* Negrita */
-  font-size: 0.9rem; /* Tamano comodo */
-} /* Fin de menu a */
+  padding: 6px 12px;
+  background: var(--color-blanco);
+  border: 1px solid var(--color-borde);
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
 
-/* Hover del menu */
 #menu a:hover {
-  background: var(--color-principal); /* Azul */
-  color: var(--color-blanco); /* Blanco */
-} /* Fin de menu a:hover */
+  background: var(--color-principal);
+  color: var(--color-blanco);
+}
 
-/* Imagen del mapa o ruta en encuentranos */
 main section img {
-  width: 100%; /* Ocupa ancho total */
-  max-height: 400px; /* Limite de altura */
-  object-fit: cover; /* Ajuste proporcional */
-  margin: 16px auto; /* Centrado con margen vertical */
-} /* Fin de imagen de seccion */
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  margin: 16px auto;
+}
 
-/* Pie de pagina en movil */
 footer {
-  display: flex; /* Flexbox */
-  flex-direction: column; /* Columna en celular */
-  justify-content: center; /* Centrado */
-  align-items: center; /* Centrado */
-  border-top: 1px solid var(--color-borde); /* Borde */
-  padding: 16px; /* Relleno */
-  text-align: center; /* Centrado */
-  gap: 8px; /* Espacio vertical */
-} /* Fin de footer movil */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--color-borde);
+  padding: 16px;
+  text-align: center;
+  gap: 8px;
+}
 
-/* Lista dl en pie */
 footer dl {
-  margin: 0; /* Sin margen */
-  text-align: center; /* Centrado */
-} /* Fin de footer dl */
+  margin: 0;
+  text-align: center;
+}
 
-/* Boton de WhatsApp */
 .btn-whatsapp {
-  position: fixed; /* Fijo */
-  bottom: 20px; /* Abajo */
-  right: 20px; /* Derecha */
-  background: #25d366; /* Verde */
-  color: white; /* Blanco */
-  padding: 12px 20px; /* Relleno */
-  border-radius: 25px; /* Capsula */
-  font-weight: bold; /* Negrita */
-} /* Fin de btn-whatsapp */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+}
 
-/* ========================================================================== */
-/* MEDIA QUERY: TABLET Y ESCRITORIO (min-width: 768px)                        */
-/* Encabezado horizontal (MiniReto 1) y distribucion en pantallas grandes     */
-/* ========================================================================== */
 @media (min-width: 768px) {
   body {
-    padding: 16px; /* Padding exterior aumentado en tablet */
-  } /* Fin de body tablet */
+    padding: 16px;
+  }
 
-  /* Encabezado horizontal */
   header {
-    flex-direction: row; /* Fila horizontal */
-    justify-content: space-between; /* Distribucion a los extremos */
-    padding: 12px 30px; /* Relleno amplio */
-    text-align: left; /* Alineado a la izquierda */
-  } /* Fin de header tablet */
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 12px 30px;
+    text-align: left;
+  }
 
-  /* Titulo a la izquierda */
   header h1 {
-    text-align: left; /* Alineado a la izquierda */
-    font-size: 1.8rem; /* Tamano completo */
-  } /* Fin de header h1 tablet */
+    text-align: left;
+    font-size: 1.8rem;
+  }
 
-  /* Menu a la derecha */
   #menu {
-    justify-content: flex-end; /* Alineado al extremo derecho */
-    gap: 10px; /* Espacio uniforme */
-  } /* Fin de menu tablet */
+    justify-content: flex-end;
+    gap: 10px;
+  }
 
-  /* Pie de pagina horizontal */
   footer {
-    flex-direction: row; /* Fila horizontal */
-    gap: 20px; /* Separacion entre bloques */
-  } /* Fin de footer tablet */
-} /* Fin de media query 768px */
+    flex-direction: row;
+    gap: 20px;
+  }
+}

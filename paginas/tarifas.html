@@ -2,69 +2,29 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <!-- viewport: usa el ancho del dispositivo; initial-scale=1.0 inicia sin ampliar ni reducir la página. -->
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tarifas de alquiler</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-        <!-- CAMBIO 3: Bootstrap primero y mi CSS después para conservar mis estilos. -->
-        <!-- CARGA DEL CSS DE BOOTSTRAP:
-            link enlaza una hoja; href es la dirección del CSS 5.3.3 y rel="stylesheet" indica que son estilos.
-            integrity permite comprobar que el archivo recibido coincide con su huella esperada.
-            crossorigin="anonymous" permite cargarlo desde otro dominio sin enviar credenciales a ese dominio.
-        -->
+
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <!-- MI CSS: carga después de Bootstrap para conservar los estilos propios; también importan la prioridad y especificidad de cada regla. -->
+
         <link rel="stylesheet" href="../css/tarifas.css">
 
     </head>
-    <!-- GUÍA PARA ESTUDIAR:
-        Las palabras dentro de class son clases separadas por espacios; cada una tiene una tarea.
-        Bootstrap aplica las clases según el ancho de la ventana: sm 576 px, md 768 px, lg 992 px y xl 1200 px.
-        m significa margin (espacio por fuera) y p padding (espacio por dentro).
-        Los números son niveles de una escala, no píxeles: 0 = 0; 2 = 0.5 rem; 3 = 1 rem; 4 = 1.5 rem; 5 = 3 rem.
-        rem depende del tamaño de letra raíz: si es 16 px, 0.5 rem son 8 px y 1 rem son 16 px.
-        Estos comentarios se leen en el código; el navegador no los muestra en la página.
-    -->
-    <!-- PASO 1: Clases de este elemento <body>. Se leen así:
-        1. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-        2. p-md-4: desde 768 px, pone relleno interior en los cuatro lados. El nivel 4 equivale a 1.5 rem con la configuración usada.
-    -->
+
     <body class="p-3 p-md-4">
 
-        <!-- PASO 2: Clases de este elemento <header>. Se leen así:
-            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
-            2. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
-            3. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
-            4. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
-            5. justify-content-between: reparte el espacio libre entre los hijos en el eje principal; en fila separa hacia los extremos.
-            6. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
-            7. gap-3: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 3 equivale a 1 rem con la configuración usada.
-            8. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-            9. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
-            10. text-center: centra el texto dentro del elemento.
-        -->
         <header class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 p-3 mb-4 text-center">
             <img src="../img/images.jpeg" alt="logo" width="50" height="50" id="logo">
-            <!-- PASO 3: Clases de este elemento <h1>. Se leen así:
-                1. fs-2: aplica el tamaño de fuente del nivel 2 de Bootstrap; fs significa font-size, no significa 2 px.
-                2. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
-            -->
+
             <h1 class="fs-2 mb-0">Rueda Libre</h1>
 
             <nav>
-                <!-- PASO 4: Clases de este elemento <ul>. Se leen así:
-                    1. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
-                    2. flex-wrap: permite que los hijos pasen a otra línea si no caben en una sola fila.
-                    3. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
-                    4. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
-                    5. gap-2: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 2 equivale a 0.5 rem con la configuración usada.
-                    6. list-unstyled: quita las viñetas y la sangría inicial de la lista.
-                    7. p-0: pone relleno interior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
-                    8. m-0: pone margen exterior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
-                -->
+
                 <ul id="menu" class="d-flex flex-wrap justify-content-center align-items-center gap-2 list-unstyled p-0 m-0">
                     <li><a href="./reservas.html">Reservas</a></li>
                     <li><a href="./encuentranos.html">Encuentranos</a></li>
@@ -73,25 +33,12 @@
             </nav>
         </header>
 
-        <!-- CAMBIO 7: Tarifas. Tablas e información en dos columnas desde lg (992 px). -->
-        <!-- PASO 5: Clases de este elemento <main>. Se leen así:
-            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
-        -->
         <main class="container">
-            <!-- PASO 6: Clases de este elemento <div>. Se leen así:
-                1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
-                2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
-            -->
+
             <div class="row g-4">
-                <!-- PASO 7: Clases de este elemento <div>. Se leen así:
-                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
-                    2. col-lg-8: desde 992 px ocupa 8 de las 12 partes de la fila, es decir, dos tercios del ancho; se mantiene hasta que otra clase de columna la cambie.
-                -->
+
                 <div class="col-12 col-lg-8">
-                    <!-- PASO 8: Clases de este elemento <section>. Se leen así:
-                        1. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-                        2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
-                    -->
+
                     <section class="p-3 mb-4">
                         <table border="1">
                             <caption>Tarifas de alquiler de bicicletas</caption>
@@ -112,10 +59,6 @@
                         </table>
                     </section>
 
-                    <!-- PASO 9: Clases de este elemento <section>. Se leen así:
-                        1. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-                        2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
-                    -->
                     <section id="recorridos" class="p-3 mb-4">
                         <table border="1">
                             <caption>Precios de los recorridos guiados</caption>
@@ -142,14 +85,9 @@
                     </section>
 
                 </div>
-                <!-- PASO 10: Clases de este elemento <div>. Se leen así:
-                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
-                    2. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
-                -->
+
                 <div class="col-12 col-lg-4">
-                    <!-- PASO 11: Clases de este elemento <section>. Se leen así:
-                        1. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-                    -->
+
                     <section class="p-3">
                         <h2>¿Que llevar?</h2>
 
@@ -166,22 +104,8 @@
             </div>
         </main>
 
-        <!-- PASO 12: Clases de este elemento <footer>. Se leen así:
-            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
-            2. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
-            3. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
-            4. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
-            5. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
-            6. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
-            7. gap-3: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 3 equivale a 1 rem con la configuración usada.
-            8. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-            9. mt-4: pone margen exterior encima del elemento. El nivel 4 equivale a 1.5 rem con la configuración usada.
-            10. text-center: centra el texto dentro del elemento.
-        -->
         <footer class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 p-3 mt-4 text-center">
-            <!-- PASO 13: Clases de este elemento <dl>. Se leen así:
-                1. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
-            -->
+
             <dl class="mb-0">
                 <dt><strong>Nombre del negocio</strong></dt>
                 <dd>Rueda Libre</dd>
@@ -189,15 +113,9 @@
                 <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
             </dl>
         </footer>
-        <!-- PASO 14: Clases de este elemento <a>. Se leen así:
-            1. btn-whatsapp: clase que ya tenía mi CSS para fijar el enlace de WhatsApp abajo a la derecha.
-        -->
+
         <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">WhatsApp</a>
 
-        <!-- BUNDLE: src carga el JavaScript de Bootstrap con Popper incluido.
-            Las columnas y las utilidades de esta página funcionan con el CSS; este archivo sirve para componentes interactivos.
-            integrity comprueba la huella del archivo y crossorigin permite su carga desde otro dominio sin credenciales.
-        -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

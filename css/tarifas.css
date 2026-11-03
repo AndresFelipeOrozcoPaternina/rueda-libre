@@ -1,4 +1,3 @@
-/* CAMBIO 10: Bootstrap organiza las columnas. Aquí conservo colores, tarjetas, tablas y estados. */
 :root {
   --color-principal: #0284c7;
   --color-oscuro: #0f172a;
@@ -108,5 +107,4 @@ footer {
   caption { font-size: 1.1rem; margin-bottom: 12px; }
 }
 
-/* Bootstrap coloca caption debajo; conservo el título arriba de la tabla. */
 caption { caption-side: top; text-align: center; }
