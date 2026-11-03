@@ -1,86 +1,376 @@
 <!doctype html>
 <html lang="es">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Prueba Catálogo - Bootstrap 5.3</title>
-    <!-- CSS de Bootstrap 5.3 por CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    <head>
+        <meta charset="utf-8">
+        <!-- viewport: usa el ancho del dispositivo; initial-scale=1.0 inicia sin ampliar ni reducir la página. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Prueba Catálogo - Bootstrap 5.3</title>
+        <!-- CSS de Bootstrap 5.3 por CDN -->
+        <!-- CARGA DEL CSS DE BOOTSTRAP:
+            link enlaza una hoja; href es la dirección del CSS 5.3.3 y rel="stylesheet" indica que son estilos.
+            integrity permite comprobar que el archivo recibido coincide con su huella esperada.
+            crossorigin="anonymous" permite cargarlo desde otro dominio sin enviar credenciales a ese dominio.
+        -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
+    </head>
 
-<body>
+    <!-- GUÍA PARA ESTUDIAR:
+        Las palabras dentro de class son clases separadas por espacios; cada una tiene una tarea.
+        Bootstrap aplica las clases según el ancho de la ventana: sm 576 px, md 768 px, lg 992 px y xl 1200 px.
+        m significa margin (espacio por fuera) y p padding (espacio por dentro).
+        Los números son niveles de una escala, no píxeles: 0 = 0; 2 = 0.5 rem; 3 = 1 rem; 4 = 1.5 rem; 5 = 3 rem.
+        rem depende del tamaño de letra raíz: si es 16 px, 0.5 rem son 8 px y 1 rem son 16 px.
+        Estos comentarios se leen en el código; el navegador no los muestra en la página.
+    -->
+    <body>
 
+        <!-- PASO 1: Clases de este elemento <main>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. my-5: pone margen exterior arriba y abajo; y indica el eje vertical. El nivel 5 equivale a 3 rem con la configuración usada.
+        -->
+        <main class="container my-5">
+            <!-- PASO 2: Clases de este elemento <h1>. Se leen así:
+                1. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                2. text-center: centra el texto dentro del elemento.
+            -->
+            <h1 class="mb-4 text-center">Catálogo de la Flota</h1>
 
-    <main class="container my-5">
-        <h1 class="mb-4 text-center">Catálogo de la Flota</h1>
+            <!-- PASO 3: Clases de este elemento <div>. Se leen así:
+                1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
+                2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            -->
+            <div class="row g-4">
 
-
-        <div class="row g-4">
-
-
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                <div class="card h-100">
-                    <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Modelo 1</h5>
-                        <p class="card-text">Descripción breve del vehículo.</p>
+                <!-- PASO 4: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 5: Clases de este elemento <div>. Se leen así:
+                        1. card: componente de tarjeta que ya estaba en el catálogo de pruebas; añade su estructura visual.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                    -->
+                    <div class="card h-100">
+                        <!-- PASO 6: Clases de este elemento <img>. Se leen así:
+                            1. card-img-top: ajusta la imagen a la parte superior de la tarjeta del catálogo.
+                        -->
+                        <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
+                        <!-- PASO 7: Clases de este elemento <div>. Se leen así:
+                            1. card-body: agrega el espacio interno del contenido de la tarjeta del catálogo.
+                        -->
+                        <div class="card-body">
+                            <!-- PASO 8: Clases de este elemento <h5>. Se leen así:
+                                1. card-title: aplica el margen del título de la tarjeta del catálogo.
+                            -->
+                            <h5 class="card-title">Modelo 1</h5>
+                            <!-- PASO 9: Clases de este elemento <p>. Se leen así:
+                                1. card-text: identifica el texto de la tarjeta; Bootstrap quita el margen inferior si es su último hijo.
+                            -->
+                            <p class="card-text">Descripción breve del vehículo.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                <div class="card h-100">
-                    <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Modelo 2</h5>
-                        <p class="card-text">Descripción breve del vehículo.</p>
+                <!-- PASO 10: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 11: Clases de este elemento <div>. Se leen así:
+                        1. card: componente de tarjeta que ya estaba en el catálogo de pruebas; añade su estructura visual.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                    -->
+                    <div class="card h-100">
+                        <!-- PASO 12: Clases de este elemento <img>. Se leen así:
+                            1. card-img-top: ajusta la imagen a la parte superior de la tarjeta del catálogo.
+                        -->
+                        <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
+                        <!-- PASO 13: Clases de este elemento <div>. Se leen así:
+                            1. card-body: agrega el espacio interno del contenido de la tarjeta del catálogo.
+                        -->
+                        <div class="card-body">
+                            <!-- PASO 14: Clases de este elemento <h5>. Se leen así:
+                                1. card-title: aplica el margen del título de la tarjeta del catálogo.
+                            -->
+                            <h5 class="card-title">Modelo 2</h5>
+                            <!-- PASO 15: Clases de este elemento <p>. Se leen así:
+                                1. card-text: identifica el texto de la tarjeta; Bootstrap quita el margen inferior si es su último hijo.
+                            -->
+                            <p class="card-text">Descripción breve del vehículo.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                <div class="card h-100">
-                    <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Modelo 3</h5>
-                        <p class="card-text">Descripción breve del vehículo.</p>
+                <!-- PASO 16: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 17: Clases de este elemento <div>. Se leen así:
+                        1. card: componente de tarjeta que ya estaba en el catálogo de pruebas; añade su estructura visual.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                    -->
+                    <div class="card h-100">
+                        <!-- PASO 18: Clases de este elemento <img>. Se leen así:
+                            1. card-img-top: ajusta la imagen a la parte superior de la tarjeta del catálogo.
+                        -->
+                        <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
+                        <!-- PASO 19: Clases de este elemento <div>. Se leen así:
+                            1. card-body: agrega el espacio interno del contenido de la tarjeta del catálogo.
+                        -->
+                        <div class="card-body">
+                            <!-- PASO 20: Clases de este elemento <h5>. Se leen así:
+                                1. card-title: aplica el margen del título de la tarjeta del catálogo.
+                            -->
+                            <h5 class="card-title">Modelo 3</h5>
+                            <!-- PASO 21: Clases de este elemento <p>. Se leen así:
+                                1. card-text: identifica el texto de la tarjeta; Bootstrap quita el margen inferior si es su último hijo.
+                            -->
+                            <p class="card-text">Descripción breve del vehículo.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                <div class="card h-100">
-                    <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Modelo 4</h5>
-                        <p class="card-text">Descripción breve del vehículo.</p>
+                <!-- PASO 22: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 23: Clases de este elemento <div>. Se leen así:
+                        1. card: componente de tarjeta que ya estaba en el catálogo de pruebas; añade su estructura visual.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                    -->
+                    <div class="card h-100">
+                        <!-- PASO 24: Clases de este elemento <img>. Se leen así:
+                            1. card-img-top: ajusta la imagen a la parte superior de la tarjeta del catálogo.
+                        -->
+                        <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
+                        <!-- PASO 25: Clases de este elemento <div>. Se leen así:
+                            1. card-body: agrega el espacio interno del contenido de la tarjeta del catálogo.
+                        -->
+                        <div class="card-body">
+                            <!-- PASO 26: Clases de este elemento <h5>. Se leen así:
+                                1. card-title: aplica el margen del título de la tarjeta del catálogo.
+                            -->
+                            <h5 class="card-title">Modelo 4</h5>
+                            <!-- PASO 27: Clases de este elemento <p>. Se leen así:
+                                1. card-text: identifica el texto de la tarjeta; Bootstrap quita el margen inferior si es su último hijo.
+                            -->
+                            <p class="card-text">Descripción breve del vehículo.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-                <div class="card h-100">
-                    <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Modelo 5</h5>
-                        <p class="card-text">Descripción breve del vehículo.</p>
+                <!-- PASO 28: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 29: Clases de este elemento <div>. Se leen así:
+                        1. card: componente de tarjeta que ya estaba en el catálogo de pruebas; añade su estructura visual.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                    -->
+                    <div class="card h-100">
+                        <!-- PASO 30: Clases de este elemento <img>. Se leen así:
+                            1. card-img-top: ajusta la imagen a la parte superior de la tarjeta del catálogo.
+                        -->
+                        <img src="../img/images.jpeg" class="card-img-top" alt="Modelo 1">
+                        <!-- PASO 31: Clases de este elemento <div>. Se leen así:
+                            1. card-body: agrega el espacio interno del contenido de la tarjeta del catálogo.
+                        -->
+                        <div class="card-body">
+                            <!-- PASO 32: Clases de este elemento <h5>. Se leen así:
+                                1. card-title: aplica el margen del título de la tarjeta del catálogo.
+                            -->
+                            <h5 class="card-title">Modelo 5</h5>
+                            <!-- PASO 33: Clases de este elemento <p>. Se leen así:
+                                1. card-text: identifica el texto de la tarjeta; Bootstrap quita el margen inferior si es su último hijo.
+                            -->
+                            <p class="card-text">Descripción breve del vehículo.</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
+            <!-- CAMBIO 1: Beneficios. row crea una fila y las col reparten sus 12 partes. -->
+            <!-- PASO 34: Clases de este elemento <section>. Se leen así:
+                1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+                2. py-4: pone relleno interior arriba y abajo; y indica el eje vertical. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                3. py-md-5: desde 768 px, pone relleno interior arriba y abajo; y indica el eje vertical. El nivel 5 equivale a 3 rem con la configuración usada.
+            -->
+            <section class="container py-4 py-md-5">
+                <!-- PASO 35: Clases de este elemento <h2>. Se leen así:
+                    1. text-center: centra el texto dentro del elemento.
+                    2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                -->
+                <h2 class="text-center mb-4">¿Por qué Rueda Libre?</h2>
+                <!-- PASO 36: Clases de este elemento <div>. Se leen así:
+                    1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
+                    2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                -->
+                <div class="row g-4">
+                    <!-- PASO 37: Clases de este elemento <article>. Se leen así:
+                        1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                        2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                        3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    -->
+                    <article class="col-12 col-md-6 col-lg-3">
+                        <!-- PASO 38: Clases de este elemento <h3>. Se leen así:
+                            1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                            2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                            3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        -->
+                        <h3 class="fs-4 fw-bold text-dark">Bicicletas revisadas</h3>
+                        <!-- PASO 39: Clases de este elemento <p>. Se leen así:
+                            1. text-body: usa el color de texto general definido por Bootstrap.
+                        -->
+                        <p class="text-body">Revisamos las bicicletas en cada alquiler.</p>
+                        <!-- PASO 40: Clases de este elemento <p>. Se leen así:
+                            1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                            2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                            3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                        -->
+                        <p class="fw-semibold text-dark mb-0">En cada alquiler</p>
+                    </article>
+                    <!-- PASO 41: Clases de este elemento <article>. Se leen así:
+                        1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                        2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                        3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    -->
+                    <article class="col-12 col-md-6 col-lg-3">
+                        <!-- PASO 42: Clases de este elemento <h3>. Se leen así:
+                            1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                            2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                            3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        -->
+                        <h3 class="fs-4 fw-bold text-dark">Casco y candado incluidos</h3>
+                        <!-- PASO 43: Clases de este elemento <p>. Se leen así:
+                            1. text-body: usa el color de texto general definido por Bootstrap.
+                        -->
+                        <p class="text-body">Tu alquiler incluye casco y candado.</p>
+                        <!-- PASO 44: Clases de este elemento <p>. Se leen así:
+                            1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                            2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                            3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                        -->
+                        <p class="fw-semibold text-dark mb-0">Incluidos</p>
+                    </article>
+                    <!-- PASO 45: Clases de este elemento <article>. Se leen así:
+                        1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                        2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                        3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    -->
+                    <article class="col-12 col-md-6 col-lg-3">
+                        <!-- PASO 46: Clases de este elemento <h3>. Se leen así:
+                            1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                            2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                            3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        -->
+                        <h3 class="fs-4 fw-bold text-dark">Guías certificados</h3>
+                        <!-- PASO 47: Clases de este elemento <p>. Se leen así:
+                            1. text-body: usa el color de texto general definido por Bootstrap.
+                        -->
+                        <p class="text-body">Recorre la ciudad con guías certificados.</p>
+                        <!-- PASO 48: Clases de este elemento <p>. Se leen así:
+                            1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                            2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                            3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                        -->
+                        <p class="fw-semibold text-dark mb-0">Guías certificados</p>
+                    </article>
+                    <!-- PASO 49: Clases de este elemento <article>. Se leen así:
+                        1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                        2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                        3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    -->
+                    <article class="col-12 col-md-6 col-lg-3">
+                        <!-- PASO 50: Clases de este elemento <h3>. Se leen así:
+                            1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                            2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                            3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        -->
+                        <h3 class="fs-4 fw-bold text-dark">Puntos de devolución</h3>
+                        <!-- PASO 51: Clases de este elemento <p>. Se leen así:
+                            1. text-body: usa el color de texto general definido por Bootstrap.
+                        -->
+                        <p class="text-body">Puedes devolver tu bicicleta en nuestras tres sedes.</p>
+                        <!-- PASO 52: Clases de este elemento <p>. Se leen así:
+                            1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                            2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                            3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                        -->
+                        <p class="fw-semibold text-dark mb-0">3 sedes</p>
+                    </article>
+                </div>
+            </section>
+            <!-- CAMBIO 2: Franja. flex-column apila; flex-md-row pone en fila desde 768 px. -->
+            <!-- PASO 53: Clases de este elemento <section>. Se leen así:
+                1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+                2. text-bg-dark: pone fondo oscuro y un color de texto claro para ese fondo; los títulos pueden necesitar text-white.
+                3. p-4: pone relleno interior en los cuatro lados. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                4. p-md-5: desde 768 px, pone relleno interior en los cuatro lados. El nivel 5 equivale a 3 rem con la configuración usada.
+                5. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                6. rounded: redondea las esquinas del elemento.
+            -->
+            <section class="container text-bg-dark p-4 p-md-5 mb-4 rounded">
+                <!-- PASO 54: Clases de este elemento <div>. Se leen así:
+                    1. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                    2. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                    3. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
+                    4. justify-content-between: reparte el espacio libre entre los hijos en el eje principal; en fila separa hacia los extremos.
+                    5. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
+                    6. gap-4: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                -->
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                    <!-- PASO 55: Clases de este elemento <h2>. Se leen así:
+                        1. lead: destaca el texto con un tamaño de 1.25 rem y un peso de letra más ligero.
+                        2. text-white: pone el texto blanco.
+                        3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                    -->
+                    <h2 class="lead text-white mb-0">¿Listo para rodar?</h2>
+                    <!-- d-none oculta la decoración; d-md-block la muestra desde 768 px. -->
+                    <!-- PASO 56: Clases de este elemento <img>. Se leen así:
+                        1. d-none: oculta el elemento y el espacio que ocuparía.
+                        2. d-md-block: desde 768 px muestra el elemento como bloque; combinado con d-none queda oculto por debajo de ese ancho.
+                        3. img-fluid: aplica max-width: 100% y height: auto; la imagen cabe en su contenedor y conserva su proporción.
+                        4. rounded: redondea las esquinas del elemento.
+                    -->
+                    <img src="../img/portada.jpeg" alt="" width="120" class="d-none d-md-block img-fluid rounded">
+                    <!-- PASO 57: Clases de este elemento <a>. Se leen así:
+                        1. bg-light: pone fondo claro; aquí lo combino con text-dark para leer el enlace.
+                        2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        3. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                        4. px-4: pone relleno interior a izquierda y derecha; x indica el eje horizontal. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                        5. py-3: pone relleno interior arriba y abajo; y indica el eje vertical. El nivel 3 equivale a 1 rem con la configuración usada.
+                        6. rounded: redondea las esquinas del elemento.
+                        7. text-decoration-none: quita el subrayado del enlace.
+                    -->
+                    <a href="../paginas/reservas.html" class="bg-light text-dark fw-bold px-4 py-3 rounded text-decoration-none">Reservar ahora</a>
+                </div>
+            </section>
+        </main>
 
-
-            
-        </div>
-
-    </main>
-
-    <!-- JavaScript Bundle de Bootstrap 5.3 por CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"
+        <!-- JavaScript Bundle de Bootstrap 5.3 por CDN -->
+        <!-- BUNDLE: src carga el JavaScript de Bootstrap con Popper incluido.
+            Las columnas y las utilidades de esta página funcionan con el CSS; este archivo sirve para componentes interactivos.
+            integrity comprueba la huella del archivo y crossorigin permite su carga desde otro dominio sin credenciales.
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-</body>
+    </body>
 
 </html>

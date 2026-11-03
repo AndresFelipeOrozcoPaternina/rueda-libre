@@ -125,3 +125,84 @@ Problemas identificados y soluciones aplicadas:
 3. Colapso de los campos cortos del formulario a 360 px:
 - Problema: Al colocar Documento de identidad y Celular en una sola fila horizontal fija, ambos campos quedaban excesivamente estrechos para ingresar texto en teléfonos pequeños.
 - Solución: Se configuró .fila-campos con flex-direction: column como estilo base móvil para que cada campo ocupe el 100% del ancho apilado. A partir de tablet (min-width: 768px) se activa flex-direction: row con gap: 16px para retomar la visualización en la misma fila.
+
+
+RETOS 6, 7 Y 8 - CAMBIOS CON BOOTSTRAP
+
+1. Beneficios y franja final
+Agregué los cuatro beneficios debajo de la flota en pruebas y en inicio.
+Utilicé solo clases de Bootstrap en esta parte. El enlace lleva a reservas.
+La imagen ya estaba en mi carpeta img y solo aparece desde 768 px.
+Usé texto oscuro sobre fondo claro y blanco sobre fondo oscuro. El enlace tiene fondo claro y letra oscura.
+
+2. Bootstrap antes de mi CSS
+Puse Bootstrap 5.3.3 y su bundle, que es el archivo JavaScript, en las tres páginas.
+Mi CSS carga después. La cascada es la forma en que el navegador decide qué regla aplicar.
+Conservé las hojas separadas que ya tenía; en mi proyecto no hay un styles.css.
+
+3. Inicio con columnas
+La portada tiene dos columnas desde md. Las rutas tienen una, dos o tres según el ancho.
+La flota usa las mismas columnas que mi página de pruebas, conservando los modelos y precios de inicio.
+container centra el contenido, row crea una fila y col reparte el ancho en 12 partes.
+col-12 ocupa toda la fila. col-md-6 ocupa la mitad desde 768 px.
+sm empieza en 576 px, md en 768 px, lg en 992 px y xl en 1200 px.
+
+4. Tarifas con dos columnas
+Dejé las tablas a la izquierda y qué llevar a la derecha desde lg.
+Conservé el estilo de las tablas y sus precios. En celular todo queda apilado.
+
+5. Reservas con columnas 8/4
+El formulario ocupa 8 partes y el contacto 4 desde md.
+Documento y celular ocupan 6 partes cada uno desde md.
+No cambié required, pattern, minlength, min, max ni maxlength.
+Estas reglas revisan los campos obligatorios, el formato y los límites antes de enviar.
+
+6. Limpieza del CSS
+Quité flex y grid propios de las partes que ahora organiza Bootstrap.
+Conservé colores, fuentes, tarjetas, tablas y estados del menú.
+
+7. Cinco clases consultadas en la documentación oficial
+- flex-md-row: pone los elementos en fila desde 768 px.
+- d-none: oculta un elemento.
+- d-md-block: muestra como bloque desde 768 px; la usé junto a d-none.
+- gap-4: separa los elementos con 1.5 rem.
+- p-md-5: agrega 3 rem de espacio interno desde 768 px.
+Documentación:
+https://getbootstrap.com/docs/5.3/utilities/flex/
+https://getbootstrap.com/docs/5.3/utilities/display/
+https://getbootstrap.com/docs/5.3/utilities/spacing/
+https://getbootstrap.com/docs/5.3/layout/grid/
+Otras clases usadas: fs-4 cambia el tamaño de letra, fw-bold pone negrita,
+lead destaca un texto, text-bg-dark pone fondo oscuro con letra clara,
+align-items-center centra en el eje cruzado y justify-content-between separa hacia los extremos.
+En m y p, m significa margen (espacio por fuera) y p relleno (espacio por dentro).
+mb es margen debajo; px es relleno horizontal y py relleno vertical.
+g-4 separa las columnas y filas de la grilla. h-100 ocupa todo el alto disponible.
+
+8. Tres conflictos encontrados al revisar el código
+- Mi #nuestra-flota tenía display: grid. Lo quité y puse row dentro de container para que Bootstrap reparta las columnas.
+- .fila-campos .campo tenía width: 100%. Lo quité para que col-md-6 pueda ocupar media fila.
+- Bootstrap coloca caption debajo de la tabla. Puse caption-side: top en mi CSS para mantener el título arriba.
+No agregué !important. Falta comprobar estos cambios visualmente en DevTools.
+
+9. Comparativa de líneas reales
+Tomé como v1.5 el commit 9dbcdb9 (feat: diseño mobile-first y soporte responsive v1.5).
+Conté todas las líneas de cada archivo, incluyendo comentarios y líneas vacías.
+css/index.css: antes 333 líneas; ahora 115 líneas.
+css/tarifas.css: antes 251 líneas; ahora 112 líneas.
+css/reservas.css: antes 337 líneas; ahora 134 líneas.
+css/articulos.css: antes 53 líneas; ahora 26 líneas.
+Total: antes 974; ahora 387; reducción 587 líneas.
+La reducción incluye quitar comentarios repetidos; no toda corresponde a reglas eliminadas.
+Tiempo de v1.5: pendiente, no estaba registrado.
+Tiempo de esta versión: pendiente de completar con mi tiempo real.
+Ventaja: con las columnas y utilidades ya no tengo que repetir la distribución en CSS.
+Desventaja: el HTML tiene más clases y tengo que aprender qué significa cada una.
+Conclusión: Bootstrap me ayuda a organizar el sitio, pero todavía necesito mi CSS para conservar la identidad.
+
+10. Revisión y publicación pendientes
+Falta revisar inicio, tarifas y reservas a 360 px, 768 px y 1280 px en el navegador.
+Falta medir el tiempo real y comprobar la publicación de v2.0-beta en GitHub Pages.
+
+Revisión del código: las etiquetas cierran en orden y las rutas locales existen en las cuatro páginas.
+Comparé los campos del formulario con la versión anterior: conservan todos sus atributos y validaciones.

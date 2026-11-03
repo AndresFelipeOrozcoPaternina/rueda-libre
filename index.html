@@ -1,155 +1,668 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/articulos.css">
-</head>
-<body>
-    <header>
-        <img src="img/images.jpeg" alt="logo" width="50" height="50" id="logo">
-        <h1>Rueda Libre</h1>
+    <head>
+        <meta charset="UTF-8">
+        <!-- viewport: usa el ancho del dispositivo; initial-scale=1.0 inicia sin ampliar ni reducir la página. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+        <!-- CAMBIO 3: Bootstrap primero y mi CSS después para conservar mis estilos. -->
+        <!-- CARGA DEL CSS DE BOOTSTRAP:
+            link enlaza una hoja; href es la dirección del CSS 5.3.3 y rel="stylesheet" indica que son estilos.
+            integrity permite comprobar que el archivo recibido coincide con su huella esperada.
+            crossorigin="anonymous" permite cargarlo desde otro dominio sin enviar credenciales a ese dominio.
+        -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <!-- MI CSS: carga después de Bootstrap para conservar los estilos propios; también importan la prioridad y especificidad de cada regla. -->
+        <link rel="stylesheet" href="css/index.css">
+        <!-- MI CSS: carga después de Bootstrap para conservar los estilos propios; también importan la prioridad y especificidad de cada regla. -->
+        <link rel="stylesheet" href="css/articulos.css">
+    </head>
+    <!-- GUÍA PARA ESTUDIAR:
+        Las palabras dentro de class son clases separadas por espacios; cada una tiene una tarea.
+        Bootstrap aplica las clases según el ancho de la ventana: sm 576 px, md 768 px, lg 992 px y xl 1200 px.
+        m significa margin (espacio por fuera) y p padding (espacio por dentro).
+        Los números son niveles de una escala, no píxeles: 0 = 0; 2 = 0.5 rem; 3 = 1 rem; 4 = 1.5 rem; 5 = 3 rem.
+        rem depende del tamaño de letra raíz: si es 16 px, 0.5 rem son 8 px y 1 rem son 16 px.
+        Estos comentarios se leen en el código; el navegador no los muestra en la página.
+    -->
+    <!-- PASO 1: Clases de este elemento <body>. Se leen así:
+        1. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+        2. p-md-4: desde 768 px, pone relleno interior en los cuatro lados. El nivel 4 equivale a 1.5 rem con la configuración usada.
+    -->
+    <body class="p-3 p-md-4">
+        <!-- PASO 2: Clases de este elemento <header>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+            3. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+            4. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
+            5. justify-content-between: reparte el espacio libre entre los hijos en el eje principal; en fila separa hacia los extremos.
+            6. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
+            7. gap-3: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 3 equivale a 1 rem con la configuración usada.
+            8. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+            9. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            10. text-center: centra el texto dentro del elemento.
+        -->
+        <header class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 p-3 mb-4 text-center">
+            <img src="img/images.jpeg" alt="logo" width="50" height="50" id="logo">
+            <!-- PASO 3: Clases de este elemento <h1>. Se leen así:
+                1. fs-2: aplica el tamaño de fuente del nivel 2 de Bootstrap; fs significa font-size, no significa 2 px.
+                2. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+            -->
+            <h1 class="fs-2 mb-0">Rueda Libre</h1>
 
-        <nav>
-            <ul id="menu">
-                <li><a href="./paginas/tarifas.html">Tarifas</a></li>
-                <li><a href="./paginas/encuentranos.html">Encuentranos</a></li>
-                <li><a href="./paginas/reservas.html">Reservar ahora</a></li>
+            <nav>
+                <!-- PASO 4: Clases de este elemento <ul>. Se leen así:
+                    1. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                    2. flex-wrap: permite que los hijos pasen a otra línea si no caben en una sola fila.
+                    3. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
+                    4. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
+                    5. gap-2: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 2 equivale a 0.5 rem con la configuración usada.
+                    6. list-unstyled: quita las viñetas y la sangría inicial de la lista.
+                    7. p-0: pone relleno interior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
+                    8. m-0: pone margen exterior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
+                -->
+                <ul id="menu" class="d-flex flex-wrap justify-content-center align-items-center gap-2 list-unstyled p-0 m-0">
+                    <li><a href="./paginas/tarifas.html">Tarifas</a></li>
+                    <li><a href="./paginas/encuentranos.html">Encuentranos</a></li>
+                    <li><a href="./paginas/reservas.html">Reservar ahora</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- ============================================================ -->
+        <!-- CAMBIO 4: Portada. Dos columnas iguales desde md (768 px). -->
+        <!-- Texto a la izquierda y foto a la derecha; texto centrado     -->
+        <!-- ============================================================ -->
+        <!-- PASO 5: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+            3. p-md-4: desde 768 px, pone relleno interior en los cuatro lados. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            4. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <section id="portada" class="container p-3 p-md-4 mb-4">
+            <!-- PASO 6: Clases de este elemento <div>. Se leen así:
+                1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
+                2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                3. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
+            -->
+            <div class="row g-4 align-items-center">
+                <!-- PASO 7: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. text-center: centra el texto dentro del elemento.
+                    4. text-md-start: desde 768 px alinea el texto al inicio; en español, a la izquierda.
+                -->
+                <div class="col-12 col-md-6 text-center text-md-start">
+                    <!-- PASO 8: Clases de este elemento <h2>. Se leen así:
+                        1. text-center: centra el texto dentro del elemento.
+                        2. text-md-start: desde 768 px alinea el texto al inicio; en español, a la izquierda.
+                    -->
+                    <h2 class="text-center text-md-start">Explora Medellín en Dos Ruedas</h2>
+                    <!-- PASO 9: Clases de este elemento <p>. Se leen así:
+                        1. text-center: centra el texto dentro del elemento.
+                        2. text-md-start: desde 768 px alinea el texto al inicio; en español, a la izquierda.
+                    -->
+                    <p class="text-center text-md-start">Somos Rueda Libre, tu mejor opción de alquiler de bicicletas en Medellín. Diseñado para que disfrutes y recorras la ciudad a tu propio ritmo.</p>
+                </div>
+                <!-- PASO 10: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-md-6">
+                    <!-- PASO 11: Clases de este elemento <img>. Se leen así:
+                        1. img-fluid: aplica max-width: 100% y height: auto; la imagen cabe en su contenedor y conserva su proporción.
+                        2. w-100: pone el ancho en el 100% del contenedor.
+                    -->
+                    <img src="img/portada.jpeg" alt="Persona recorriendo la ciudad en bicicleta" class="img-fluid w-100">
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- PUNTO 2: Galería "Nuestras rutas"                             -->
+        <!-- CAMBIO 5: Rutas. Una columna en celular, dos desde md y tres desde xl. -->
+        <!-- ============================================================ -->
+        <!-- PASO 12: Clases de este elemento <h2>. Se leen así:
+            1. text-center: centra el texto dentro del elemento.
+            2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <h2 class="text-center mb-4">Nuestras rutas</h2>
+        <!-- PASO 13: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <section id="nuestras-rutas" class="container mb-4">
+            <!-- PASO 14: Clases de este elemento <div>. Se leen así:
+                1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
+                2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            -->
+            <div class="row g-4">
+                <!-- PASO 15: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-xl-4: desde 1200 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <!-- PASO 16: Clases de este elemento <article>. Se leen así:
+                        1. tarjeta-ruta: clase de mi CSS que conserva el aspecto de cada tarjeta de ruta.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                        4. text-center: centra el texto dentro del elemento.
+                    -->
+                    <article class="tarjeta-ruta h-100 p-3 text-center">
+                        <img src="img/ruta.jpeg" alt="Ruta Río y Parques">
+                        <h3>Río y Parques</h3>
+                        <!-- PASO 17: Clases de este elemento <p>. Se leen así:
+                            1. nivel-ruta: clase de mi CSS para el texto que indica la dificultad de la ruta.
+                        -->
+                        <p class="nivel-ruta">Nivel: <strong>Fácil</strong></p>
+                    </article>
+                </div>
+
+                <!-- PASO 18: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-xl-4: desde 1200 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <!-- PASO 19: Clases de este elemento <article>. Se leen así:
+                        1. tarjeta-ruta: clase de mi CSS que conserva el aspecto de cada tarjeta de ruta.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                        4. text-center: centra el texto dentro del elemento.
+                    -->
+                    <article class="tarjeta-ruta h-100 p-3 text-center">
+                        <img src="img/ruta.jpeg" alt="Ruta Sabores de Barrio">
+                        <h3>Sabores de Barrio</h3>
+                        <!-- PASO 20: Clases de este elemento <p>. Se leen así:
+                            1. nivel-ruta: clase de mi CSS para el texto que indica la dificultad de la ruta.
+                        -->
+                        <p class="nivel-ruta">Nivel: <strong>Medio</strong></p>
+                    </article>
+                </div>
+
+                <!-- PASO 21: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-xl-4: desde 1200 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-md-6 col-xl-4">
+                    <!-- PASO 22: Clases de este elemento <article>. Se leen así:
+                        1. tarjeta-ruta: clase de mi CSS que conserva el aspecto de cada tarjeta de ruta.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                        4. text-center: centra el texto dentro del elemento.
+                    -->
+                    <article class="tarjeta-ruta h-100 p-3 text-center">
+                        <img src="img/ruta.jpeg" alt="Ruta Reto Las Palmas">
+                        <h3>Reto Las Palmas</h3>
+                        <!-- PASO 23: Clases de este elemento <p>. Se leen así:
+                            1. nivel-ruta: clase de mi CSS para el texto que indica la dificultad de la ruta.
+                        -->
+                        <p class="nivel-ruta">Nivel: <strong>Difícil</strong></p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PASO 24: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+            3. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <section class="container p-3 mb-4">
+            <h2>Nuestros servicios</h2>
+            <p>Nuestro servicio está disponible para personas <strong>mayores de 16 años</strong>. Se debe presentar el documento de identidad.</p>
+        </section>
+
+        <!-- PASO 25: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+            3. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <section class="container p-3 mb-4">
+            <h2>¿Cómo alquilar?</h2>
+            <ol>
+                <li>Elige tu destino</li>
+                <li>Selecciona tu bicicleta</li>
+                <li>Recoge la bicicleta en la estación</li>
+                <li>Disfruta y devuelve</li>
+            </ol>
+
+            <h3>Beneficios por alquilar nuestro servicio:</h3>
+            <ul>
+                <li>Seguro básico</li>
+                <li>Mapas y rutas</li>
+                <li>Casco homologado</li>
             </ul>
-        </nav>
-    </header>
+        </section>
 
-    <!-- ============================================================ -->
-    <!-- PUNTO 1: Portada de inicio (Hero en dos columnas con Grid)   -->
-    <!-- Texto a la izquierda y foto a la derecha; texto centrado     -->
-    <!-- ============================================================ -->
-    <section id="portada" class="hero">
-        <div class="hero-texto">
-            <h2>Explora Medellín en Dos Ruedas</h2>
-            <p>Somos Rueda Libre, tu mejor opción de alquiler de bicicletas en Medellín. Diseñado para que disfrutes y recorras la ciudad a tu propio ritmo.</p>
-        </div>
-        <div class="hero-imagen">
-            <img src="img/portada.jpeg" alt="Persona recorriendo la ciudad en bicicleta">
-        </div>
-    </section>
+        <!-- PASO 26: Clases de este elemento <h2>. Se leen así:
+            1. text-center: centra el texto dentro del elemento.
+            2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <h2 class="text-center mb-4">Nuestra Flota</h2>
+        <!-- CAMBIO 6: Flota. Uso las mismas columnas del catálogo de pruebas. -->
+        <!-- PASO 27: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <section id="nuestra-flota" class="container mb-4">
+            <!-- PASO 28: Clases de este elemento <div>. Se leen así:
+                1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
+                2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            -->
+            <div class="row g-4">
+                <!-- PASO 29: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 30: Clases de este elemento <article>. Se leen así:
+                        1. modelo: clase de mi CSS que conserva el aspecto de cada bicicleta de la flota.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                        4. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                        5. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                    -->
+                    <article class="modelo h-100 d-flex flex-column p-3">
+                        <h3>Urbana clasica</h3>
+                        <img src="img/bicicleta.jpeg" alt="bicicleta">
+                        <p>Cómoda y liviana para las ciclorrutas.</p>
+                        <!-- PASO 31: Clases de este elemento <p>. Se leen así:
+                            1. precio: clase de mi CSS para destacar el precio.
+                        -->
+                        <p class="precio">$10.000 por hora</p>
+                        <!-- PASO 32: Clases de este elemento <a>. Se leen así:
+                            1. bg-dark: pone fondo oscuro; el color de la letra se define por separado.
+                            2. text-white: pone el texto blanco.
+                            3. text-center: centra el texto dentro del elemento.
+                            4. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                            5. mt-auto: usa margen superior automático; en esta tarjeta flex ocupa el espacio libre y empuja el enlace hacia abajo.
+                            6. rounded: redondea las esquinas del elemento.
+                        -->
+                        <a href="./paginas/reservas.html" class="bg-dark text-white text-center p-3 mt-auto rounded">Reservar</a>
+                    </article>
+                </div>
 
-    <!-- ============================================================ -->
-    <!-- PUNTO 2: Galería "Nuestras rutas"                             -->
-    <!-- Tres tarjetas en una sola fila (foto, nombre y nivel)        -->
-    <!-- ============================================================ -->
-    <h2>Nuestras rutas</h2>
-    <section id="nuestras-rutas" class="galeria-rutas">
-        <article class="tarjeta-ruta">
-            <img src="img/ruta.jpeg" alt="Ruta Río y Parques">
-            <h3>Río y Parques</h3>
-            <p class="nivel-ruta">Nivel: <strong>Fácil</strong></p>
-        </article>
+                <!-- PASO 33: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 34: Clases de este elemento <article>. Se leen así:
+                        1. modelo: clase de mi CSS que conserva el aspecto de cada bicicleta de la flota.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                        4. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                        5. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                    -->
+                    <article class="modelo h-100 d-flex flex-column p-3">
+                        <h3>Urbana Plegable</h3>
+                        <img src="img/bicicleta.jpeg" alt="bicicleta">
+                        <p>Se dobla en segundos; ideal para combinar con el metro.</p>
+                        <!-- PASO 35: Clases de este elemento <p>. Se leen así:
+                            1. precio: clase de mi CSS para destacar el precio.
+                        -->
+                        <p class="precio">$12.000 por hora</p>
+                        <!-- PASO 36: Clases de este elemento <a>. Se leen así:
+                            1. bg-dark: pone fondo oscuro; el color de la letra se define por separado.
+                            2. text-white: pone el texto blanco.
+                            3. text-center: centra el texto dentro del elemento.
+                            4. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                            5. mt-auto: usa margen superior automático; en esta tarjeta flex ocupa el espacio libre y empuja el enlace hacia abajo.
+                            6. rounded: redondea las esquinas del elemento.
+                        -->
+                        <a href="./paginas/reservas.html" class="bg-dark text-white text-center p-3 mt-auto rounded">Reservar</a>
+                    </article>
+                </div>
 
-        <article class="tarjeta-ruta">
-            <img src="img/ruta.jpeg" alt="Ruta Sabores de Barrio">
-            <h3>Sabores de Barrio</h3>
-            <p class="nivel-ruta">Nivel: <strong>Medio</strong></p>
-        </article>
+                <!-- PASO 37: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 38: Clases de este elemento <article>. Se leen así:
+                        1. modelo: clase de mi CSS que conserva el aspecto de cada bicicleta de la flota.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                        4. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                        5. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                    -->
+                    <article class="modelo h-100 d-flex flex-column p-3">
+                        <h3>Montaña Trail</h3>
+                        <img src="img/bicicleta.jpeg" alt="bicicleta">
+                        <p>Suspensión delantera y 21 cambios para las subidas.</p>
+                        <!-- PASO 39: Clases de este elemento <p>. Se leen así:
+                            1. precio: clase de mi CSS para destacar el precio.
+                        -->
+                        <p class="precio">$15.000 por hora</p>
+                        <!-- PASO 40: Clases de este elemento <a>. Se leen así:
+                            1. bg-dark: pone fondo oscuro; el color de la letra se define por separado.
+                            2. text-white: pone el texto blanco.
+                            3. text-center: centra el texto dentro del elemento.
+                            4. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                            5. mt-auto: usa margen superior automático; en esta tarjeta flex ocupa el espacio libre y empuja el enlace hacia abajo.
+                            6. rounded: redondea las esquinas del elemento.
+                        -->
+                        <a href="./paginas/reservas.html" class="bg-dark text-white text-center p-3 mt-auto rounded">Reservar</a>
+                    </article>
+                </div>
 
-        <article class="tarjeta-ruta">
-            <img src="img/ruta.jpeg" alt="Ruta Reto Las Palmas">
-            <h3>Reto Las Palmas</h3>
-            <p class="nivel-ruta">Nivel: <strong>Difícil</strong></p>
-        </article>
-    </section>
+                <!-- PASO 41: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 42: Clases de este elemento <article>. Se leen así:
+                        1. modelo: clase de mi CSS que conserva el aspecto de cada bicicleta de la flota.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                        4. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                        5. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                    -->
+                    <article class="modelo h-100 d-flex flex-column p-3">
+                        <h3>Gravel Aventura</h3>
+                        <img src="img/bicicleta.jpeg" alt="bicicleta">
+                        <p>Para rutas mixtas de asfalto y destapado.</p>
+                        <!-- PASO 43: Clases de este elemento <p>. Se leen así:
+                            1. precio: clase de mi CSS para destacar el precio.
+                        -->
+                        <p class="precio">$18.000 por hora</p>
+                        <!-- PASO 44: Clases de este elemento <a>. Se leen así:
+                            1. bg-dark: pone fondo oscuro; el color de la letra se define por separado.
+                            2. text-white: pone el texto blanco.
+                            3. text-center: centra el texto dentro del elemento.
+                            4. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                            5. mt-auto: usa margen superior automático; en esta tarjeta flex ocupa el espacio libre y empuja el enlace hacia abajo.
+                            6. rounded: redondea las esquinas del elemento.
+                        -->
+                        <a href="./paginas/reservas.html" class="bg-dark text-white text-center p-3 mt-auto rounded">Reservar</a>
+                    </article>
+                </div>
 
-    <section>
-        <h2>Nuestros servicios</h2>
-        <p>Nuestro servicio está disponible para personas <strong>mayores de 16 años</strong>. Se debe presentar el documento de identidad.</p>
-    </section>
+                <!-- PASO 45: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 46: Clases de este elemento <article>. Se leen así:
+                        1. modelo: clase de mi CSS que conserva el aspecto de cada bicicleta de la flota.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                        4. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                        5. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                    -->
+                    <article class="modelo h-100 d-flex flex-column p-3">
+                        <h3>Eléctrica Urbana</h3>
+                        <img src="img/bicicleta.jpeg" alt="bicicleta">
+                        <p>Asistencia eléctrica con 45 km de autonomía.</p>
+                        <!-- PASO 47: Clases de este elemento <p>. Se leen así:
+                            1. precio: clase de mi CSS para destacar el precio.
+                        -->
+                        <p class="precio">$25.000 por hora</p>
+                        <!-- PASO 48: Clases de este elemento <a>. Se leen así:
+                            1. bg-dark: pone fondo oscuro; el color de la letra se define por separado.
+                            2. text-white: pone el texto blanco.
+                            3. text-center: centra el texto dentro del elemento.
+                            4. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                            5. mt-auto: usa margen superior automático; en esta tarjeta flex ocupa el espacio libre y empuja el enlace hacia abajo.
+                            6. rounded: redondea las esquinas del elemento.
+                        -->
+                        <a href="./paginas/reservas.html" class="bg-dark text-white text-center p-3 mt-auto rounded">Reservar</a>
+                    </article>
+                </div>
 
-    <section>
-        <h2>¿Cómo alquilar?</h2>
-        <ol>
-            <li>Elige tu destino</li>
-            <li>Selecciona tu bicicleta</li>
-            <li>Recoge la bicicleta en la estación</li>
-            <li>Disfruta y devuelve</li>
-        </ol>
+                <!-- PASO 49: Clases de este elemento <div>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-sm-6: desde 576 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-4: desde 992 px ocupa 4 de las 12 partes de la fila, es decir, un tercio del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    4. col-xl-3: desde 1200 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+                    <!-- PASO 50: Clases de este elemento <article>. Se leen así:
+                        1. modelo: clase de mi CSS que conserva el aspecto de cada bicicleta de la flota.
+                        2. h-100: pone el alto en el 100% del contenedor; aquí ayuda a igualar las tarjetas de una fila.
+                        3. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                        4. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                        5. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                    -->
+                    <article class="modelo h-100 d-flex flex-column p-3">
+                        <h3>Infantil</h3>
+                        <img src="img/bicicleta.jpeg" alt="bicicleta">
+                        <p>Para niños de 6 a 10 años.</p>
+                        <!-- PASO 51: Clases de este elemento <p>. Se leen así:
+                            1. precio: clase de mi CSS para destacar el precio.
+                        -->
+                        <p class="precio">$8.000 por hora</p>
+                        <!-- PASO 52: Clases de este elemento <a>. Se leen así:
+                            1. bg-dark: pone fondo oscuro; el color de la letra se define por separado.
+                            2. text-white: pone el texto blanco.
+                            3. text-center: centra el texto dentro del elemento.
+                            4. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+                            5. mt-auto: usa margen superior automático; en esta tarjeta flex ocupa el espacio libre y empuja el enlace hacia abajo.
+                            6. rounded: redondea las esquinas del elemento.
+                        -->
+                        <a href="./paginas/reservas.html" class="bg-dark text-white text-center p-3 mt-auto rounded">Reservar</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- CAMBIO 1: Beneficios. row crea una fila y las col reparten sus 12 partes. -->
+        <!-- PASO 53: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. py-4: pone relleno interior arriba y abajo; y indica el eje vertical. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            3. py-md-5: desde 768 px, pone relleno interior arriba y abajo; y indica el eje vertical. El nivel 5 equivale a 3 rem con la configuración usada.
+        -->
+        <section class="container py-4 py-md-5">
+            <!-- PASO 54: Clases de este elemento <h2>. Se leen así:
+                1. text-center: centra el texto dentro del elemento.
+                2. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            -->
+            <h2 class="text-center mb-4">¿Por qué Rueda Libre?</h2>
+            <!-- PASO 55: Clases de este elemento <div>. Se leen así:
+                1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
+                2. g-4: define la separación horizontal y vertical de las columnas de esta fila. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            -->
+            <div class="row g-4">
+                <!-- PASO 56: Clases de este elemento <article>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <article class="col-12 col-md-6 col-lg-3">
+                    <!-- PASO 57: Clases de este elemento <h3>. Se leen así:
+                        1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                        2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                        3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                    -->
+                    <h3 class="fs-4 fw-bold text-dark">Bicicletas revisadas</h3>
+                    <!-- PASO 58: Clases de este elemento <p>. Se leen así:
+                        1. text-body: usa el color de texto general definido por Bootstrap.
+                    -->
+                    <p class="text-body">Revisamos las bicicletas en cada alquiler.</p>
+                    <!-- PASO 59: Clases de este elemento <p>. Se leen así:
+                        1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                        2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                    -->
+                    <p class="fw-semibold text-dark mb-0">En cada alquiler</p>
+                </article>
+                <!-- PASO 60: Clases de este elemento <article>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <article class="col-12 col-md-6 col-lg-3">
+                    <!-- PASO 61: Clases de este elemento <h3>. Se leen así:
+                        1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                        2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                        3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                    -->
+                    <h3 class="fs-4 fw-bold text-dark">Casco y candado incluidos</h3>
+                    <!-- PASO 62: Clases de este elemento <p>. Se leen así:
+                        1. text-body: usa el color de texto general definido por Bootstrap.
+                    -->
+                    <p class="text-body">Tu alquiler incluye casco y candado.</p>
+                    <!-- PASO 63: Clases de este elemento <p>. Se leen así:
+                        1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                        2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                    -->
+                    <p class="fw-semibold text-dark mb-0">Incluidos</p>
+                </article>
+                <!-- PASO 64: Clases de este elemento <article>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <article class="col-12 col-md-6 col-lg-3">
+                    <!-- PASO 65: Clases de este elemento <h3>. Se leen así:
+                        1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                        2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                        3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                    -->
+                    <h3 class="fs-4 fw-bold text-dark">Guías certificados</h3>
+                    <!-- PASO 66: Clases de este elemento <p>. Se leen así:
+                        1. text-body: usa el color de texto general definido por Bootstrap.
+                    -->
+                    <p class="text-body">Recorre la ciudad con guías certificados.</p>
+                    <!-- PASO 67: Clases de este elemento <p>. Se leen así:
+                        1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                        2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                    -->
+                    <p class="fw-semibold text-dark mb-0">Guías certificados</p>
+                </article>
+                <!-- PASO 68: Clases de este elemento <article>. Se leen así:
+                    1. col-12: desde el ancho más pequeño ocupa 12 de las 12 partes de la fila, es decir, todo el ancho; se mantiene hasta que otra clase de columna la cambie.
+                    2. col-md-6: desde 768 px ocupa 6 de las 12 partes de la fila, es decir, la mitad del ancho; se mantiene hasta que otra clase de columna la cambie.
+                    3. col-lg-3: desde 992 px ocupa 3 de las 12 partes de la fila, es decir, un cuarto del ancho; se mantiene hasta que otra clase de columna la cambie.
+                -->
+                <article class="col-12 col-md-6 col-lg-3">
+                    <!-- PASO 69: Clases de este elemento <h3>. Se leen así:
+                        1. fs-4: aplica el tamaño de fuente del nivel 4 de Bootstrap; no cambia el nivel de la etiqueta h3.
+                        2. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                        3. text-dark: pone el texto en el color oscuro de Bootstrap.
+                    -->
+                    <h3 class="fs-4 fw-bold text-dark">Puntos de devolución</h3>
+                    <!-- PASO 70: Clases de este elemento <p>. Se leen así:
+                        1. text-body: usa el color de texto general definido por Bootstrap.
+                    -->
+                    <p class="text-body">Puedes devolver tu bicicleta en nuestras tres sedes.</p>
+                    <!-- PASO 71: Clases de este elemento <p>. Se leen así:
+                        1. fw-semibold: pone el texto en seminegrita, con peso 600, un poco menos grueso que fw-bold.
+                        2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                        3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                    -->
+                    <p class="fw-semibold text-dark mb-0">3 sedes</p>
+                </article>
+            </div>
+        </section>
+        <!-- CAMBIO 2: Franja. flex-column apila; flex-md-row pone en fila desde 768 px. -->
+        <!-- PASO 72: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. text-bg-dark: pone fondo oscuro y un color de texto claro para ese fondo; los títulos pueden necesitar text-white.
+            3. p-4: pone relleno interior en los cuatro lados. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            4. p-md-5: desde 768 px, pone relleno interior en los cuatro lados. El nivel 5 equivale a 3 rem con la configuración usada.
+            5. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            6. rounded: redondea las esquinas del elemento.
+        -->
+        <section class="container text-bg-dark p-4 p-md-5 mb-4 rounded">
+            <!-- PASO 73: Clases de este elemento <div>. Se leen así:
+                1. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+                2. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+                3. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
+                4. justify-content-between: reparte el espacio libre entre los hijos en el eje principal; en fila separa hacia los extremos.
+                5. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
+                6. gap-4: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <!-- PASO 74: Clases de este elemento <h2>. Se leen así:
+                    1. lead: destaca el texto con un tamaño de 1.25 rem y un peso de letra más ligero.
+                    2. text-white: pone el texto blanco.
+                    3. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+                -->
+                <h2 class="lead text-white mb-0">¿Listo para rodar?</h2>
+                <!-- d-none oculta la decoración; d-md-block la muestra desde 768 px. -->
+                <!-- PASO 75: Clases de este elemento <img>. Se leen así:
+                    1. d-none: oculta el elemento y el espacio que ocuparía.
+                    2. d-md-block: desde 768 px muestra el elemento como bloque; combinado con d-none queda oculto por debajo de ese ancho.
+                    3. img-fluid: aplica max-width: 100% y height: auto; la imagen cabe en su contenedor y conserva su proporción.
+                    4. rounded: redondea las esquinas del elemento.
+                -->
+                <img src="img/portada.jpeg" alt="" width="120" class="d-none d-md-block img-fluid rounded">
+                <!-- PASO 76: Clases de este elemento <a>. Se leen así:
+                    1. bg-light: pone fondo claro; aquí lo combino con text-dark para leer el enlace.
+                    2. text-dark: pone el texto en el color oscuro de Bootstrap.
+                    3. fw-bold: pone el texto en negrita, con peso 700; fw significa font-weight.
+                    4. px-4: pone relleno interior a izquierda y derecha; x indica el eje horizontal. El nivel 4 equivale a 1.5 rem con la configuración usada.
+                    5. py-3: pone relleno interior arriba y abajo; y indica el eje vertical. El nivel 3 equivale a 1 rem con la configuración usada.
+                    6. rounded: redondea las esquinas del elemento.
+                    7. text-decoration-none: quita el subrayado del enlace.
+                -->
+                <a href="paginas/reservas.html" class="bg-light text-dark fw-bold px-4 py-3 rounded text-decoration-none">Reservar ahora</a>
+            </div>
+        </section>
 
-        <h3>Beneficios por alquilar nuestro servicio:</h3>
-        <ul>
-            <li>Seguro básico</li>
-            <li>Mapas y rutas</li>
-            <li>Casco homologado</li>
-        </ul>
-    </section>
+        <!-- PASO 77: Clases de este elemento <section>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+            3. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
+        -->
+        <section class="container p-3 mb-4">
+            <p><a href="https://l1nk.dev/s5v5kyc" target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps</a></p>
+            <p><a href="./paginas/encuentranos.html">Encuentranos aqui</a></p>
+        </section>
 
-    <h2>Nuestra Flota</h2>
-    <section id="nuestra-flota">
-        <article class="modelo">
-            <h3>Urbana clasica</h3>
-            <img src="img/bicicleta.jpeg" alt="bicicleta">
-            <p>Cómoda y liviana para las ciclorrutas.</p>
-            <p class="precio">$10.000 por hora</p>
-            <button class="btn-reservar"><a href="./paginas/reservas.html">Reservar</a></button>
-        </article>
+        <!-- PASO 78: Clases de este elemento <footer>. Se leen así:
+            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
+            2. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
+            3. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
+            4. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
+            5. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
+            6. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
+            7. gap-3: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 3 equivale a 1 rem con la configuración usada.
+            8. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
+            9. mt-4: pone margen exterior encima del elemento. El nivel 4 equivale a 1.5 rem con la configuración usada.
+            10. text-center: centra el texto dentro del elemento.
+        -->
+        <footer class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 p-3 mt-4 text-center">
+            <!-- PASO 79: Clases de este elemento <dl>. Se leen así:
+                1. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
+            -->
+            <dl class="mb-0">
+                <dt><strong>Nombre del negocio</strong></dt>
+                <dd>Rueda Libre</dd>
+                <dt><strong>Correo electrónico</strong></dt>
+                <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
+            </dl>
+        </footer>
+        <!-- PASO 80: Clases de este elemento <a>. Se leen así:
+            1. btn-whatsapp: clase que ya tenía mi CSS para fijar el enlace de WhatsApp abajo a la derecha.
+        -->
+        <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">WhatsApp</a>
 
-        <article class="modelo">
-            <h3>Urbana Plegable</h3>
-            <img src="img/bicicleta.jpeg" alt="bicicleta">
-            <p>Se dobla en segundos; ideal para combinar con el metro.</p>
-            <p class="precio">$12.000 por hora</p>
-            <button class="btn-reservar"><a href="./paginas/reservas.html">Reservar</a></button>
-        </article>
-
-        <article class="modelo">
-            <h3>Montaña Trail</h3>
-            <img src="img/bicicleta.jpeg" alt="bicicleta">
-            <p>Suspensión delantera y 21 cambios para las subidas.</p>
-            <p class="precio">$15.000 por hora</p>
-            <button class="btn-reservar"><a href="./paginas/reservas.html">Reservar</a></button>
-        </article>
-
-        <article class="modelo">
-            <h3>Gravel Aventura</h3>
-            <img src="img/bicicleta.jpeg" alt="bicicleta">
-            <p>Para rutas mixtas de asfalto y destapado.</p>
-            <p class="precio">$18.000 por hora</p>
-            <button class="btn-reservar"><a href="./paginas/reservas.html">Reservar</a></button>
-        </article>
-
-        <article class="modelo">
-            <h3>Eléctrica Urbana</h3>
-            <img src="img/bicicleta.jpeg" alt="bicicleta">
-            <p>Asistencia eléctrica con 45 km de autonomía.</p>
-            <p class="precio">$25.000 por hora</p>
-            <button class="btn-reservar"><a href="./paginas/reservas.html">Reservar</a></button>
-        </article>
-
-        <article class="modelo">
-            <h3>Infantil</h3>
-            <img src="img/bicicleta.jpeg" alt="bicicleta">
-            <p>Para niños de 6 a 10 años.</p>
-            <p class="precio">$8.000 por hora</p>
-            <button class="btn-reservar"><a href="./paginas/reservas.html">Reservar</a></button>
-        </article>
-    </section>
-
-    <section>
-        <p><a href="https://l1nk.dev/s5v5kyc" target="_blank" rel="noopener noreferrer">Ver ubicación en Google Maps</a></p>
-        <p><a href="./paginas/encuentranos.html">Encuentranos aqui</a></p>
-    </section>
-
-    <footer>
-        <dl>
-            <dt><strong>Nombre del negocio</strong></dt>
-            <dd>Rueda Libre</dd>
-            <dt><strong>Correo electrónico</strong></dt>
-            <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
-        </dl>
-    </footer>  
-    <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">WhatsApp</a>
-
-</body>
+        <!-- BUNDLE: src carga el JavaScript de Bootstrap con Popper incluido.
+            Las columnas y las utilidades de esta página funcionan con el CSS; este archivo sirve para componentes interactivos.
+            integrity comprueba la huella del archivo y crossorigin permite su carga desde otro dominio sin credenciales.
+        -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    </body>
 </html>
