@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* CAMBIO 10: Bootstrap organiza las columnas. Aquí conservo colores, tarjetas, tablas y estados. */
 :root {
   --color-principal: #0284c7;
