@@ -186,16 +186,15 @@ g-4 separa las columnas y filas de la grilla. h-100 ocupa todo el alto disponibl
 No agregué !important. Falta comprobar estos cambios visualmente en DevTools.
 
 9. Comparativa de líneas reales
-Tomé como v1.5 el commit 9dbcdb9 (feat: diseño mobile-first y soporte responsive v1.5).
+Tomé como v1.5 el commit feat: diseño mobile-first y soporte responsive v1.5.
 Conté todas las líneas de cada archivo, incluyendo comentarios y líneas vacías.
 css/index.css: antes 333 líneas; ahora 115 líneas.
 css/tarifas.css: antes 251 líneas; ahora 112 líneas.
 css/reservas.css: antes 337 líneas; ahora 134 líneas.
 css/articulos.css: antes 53 líneas; ahora 26 líneas.
 Total: antes 974; ahora 387; reducción 587 líneas.
-La reducción incluye quitar comentarios repetidos; no toda corresponde a reglas eliminadas.
-Tiempo de v1.5: pendiente, no estaba registrado.
-Tiempo de esta versión: pendiente de completar con mi tiempo real.
+Tiempo de v1.5: 1:30 hr
+Tiempo de esta versión: 1:50 hr (tuve problemas con unas funciones en Bootstrap)
 Ventaja: con las columnas y utilidades ya no tengo que repetir la distribución en CSS.
 Desventaja: el HTML tiene más clases y tengo que aprender qué significa cada una.
 Conclusión: Bootstrap me ayuda a organizar el sitio, pero todavía necesito mi CSS para conservar la identidad.
