@@ -206,3 +206,9 @@ Falta medir el tiempo real y comprobar la publicación de v2.0-beta en GitHub Pa
 
 Revisión del código: las etiquetas cierran en orden y las rutas locales existen en las cuatro páginas.
 Comparé los campos del formulario con la versión anterior: conservan todos sus atributos y validaciones.
+
+Prototipo Rueda Nocturna con Tailwind
+Creé nocturna/prototipo.html con el Play CDN y solo utilidades de Tailwind.
+En la semana 2 hice el enlace con utilidades de Bootstrap como bg-dark, text-white y p-3.
+Hoy usé bg-amber-300, text-slate-950, px-6, py-3 y rounded-lg para darle fondo, color, espacio y bordes redondeados.
+Bootstrap trae componentes listos como btn, aunque antes usé sus utilidades. Tailwind es utility-first: combino clases pequeñas para construir el estilo.
