@@ -23,7 +23,7 @@ No cargue Bootstrap y Tailwind juntos en una misma pagina.
 | `nocturna/componentes.html` | Tailwind | Botones, etiqueta, card y campo que reutilice en la landing |
 | `nocturna/index.html` | Tailwind | Encabezado, rutas, pasos, planes, formulario, responsive y modo oscuro |
 
-Tambien use HTML, CSS y un poco de JavaScript. Las fuentes son Montserrat y Open Sans. Los colores del sitio estan en `css/marca.css` y los de Tailwind en `nocturna/src/input.css`.
+Tambien use HTML y CSS. Las fuentes son Montserrat y Open Sans. Los colores del sitio estan en `css/marca.css` y los de Tailwind en `nocturna/src/input.css`.
 
 ## Abrir en local
 
@@ -44,7 +44,7 @@ Se revisaron las paginas a 360, 768 y 1280 px, y la landing tambien a 1024 px. E
 La landing y reservas quedaron sin errores en el W3C. Tambien se revisaron el contraste, el modo oscuro y los enlaces publicados.
 
 Falta configurar el servicio que recibe las inscripciones y reservas. Por ahora solo se probo el envio con un receptor local de prueba, el correo y telefono son ejemplos.
-El [guion de la demo](docs/demo.md) esta preparado, falta ensayarlo con un compañero.
+Falta preparar y ensayar la demo con un compañero.
 
 ## Bootstrap o Tailwind
 
