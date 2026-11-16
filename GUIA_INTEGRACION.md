@@ -410,12 +410,6 @@ Agrupa los datos que se van a enviar. method="post" evita ponerlos en la URL; Ja
 
 Párrafo de texto. Anuncia el resultado sin mover el foco del teclado.
 
-**Línea 330**
-
-`<script src="../nocturna/inscripcion.js" defer></script>`
-
-Carga un archivo JavaScript externo. Si tiene defer, espera a que el HTML esté preparado.
-
 ## paginas/encuentranos.html
 
 **Línea 12**
@@ -491,6 +485,6 @@ Bootstrap y Tailwind tienen escalas diferentes: p-4 en Bootstrap es 1.5 rem y en
 
 - Se quitaron importaciones de Tailwind en el CSS de Bootstrap porque el navegador intentaba pedir un archivo inexistente.
 - Se quitó border="1" de las tablas: ahora el borde está en CSS.
-- Reservas carga el mismo JavaScript del formulario nocturno; todavía necesita el servicio real.
+- Reservas valida los campos con HTML. El envío sigue deshabilitado hasta tener un servicio real.
 - Los pies usan el mismo correo y teléfono de ejemplo. Hay que cambiarlos por los reales antes de recibir clientes.
 - README.md contiene los enlaces y las capturas; docs/demo.md organiza el recorrido, pero el ensayo con un compañero sigue pendiente.
