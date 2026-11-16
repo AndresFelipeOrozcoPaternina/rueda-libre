@@ -2,7 +2,7 @@ BITACORA - RUEDA LIBRE
 
 Inicio del proyecto
 
-Use HTML para la estructura, CSS para el diseño y JavaScript para las interacciones
+Use HTML para la estructura y CSS para el diseño, el carrusel usa el archivo que trae Bootstrap
 Las paginas principales son inicio, tarifas, reservas y encuentranos
 En local use el puerto 5500, GET es la petición para pedir la pagina y 304 indica que se puede usar la copia guardada
 Cannot GET significa que no se encontro la ruta solicitada, no que faltara un puerto
@@ -85,7 +85,7 @@ En input.css defini los seis colores con @theme y las dos fuentes
 Verde Ruta #0284C7, Azul Noche #0F172A, Naranja Pedal #F59E0B
 Gris Asfalto #334155, Crema #F8FAFC y Amarillo Farol #FFD166
 Conserve los valores anteriores, aunque el nombre Verde Ruta tiene un valor azul
-Use dark en cards, campos y bordes. Al abrir se usa el tema del sistema si no hay una elección guardada
+Use dark en cards, campos y bordes, sigue la preferencia del sistema sin JavaScript propio
 
 Contraste medido, el minimo para texto normal es 4.5:1
 
@@ -110,7 +110,7 @@ Use npm run build, que ejecuta la CLI con --minify
 Tamaños medidos sin comprimir, sin imagenes ni fuentes
 Tailwind en el reto 8: 13.856 bytes de CSS, en ese momento no necesitaba JS
 Bootstrap 5.3.3: CSS 232.803 bytes y bundle JS 80.721, total 313.524 bytes sin el CSS propio
-Con el formulario y los planes el CSS final de Tailwind quedo en 14.878 bytes, mas 1.278 del JS propio
+Con el formulario y los planes el CSS de Tailwind quedo en 14.878 bytes en esa revision. Despues quite el JavaScript propio para seguir la guia
 
 Gzip calculado en el reto 8: Tailwind 3.369 bytes, Bootstrap CSS 30.829 y JS 23.858
 En Network sin cache se transfirieron 3.647 bytes de Tailwind, 34.001 de Bootstrap CSS y 24.866 de JS
@@ -138,7 +138,7 @@ Reto 9 - Inscripcion
 
 Agregue datos personales y de la salida con fieldset y legend, todo es obligatorio
 Se probaron el formulario vacio, nombre corto, correo y celular invalidos y acompañantes fuera de 0 a 3
-Con Tab, flechas y espacio se completo y se envio a un receptor local de prueba
+Se revisaron los campos con Tab, flechas y espacio, las reglas de validación estan en HTML
 En celular queda una columna y desde md los campos cortos quedan en dos, tambien funciona en oscuro
 Falta el servicio real para recibir los datos. La pagina avisa que el envio no esta habilitado
 
@@ -161,18 +161,18 @@ Reto 12 - Revision final
 
 Se revisaron las seis paginas en Chrome y se hicieron 24 comprobaciones automaticas con axe, sin incidencias detectadas de WCAG A y AA
 La landing y reservas pasaron por el W3C, se corrigio autocomplete del celular y quedaron sin errores
-Cambie el envio de reservas porque GitHub Pages no recibe POST en un html
+Deje el envio deshabilitado porque GitHub Pages no recibe POST en un html y todavia falta un receptor real
 Deje el README con paginas, frameworks, capturas y como abrir el proyecto
 Despues de publicar se revisaron las seis paginas y 25 enlaces y recursos, todos devolvieron 200
 
 Sitio: https://andresfelipeorozcopaternina.github.io/rueda-libre/
 Landing: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
 
-Boton de modo oscuro
+Correccion de errores
 
-Agregue el boton en el encabezado de la landing y en el kit, tambien sirve con teclado
-tema.js cambia la clase dark y guarda la elección en el navegador para conservarla al recargar
-Cambie la variante dark en input.css para que responda al boton y volvi a compilar el CSS
-Se probaron las dos paginas a 360, 768 y 1280 px, con teclado y recarga, sin errores ni scroll lateral
-La elección tambien se conserva al pasar de la landing al kit. El W3C sigue sin errores
-Con este cambio el CSS pesa 15.158 bytes y los dos archivos de JS suman 2.410 bytes, sin comprimir
+Quite los archivos de JavaScript propio y sus referencias, no los pide la guia
+El modo oscuro vuelve a seguir el tema del sistema con Tailwind, sin boton manual
+Los formularios conservan required, minlength, pattern, min y max en HTML
+Deje deshabilitado el envio hasta tener donde recibir los datos, asi no lleva a una pagina de error
+Se mantiene el bundle de Bootstrap para el carrusel y el Play CDN del prototipo
+El CSS compilado quedo en 15.048 bytes. Se repitieron las 24 comprobaciones sin incidencias y el W3C sigue sin errores

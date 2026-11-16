@@ -42,13 +42,14 @@ npm run build
 
 Se revisaron las paginas a 360, 768 y 1280 px, y la landing tambien a 1024 px. El formulario bloquea datos vacios o invalidos y se puede completar con teclado.
 La landing y reservas quedaron sin errores en el W3C. Tambien se revisaron el contraste, el modo oscuro y los enlaces publicados.
-El boton Modo oscuro permite cambiar el tema en la landing y el kit. Guarda la elección al recargar, si no hay una elección usa el tema del sistema.
+El modo oscuro de la landing y el kit sigue el tema del sistema con dark: de Tailwind, sin JavaScript propio.
+Los campos se validan con HTML. El envio esta deshabilitado hasta tener un servicio que reciba los datos.
 
 ## Bootstrap o Tailwind
 
 Bootstrap me ayudo a empezar con las columnas y el carrusel. Con Tailwind tuve que aprender mas clases, pero fue mas facil organizar la landing y personalizarla.
 
-Bootstrap carga 232.803 bytes de CSS y 80.721 de JavaScript. La landing tiene 15.158 bytes de CSS y 2.410 de JavaScript propio, sin contar imagenes ni fuentes. Bootstrap tambien usa mis hojas de CSS.
+Bootstrap carga 232.803 bytes de CSS y 80.721 de JavaScript del framework para el carrusel. La landing tiene 15.048 bytes de CSS compilado de Tailwind y no usa archivos JavaScript propios, imagenes y fuentes aparte. Bootstrap tambien usa mis hojas de CSS.
 Para la siguiente version recomiendo Tailwind por el tamaño y la personalización, dejaria Bootstrap en las paginas que ya funcionan.
 
 ## Capturas

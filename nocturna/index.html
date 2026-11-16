@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/output.css">
-    <script src="tema.js"></script>
 </head>
 <body class="bg-crema font-cuerpo text-gris-asfalto dark:bg-azul-noche dark:text-crema">
     <header class="border-b border-gris-asfalto dark:border-crema">
@@ -26,7 +25,6 @@
                     <a href="#como-funciona" class="hover:underline">¿Cómo funciona?</a>
                 </div>
                 <a href="#inscripcion" class="btn-principal">Inscríbete</a>
-                <button id="cambiar-tema" type="button" class="btn-secundario">Modo oscuro</button>
             </nav>
         </div>
     </header>
@@ -199,10 +197,9 @@
                     </fieldset>
                     <p id="condiciones-texto">Condiciones: lleva tu documento de identidad, usa casco y sigue las indicaciones del guía durante el recorrido.</p>
                     <label for="condiciones" class="flex items-center gap-3"><input id="condiciones" name="condiciones" type="checkbox" value="aceptadas" aria-describedby="condiciones-texto" required class="h-5 w-5 shrink-0 accent-azul-noche focus:outline-2 focus:outline-offset-2 dark:accent-amarillo-farol"> Acepto las condiciones del recorrido</label>
-                    <button type="submit" class="btn-secundario">Enviar inscripción</button>
+                    <button type="submit" disabled aria-describedby="estado-inscripcion" class="btn-secundario disabled:cursor-not-allowed disabled:opacity-70">Enviar inscripción</button>
                     <p id="estado-inscripcion" role="status" class="font-semibold">El envío de inscripciones todavía no está habilitado.</p>
                 </form>
-                <noscript>Activa JavaScript para comprobar la disponibilidad del envío.</noscript>
             </div>
         </section>
     </main>
@@ -213,6 +210,5 @@
             <div class="space-y-2"><p class="font-titulo font-bold">Rueda Nocturna</p><p>Jueves a sábado</p><a href="componentes.html" class="underline">Kit de componentes</a></div>
         </div>
     </footer>
-    <script src="inscripcion.js" defer></script>
 </body>
 </html>
