@@ -414,7 +414,7 @@ Párrafo de texto. Anuncia el resultado sin mover el foco del teclado.
 
 `<script src="../nocturna/inscripcion.js" defer></script>`
 
-Carga el JavaScript externo; defer espera a que el HTML esté preparado.
+Carga un archivo JavaScript externo. Si tiene defer, espera a que el HTML esté preparado.
 
 ## paginas/encuentranos.html
 
