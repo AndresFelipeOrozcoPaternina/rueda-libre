@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre Medellín en bicicleta con las tres rutas de Rueda Nocturna.">
+    <meta name="color-scheme" content="light dark">
+    <title>Rueda Nocturna | Rueda Libre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-crema font-cuerpo text-gris-asfalto dark:bg-azul-noche dark:text-crema">
+    <header class="border-b border-gris-asfalto dark:border-crema">
+        <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-5 md:flex-row">
+            <a href="../index.html" class="flex items-center gap-3 font-titulo font-bold">
+                <img src="../img/images.jpeg" alt="" width="48" height="48" class="h-12 w-12 rounded-full object-cover">
+                Rueda Libre
+            </a>
+            <nav aria-label="Navegación principal" class="flex items-center gap-6">
+                <div class="hidden items-center gap-6 md:flex">
+                    <a href="#inicio" class="hover:underline">Inicio</a>
+                    <a href="#rutas" class="hover:underline">Rutas</a>
+                    <a href="#como-funciona" class="hover:underline">¿Cómo funciona?</a>
+                </div>
+                <a href="#inscripcion" class="btn-principal">Inscríbete</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="inicio" class="bg-azul-noche text-crema dark:bg-gris-asfalto">
+            <div class="mx-auto grid max-w-6xl items-center gap-8 px-6 py-12 md:grid-cols-2 lg:py-20">
+                <div class="space-y-6">
+                    <span class="inline-block rounded-full bg-amarillo-farol px-3 py-1 text-sm font-semibold text-azul-noche">Jueves a sábado</span>
+                    <h1 class="font-titulo text-4xl font-bold lg:text-6xl">Rueda Nocturna</h1>
+                    <p class="text-lg lg:text-xl">Descubre Medellín en bici cuando se encienden las luces.</p>
+                    <p>3 rutas · Desde $55.000</p>
+                    <a href="#rutas" class="btn-principal">Elige tu ruta</a>
+                </div>
+                <img src="../img/portada.jpeg" alt="Recorrido en bicicleta por la ciudad" width="640" height="420" class="h-64 w-full rounded-xl object-cover lg:h-80">
+            </div>
+        </section>
+        <section id="rutas">
+            <div class="mx-auto max-w-6xl space-y-8 px-6 py-12 lg:py-20">
+                <h2 class="font-titulo text-2xl font-bold text-azul-noche lg:text-3xl dark:text-amarillo-farol">Elige tu ruta</h2>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="flex flex-col gap-4 rounded-xl border border-gris-asfalto bg-white p-6 dark:border-crema dark:bg-gris-asfalto">
+                        <img src="../img/ruta.jpeg" alt="Camino de la ruta Río y Parques" width="480" height="320" class="h-40 w-full rounded-lg object-cover" loading="lazy">
+                        <h3 class="font-titulo text-xl font-bold">Río y Parques</h3>
+                        <span class="self-start rounded-full bg-crema px-3 py-1 text-sm font-semibold text-gris-asfalto">Nivel fácil</span>
+                        <p class="grow">Un recorrido tranquilo para disfrutar las luces junto al río.</p>
+                        <a href="#inscripcion" class="btn-secundario">Elegir ruta</a>
+                    </article>
+                    <article class="flex flex-col gap-4 rounded-xl border border-gris-asfalto bg-white p-6 dark:border-crema dark:bg-gris-asfalto">
+                        <img src="../img/ruta.jpeg" alt="Camino de la ruta Sabores de Barrio" width="480" height="320" class="h-40 w-full rounded-lg object-cover" loading="lazy">
+                        <h3 class="font-titulo text-xl font-bold">Sabores de Barrio</h3>
+                        <span class="self-start rounded-full bg-crema px-3 py-1 text-sm font-semibold text-gris-asfalto">Nivel medio</span>
+                        <p class="grow">Conoce los barrios y disfruta la ciudad en dos ruedas.</p>
+                        <a href="#inscripcion" class="btn-secundario">Elegir ruta</a>
+                    </article>
+                    <article class="flex flex-col gap-4 rounded-xl border border-gris-asfalto bg-white p-6 dark:border-crema dark:bg-gris-asfalto">
+                        <img src="../img/ruta.jpeg" alt="Camino de la ruta Reto Las Palmas" width="480" height="320" class="h-40 w-full rounded-lg object-cover" loading="lazy">
+                        <h3 class="font-titulo text-xl font-bold">Reto Las Palmas</h3>
+                        <span class="self-start rounded-full bg-crema px-3 py-1 text-sm font-semibold text-gris-asfalto">Nivel difícil</span>
+                        <p class="grow">Una ruta con más esfuerzo para quienes buscan un reto.</p>
+                        <a href="#inscripcion" class="btn-secundario">Elegir ruta</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="como-funciona" class="bg-white dark:bg-gris-asfalto">
+            <div class="mx-auto max-w-6xl space-y-8 px-6 py-12 lg:py-20">
+                <h2 class="font-titulo text-2xl font-bold text-azul-noche lg:text-3xl dark:text-amarillo-farol">¿Cómo funciona?</h2>
+                <ol class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <li class="space-y-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amarillo-farol font-bold text-azul-noche">1</span><h3 class="font-titulo text-xl font-bold">Elige tu ruta</h3><p>Busca el nivel que se adapte a ti.</p></li>
+                    <li class="space-y-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amarillo-farol font-bold text-azul-noche">2</span><h3 class="font-titulo text-xl font-bold">Inscríbete</h3><p>Completa tus datos en reservas.</p></li>
+                    <li class="space-y-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amarillo-farol font-bold text-azul-noche">3</span><h3 class="font-titulo text-xl font-bold">Recoge tu equipo</h3><p>Prepara tu bicicleta y casco.</p></li>
+                    <li class="space-y-3"><span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-amarillo-farol font-bold text-azul-noche">4</span><h3 class="font-titulo text-xl font-bold">Rueda</h3><p>Disfruta el recorrido por Medellín.</p></li>
+                </ol>
+            </div>
+        </section>
+        <section id="inscripcion" class="bg-amarillo-farol text-azul-noche dark:bg-gris-asfalto dark:text-crema">
+            <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-6 py-12 md:flex-row lg:py-20">
+                <div class="space-y-3">
+                    <h2 class="font-titulo text-2xl font-bold lg:text-3xl">La noche te espera</h2>
+                    <p>Elige tu próxima salida y reserva tu bicicleta.</p>
+                </div>
+                <a href="../paginas/reservas.html" class="btn-secundario">Inscríbete</a>
+            </div>
+        </section>
+    </main>
+    <footer class="border-t border-gris-asfalto dark:border-crema">
+        <div class="mx-auto flex max-w-6xl flex-col justify-between gap-6 px-6 py-8 md:flex-row">
+            <div class="space-y-2"><p class="font-titulo font-bold">Rueda Libre</p><p>Medellín en dos ruedas.</p></div>
+            <div class="space-y-2"><p class="font-titulo font-bold">Contacto</p><a href="../paginas/encuentranos.html" class="underline">Encuéntranos</a></div>
+            <div class="space-y-2"><p class="font-titulo font-bold">Rueda Nocturna</p><p>Jueves a sábado</p><a href="componentes.html" class="underline">Kit de componentes</a></div>
+        </div>
+    </footer>
+</body>
+</html>

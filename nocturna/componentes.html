@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre Medellín en bicicleta con las tres rutas de Rueda Nocturna.">
+    <meta name="color-scheme" content="light dark">
+    <title>Componentes | Rueda Nocturna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-crema font-cuerpo text-gris-asfalto dark:bg-azul-noche dark:text-crema">
+    <main class="mx-auto max-w-6xl space-y-8 px-6 py-12 lg:py-20">
+        <h1 class="font-titulo text-3xl font-bold">Kit de Rueda Nocturna</h1>
+        <a href="index.html" class="underline">Volver a la landing</a>
+        <section id="botones" class="space-y-4">
+            <h2 class="font-titulo text-2xl font-bold">Botones</h2>
+            <div class="flex flex-wrap gap-4">
+                <a href="index.html#inscripcion" class="btn-principal">Inscríbete</a>
+                <a href="index.html#inscripcion" class="btn-secundario">Elegir ruta</a>
+            </div>
+        </section>
+        <section id="etiquetas" class="space-y-4">
+            <h2 class="font-titulo text-2xl font-bold">Etiqueta</h2>
+            <span class="inline-block rounded-full bg-amarillo-farol px-3 py-1 text-sm font-semibold text-azul-noche">Jueves a sábado</span>
+        </section>
+        <section id="cards" class="space-y-4">
+            <h2 class="font-titulo text-2xl font-bold">Card de ruta</h2>
+            <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="flex flex-col gap-4 rounded-xl border border-gris-asfalto bg-white p-6 dark:border-crema dark:bg-gris-asfalto">
+                        <img src="../img/ruta.jpeg" alt="Camino de la ruta Río y Parques" width="480" height="320" class="h-40 w-full rounded-lg object-cover" loading="lazy">
+                        <h3 class="font-titulo text-xl font-bold">Río y Parques</h3>
+                        <span class="self-start rounded-full bg-crema px-3 py-1 text-sm font-semibold text-gris-asfalto">Nivel fácil</span>
+                        <p class="grow">Un recorrido tranquilo para disfrutar las luces junto al río.</p>
+                        <a href="index.html#inscripcion" class="btn-secundario">Elegir ruta</a>
+                    </article>
+            </div>
+        </section>
+        <section id="campos" class="space-y-4">
+            <h2 class="font-titulo text-2xl font-bold">Campo de ejemplo</h2>
+            <label for="nombre" class="block font-semibold">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="given-name" class="w-full rounded-lg border border-gris-asfalto bg-white px-4 py-3 text-gris-asfalto focus:outline-2 focus:outline-offset-2 focus:outline-verde-ruta dark:border-crema dark:bg-gris-asfalto dark:text-crema dark:focus:outline-amarillo-farol">
+        </section>
+    </main>
+</body>
+</html>
