@@ -211,3 +211,75 @@ Creé nocturna/prototipo.html con el Play CDN y solo utilidades de Tailwind.
 En la semana 2 hice el enlace con utilidades de Bootstrap como bg-dark, text-white y p-3.
 Hoy usé bg-amber-300, text-slate-950, px-6, py-3 y rounded-lg para darle fondo, color, espacio y bordes redondeados.
 Bootstrap trae componentes listos como btn, aunque antes usé sus utilidades. Tailwind es utility-first: combino clases pequeñas para construir el estilo.
+
+RETOS 5 AL 8 - RUEDA NOCTURNA
+
+5. Layout
+Creé nocturna/index.html con header, main, cuatro secciones con id y footer.
+Todas las partes usan max-w-6xl, mx-auto y px-6.
+Usé flex para el encabezado y los tres bloques del pie.
+Usé grid para rutas y pasos porque permite cambiar el número de columnas fácilmente.
+No había componentes.html en el proyecto: creé un kit sencillo y reutilicé su card sin cambiar las clases.
+Los botones de inscripción llevan a la sección final y desde allí al formulario existente.
+
+6. Responsive
+Al empezar solo había un prototipo; faltaban rutas, pasos y pie.
+El layout fijo de escritorio dejaría las cards y el menú muy apretados a 360 px.
+Dejé una columna como base, sm desde 640 px, md desde 768 px y lg desde 1024 px.
+Pruebas reales en Chrome automatizado con Playwright, emulando claro y oscuro:
+
+Ancho   | Rutas | Pasos | Encabezado | Enlaces | Scroll horizontal
+360 px  | 1     | 1     | Apilado    | Ocultos | No
+768 px  | 2     | 2     | En fila    | Visibles| No
+1024 px | 3     | 4     | En fila    | Visibles| No
+1280 px | 3     | 4     | En fila    | Visibles| No
+
+También probé 640 px: dos rutas y dos pasos por fila.
+Las anclas encuentran su sección en todos los anchos. Inscríbete sigue visible en celular.
+Revisé capturas de 360 px en claro y 1280 px en oscuro.
+
+7. Tema y contraste
+Definí seis colores y dos fuentes con @theme en nocturna/src/input.css.
+Conservé los cinco valores del sitio anterior (css/styles.css del historial):
+Verde Ruta #0284C7, Azul Noche #0F172A, Naranja Pedal #F59E0B,
+Gris Asfalto #334155 y Crema #F8FAFC. Agregué Amarillo Farol #FFD166.
+Aunque los nombres del reto dicen verde y naranja, el sitio guardaba azul y ámbar.
+Montserrat se usa en títulos y botones; Open Sans en el cuerpo, desde Google Fonts.
+dark sigue la preferencia del sistema. También cambia cards, bordes y el campo del kit.
+Calculé contraste con la fórmula WCAG de luminancia relativa (mínimo 4.5:1):
+
+Texto / fondo                  | Contraste | Resultado
+Crema / Azul Noche             | 17.06:1   | Cumple
+Crema / Gris Asfalto           | 9.90:1    | Cumple
+Amarillo Farol / Azul Noche    | 12.38:1   | Cumple
+Amarillo Farol / Gris Asfalto  | 7.18:1    | Cumple
+Blanco / Gris Asfalto          | 10.35:1   | Cumple
+Blanco / Azul Noche            | 17.85:1   | Cumple
+Verde Ruta / Azul Noche        | 4.36:1    | No cumple
+
+Por eso no usé Verde Ruta para texto en oscuro: usé Crema o Amarillo Farol.
+
+8. Limpieza y comparativa
+Antes de extraer botones: el estilo principal se repite 2 veces y el secundario 4.
+La card y su etiqueta de nivel se repiten 3 veces; conservé el mismo marcado.
+Creé solo btn-principal y btn-secundario con @apply dentro de @layer components.
+Ordené las utilidades por layout, espaciado, tipografía, colores y estados.
+Compilación: cd nocturna/src, npm ci y npm run build.
+build ejecuta tailwindcss -i ./input.css -o ./output.css --minify.
+
+Mediciones reales de archivos minificados, sin comprimir:
+Tailwind output.css: 13.856 bytes. No necesita JavaScript para esta landing.
+Bootstrap 5.3.3 CSS: 232.803 bytes. Bundle JS: 80.721 bytes. Total: 313.524 bytes.
+Descargué los mismos archivos de jsDelivr que carga index.html.
+Gzip calculado localmente: Tailwind 3.369 bytes; Bootstrap CSS 30.829 y JS 23.858.
+Estos son tamaños de archivo y gzip local, no una captura del panel Network.
+No incluyen imágenes, fuentes ni el CSS propio del sitio Bootstrap.
+
+Criterio        | Bootstrap                         | Tailwind
+Aprendizaje     | Las columnas me ayudaron rápido.  | Necesité aprender utilidades y prefijos.
+Personalizar   | Conservé CSS propio para la marca. | @theme deja usar los colores directamente.
+Tamaño final   | CSS + JS: 313.524 bytes.           | CSS: 13.856 bytes, sin JS.
+Casos de uso   | Tablas y formularios ya armados.   | Landing con distribución y tema propios.
+
+Recomiendo Tailwind para la próxima versión de Rueda Libre por el tema propio y el CSS menor.
+Bootstrap sigue siendo útil para mantener las páginas actuales sin rehacerlas.
