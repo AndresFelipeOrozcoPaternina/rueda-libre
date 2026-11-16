@@ -1,32 +1,34 @@
-# Rueda Libre y Rueda Nocturna
+# Rueda Libre
 
-Sitio de alquiler de bicicletas en Medellín y landing para los recorridos nocturnos. El sitio principal usa Bootstrap y la campaña usa Tailwind.
+Este proyecto es una pagina de alquiler de bicicletas en Medellín. Tambien tiene Rueda Nocturna, una campaña con rutas, planes y un formulario de inscripción.
 
-## Abrir el proyecto
+## Enlaces
 
-- [Sitio Rueda Libre](https://andresfelipeorozcopaternina.github.io/rueda-libre/)
+- [Sitio principal](https://andresfelipeorozcopaternina.github.io/rueda-libre/)
 - [Rueda Nocturna](https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/)
-- [Inscripción](https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/#inscripcion)
-- [Kit de componentes](https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/componentes.html)
+- [Formulario de inscripción](https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/#inscripcion)
 
-El formulario valida los datos y está preparado para un servicio de recepción. **El envío real sigue pendiente de configurar**: el correo y el teléfono actuales son ejemplos. La página lo avisa y no muestra una confirmación falsa.
+## Donde use cada framework
 
-## Páginas
+No cargue Bootstrap y Tailwind juntos en una misma pagina.
 
-| Archivo | Contenido |
-| --- | --- |
-| `index.html` | Inicio, carrusel de cuatro diapositivas, rutas y flota |
-| `paginas/tarifas.html` | Precios y recorridos |
-| `paginas/reservas.html` | Formulario de reserva de bicicletas |
-| `paginas/encuentranos.html` | Ubicación y contacto |
-| `nocturna/index.html` | Campaña, rutas, pasos, planes e inscripción |
-| `nocturna/componentes.html` | Botones, card, etiqueta y campo del kit |
+| Pagina | Framework | Donde lo use |
+| --- | --- | --- |
+| `index.html` | Bootstrap | Menu, carrusel, columnas de la portada, rutas, flota y beneficios |
+| `paginas/tarifas.html` | Bootstrap | Menu y columnas para separar las tablas de la lista de que llevar. Las tablas conservan mi CSS |
+| `paginas/reservas.html` | Bootstrap | Menu, columnas del formulario y contacto, y la fila de documento y celular. Los campos tienen CSS propio |
+| `paginas/encuentranos.html` | Bootstrap | Menu de navegación. El resto conserva CSS propio |
+| `pruebas/catalogo-bootstrap.html` | Bootstrap | Pruebas de las cards de bicicletas, columnas y beneficios |
+| `nocturna/prototipo.html` | Tailwind con Play CDN | Primera prueba del titulo, fondo, textos y boton |
+| `nocturna/componentes.html` | Tailwind | Botones, etiqueta, card y campo que reutilice en la landing |
+| `nocturna/index.html` | Tailwind | Encabezado, rutas, pasos, planes, formulario, responsive y modo oscuro |
 
-## Tecnologías y uso local
+Tambien use HTML, CSS y un poco de JavaScript. Las fuentes son Montserrat y Open Sans. Los colores del sitio estan en `css/marca.css` y los de Tailwind en `nocturna/src/input.css`.
 
-HTML semántico, CSS, JavaScript sencillo, Bootstrap 5.3.3, Tailwind 4.3.4 y Google Fonts (Montserrat y Open Sans). Publicado con GitHub Pages.
+## Abrir en local
 
-Abre la carpeta con VS Code y usa Live Server sobre `index.html`. El CSS generado ya está incluido. Para reconstruirlo necesitas Node y npm:
+Abre la carpeta en VS Code y usa Live Server en `index.html`.
+Para volver a generar el CSS de Tailwind necesitas Node y npm:
 
 ```sh
 cd nocturna/src
@@ -34,77 +36,43 @@ npm ci
 npm run build
 ```
 
-`npm run dev` recompila al guardar cambios. Edita `input.css`, no `output.css`. `css/marca.css` comparte los colores y las fuentes con las páginas de Bootstrap.
+`npm run dev` sirve para compilar mientras haces cambios. No se edita `output.css` a mano.
 
-Para recibir inscripciones, coloca la URL real del servicio en `destino`, dentro de `nocturna/inscripcion.js`. Debe aceptar POST con FormData, permitir la conexión desde GitHub Pages y responder con un estado HTTP correcto. El mismo archivo también atiende el formulario de reservas. No agregues contraseñas ni claves privadas al repositorio.
+## Pruebas y pendientes
 
-## Pruebas y decisiones
+Se revisaron las paginas a 360, 768 y 1280 px, y la landing tambien a 1024 px. El formulario bloquea datos vacios o invalidos y se puede completar con teclado.
+La landing y reservas quedaron sin errores en el W3C. Tambien se revisaron el contraste, el modo oscuro y los enlaces publicados.
 
-- Responsive en 360, 768 y 1280 px. La landing también se revisó en 1024 px.
-- Modo oscuro según la preferencia del sistema, sin botón ni librerías adicionales.
-- Validación nativa de nombre, correo, celular, opciones obligatorias y acompañantes entre 0 y 3.
-- Formulario completado con teclado y envío probado contra un receptor local simulado. Falta probar la recepción real cuando exista el destino.
-- W3C Nu Validator: cero errores en la landing y en reservas.
-- Revisión automática con axe: 24 comprobaciones de página, ancho y tema, sin incidencias detectadas de WCAG A/AA ni scroll horizontal. Se complementó con el recorrido del formulario por teclado.
-- Medidas de los planes a 1280 px: 352 px de ancho, 353 px de alto y 24 px de relleno; botones alineados.
-- Los tiempos y los resultados completos están en [bitacora.txt](bitacora.txt).
+Falta configurar el servicio que recibe las inscripciones y reservas. Por ahora solo se probo el envio con un receptor local de prueba, el correo y telefono son ejemplos.
+El [guion de la demo](docs/demo.md) esta preparado, falta ensayarlo con un compañero.
 
 ## Bootstrap o Tailwind
 
-| Criterio | Bootstrap | Tailwind |
-| --- | --- | --- |
-| Aprendizaje | Las columnas y los componentes permiten empezar rápido | Hay que aprender utilidades y prefijos |
-| Personalización | Necesité CSS propio para la marca | El tema y sus utilidades permiten usarla directamente |
-| Tamaño medido | CSS: 232.803 bytes; bundle JS: 80.721 bytes | CSS final: 14.878 bytes; JS propio: 1.278 bytes |
-| Uso | Tablas, formularios y carrusel del sitio | Layout, planes y modo oscuro de la campaña |
+Bootstrap me ayudo a empezar con las columnas y el carrusel. Con Tailwind tuve que aprender mas clases, pero fue mas facil organizar la landing y personalizarla.
 
-Son tamaños sin comprimir, sin imágenes ni fuentes. En Bootstrap tampoco incluyen el CSS propio. En el reto 8 Tailwind pesaba 13.856 bytes; después se agregaron el formulario y los planes.
-
-Recomiendo Tailwind para la próxima versión por la personalización y el tamaño. Mantendría Bootstrap en las páginas actuales hasta que sea necesario cambiarlas.
+Bootstrap carga 232.803 bytes de CSS y 80.721 de JavaScript. La landing tiene 14.878 bytes de CSS y 1.278 de JavaScript propio, sin contar imagenes ni fuentes. Bootstrap tambien usa mis hojas de CSS.
+Para la siguiente version recomiendo Tailwind por el tamaño y la personalización, dejaria Bootstrap en las paginas que ya funcionan.
 
 ## Capturas
 
-### Escritorio
+Escritorio
 
-![Landing en escritorio](docs/capturas/escritorio.png)
+![Escritorio](docs/capturas/escritorio.png)
 
-### Celular
+Celular
 
-![Landing a 360 px](docs/capturas/celular.png)
+![Celular](docs/capturas/celular.png)
 
-### Modo oscuro
+Modo oscuro
 
-![Landing en modo oscuro](docs/capturas/oscuro.png)
+![Modo oscuro](docs/capturas/oscuro.png)
 
-### Planes
+## Lo que aprendi
 
-![Tres planes con sus botones alineados](docs/capturas/planes.png)
+Grid me sirvio para cambiar las columnas segun el ancho. Flex me ayudo a dejar los botones de los planes a la misma altura. Tambien aprendi que validar un formulario no significa que ya se esten recibiendo los datos.
 
-## Mapa de los 12 MiniRetos
-
-| Reto | Aporte al producto |
-| --- | --- |
-| 1 | Prototipo de la sección principal con Play CDN |
-| 2 | Compilación con CLI y botones |
-| 3 | Cards de las tres rutas |
-| 4 | Kit de componentes reutilizables |
-| 5 | Estructura de la landing |
-| 6 | Distribución mobile-first |
-| 7 | Tema, fuentes y modo oscuro |
-| 8 | Botones reutilizados y comparación de frameworks |
-| 9 | Inscripción con validaciones |
-| 10 | Menús, carrusel e identidad compartida |
-| 11 | Planes Individual, Pareja y Grupo |
-| 12 | Revisión final, documentación, publicación y guion de demo |
-
-## Aprendizajes y demo
-
-Grid facilita cambiar las columnas por tamaño de pantalla. Flex permite dejar los botones al final de las cards. Las validaciones nativas ahorran código y el contraste se debe medir también en oscuro.
-
-El [guion de demo](docs/demo.md) organiza un recorrido de menos de tres minutos. El ensayo con un compañero y su retroalimentación quedan pendientes; no se registró una opinión inventada.
-
-En la rama [andres_pruebas](https://github.com/AndresFelipeOrozcoPaternina/rueda-libre/tree/andres_pruebas) están las explicaciones línea por línea para estudiar.
+Los cambios y las pruebas estan en [bitacora.txt](bitacora.txt).
 
 ## Autor
 
-Andrés Felipe Orozco Paternina — proyecto de formación RIWI.
+Andrés Felipe Orozco Paternina - RIWI
