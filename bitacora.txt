@@ -272,7 +272,10 @@ Tailwind output.css: 13.856 bytes. No necesita JavaScript para esta landing.
 Bootstrap 5.3.3 CSS: 232.803 bytes. Bundle JS: 80.721 bytes. Total: 313.524 bytes.
 Descargué los mismos archivos de jsDelivr que carga index.html.
 Gzip calculado localmente: Tailwind 3.369 bytes; Bootstrap CSS 30.829 y JS 23.858.
-Estos son tamaños de archivo y gzip local, no una captura del panel Network.
+Estos son tamaños de archivo y gzip local.
+También revisé Network de Chrome mediante DevTools Protocol, sin caché:
+Tailwind transfirió 3.628 bytes y Bootstrap CSS 34.000 bytes (incluyen cabeceras).
+Encontré un 404 en el JS anterior: faltaba /js/ en la URL. Lo corregí en las cuatro páginas que lo usaban.
 No incluyen imágenes, fuentes ni el CSS propio del sitio Bootstrap.
 
 Criterio        | Bootstrap                         | Tailwind
@@ -283,3 +286,6 @@ Casos de uso   | Tablas y formularios ya armados.   | Landing con distribución 
 
 Recomiendo Tailwind para la próxima versión de Rueda Libre por el tema propio y el CSS menor.
 Bootstrap sigue siendo útil para mantener las páginas actuales sin rehacerlas.
+
+Publicación comprobada: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
+La landing y el CSS devuelven HTTP 200. La guía línea por línea está en GUIA_NOCTURNA.md de andres_pruebas.
