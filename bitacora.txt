@@ -290,3 +290,12 @@ Bootstrap sigue siendo útil para mantener las páginas actuales sin rehacerlas.
 
 Publicación comprobada: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
 La landing y el CSS devuelven HTTP 200. La guía línea por línea está en GUIA_NOCTURNA.md de andres_pruebas.
+
+
+RETO 9 - Inscripcion
+Tiempo real: 3 min 56 s, limite 40 min
+Agregue los datos personales y los de la salida con fieldset y legend
+probe vacio, nombre corto, correo y celular malos y acompañantes fuera del rango. El navegador los bloquea
+Con Tab, flechas y espacio pude completarlo y enviarlo a un receptor local de prueba
+A 360 queda en una columna, desde md los campos cortos quedan en dos. Tambien probe oscuro
+Falta el correo o servicio real para recibir inscripciones, la pagina avisa y no dice que envio algo cuando no lo hizo
