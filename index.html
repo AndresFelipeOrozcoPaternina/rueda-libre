@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="css/index.css">
 
         <link rel="stylesheet" href="css/articulos.css">
+        <link rel="stylesheet" href="css/marca.css">
     </head>
 
     <body class="p-3 p-md-4">
@@ -24,9 +25,9 @@
 
             <h1 class="fs-2 mb-0">Rueda Libre</h1>
 
-            <nav>
+            <nav class="navbar" aria-label="Navegación principal">
 
-                <ul id="menu" class="d-flex flex-wrap justify-content-center align-items-center gap-2 list-unstyled p-0 m-0">
+                <ul id="menu" class="navbar-nav flex-row flex-wrap justify-content-center align-items-center gap-2 p-0 m-0">
                     <li><a href="./paginas/tarifas.html">Tarifas</a></li>
                     <li><a href="./nocturna/index.html">Rueda Nocturna</a></li>
                     <li><a href="./paginas/encuentranos.html">Encuentranos</a></li>
@@ -35,6 +36,45 @@
             </nav>
         </header>
 
+        <main>
+        <section id="campanas" class="container p-3 mb-4" aria-label="Campañas y recorridos">
+            <div id="carrusel-inicio" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Explora Medellín</h2>
+                            <p>Conoce la ciudad a tu ritmo en dos ruedas.</p>
+                            <a href="paginas/reservas.html" class="rounded px-4 py-3 fw-bold">Reserva tu bicicleta</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Una ruta para ti</h2>
+                            <p>Escoge entre Río y Parques, Sabores de Barrio y Reto Las Palmas.</p>
+                            <a href="#nuestras-rutas" class="rounded px-4 py-3 fw-bold">Ver rutas</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Elige tu bicicleta</h2>
+                            <p>Consulta los modelos y las tarifas de alquiler.</p>
+                            <a href="paginas/tarifas.html" class="rounded px-4 py-3 fw-bold">Ver tarifas</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Rueda Nocturna</h2>
+                            <p>Descubre Medellín cuando se encienden las luces.</p>
+                            <a href="nocturna/index.html#inscripcion" class="rounded px-4 py-3 fw-bold">Inscríbete a Rueda Nocturna</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between gap-3 pt-3">
+                    <button type="button" class="btn btn-dark" data-bs-target="#carrusel-inicio" data-bs-slide="prev">Anterior</button>
+                    <button type="button" class="btn btn-dark" data-bs-target="#carrusel-inicio" data-bs-slide="next">Siguiente</button>
+                </div>
+            </div>
+        </section>
         <section id="portada" class="container p-3 p-md-4 mb-4">
 
             <div class="row g-4 align-items-center">
@@ -260,6 +300,7 @@
             <p><a href="./paginas/encuentranos.html">Encuentranos aqui</a></p>
         </section>
 
+        </main>
         <footer class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 p-3 mt-4 text-center">
 
             <dl class="mb-0">
@@ -267,6 +308,8 @@
                 <dd>Rueda Libre</dd>
                 <dt><strong>Correo electrónico</strong></dt>
                 <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
+                <dt>Teléfono</dt>
+                <dd>+57 300 000 0000</dd>
             </dl>
         </footer>
 

@@ -293,9 +293,17 @@ La landing y el CSS devuelven HTTP 200. La guía línea por línea está en GUIA
 
 
 RETO 9 - Inscripcion
-Tiempo real: 3 min 56 s, limite 40 min
+Tiempo real: 2 min 56 s, limite 40 min
 Agregue los datos personales y los de la salida con fieldset y legend
 probe vacio, nombre corto, correo y celular malos y acompañantes fuera del rango. El navegador los bloquea
 Con Tab, flechas y espacio pude completarlo y enviarlo a un receptor local de prueba
 A 360 queda en una columna, desde md los campos cortos quedan en dos. Tambien probe oscuro
 Falta el correo o servicio real para recibir inscripciones, la pagina avisa y no dice que envio algo cuando no lo hizo
+
+RETO 10 - Unir las paginas
+Tiempo transcurrido: 19 min 38 s, limite 40 min. Incluye la pausa de la interrupcion
+Puse Rueda Nocturna en los menus y arme el carrusel con cuatro diapositivas, antes no habia uno
+El logo vuelve al inicio y Reserva tu bici lleva a reservas
+Deje colores y fuentes en marca.css para Bootstrap, con los mismos valores de Tailwind
+Tambien deje el mismo correo y telefono en los pies, son los datos de ejemplo que ya tenia el proyecto
+Probe las seis paginas a 360, 768 y 1280, sin scroll lateral. El carrusel funciona y revise 18 enlaces y recursos locales sin errores

@@ -1,0 +1,44 @@
+:root {
+  --color-verde-ruta: #0284c7;
+  --color-azul-noche: #0f172a;
+  --color-naranja-pedal: #f59e0b;
+  --color-gris-asfalto: #334155;
+  --color-crema: #f8fafc;
+  --color-amarillo-farol: #ffd166;
+  --color-principal: var(--color-verde-ruta);
+  --color-oscuro: var(--color-azul-noche);
+  --color-texto: var(--color-gris-asfalto);
+  --color-fondo: var(--color-crema);
+  --fuente: "Open Sans", sans-serif;
+  --bs-primary: var(--color-verde-ruta);
+  --bs-primary-rgb: 2, 132, 199;
+  --bs-secondary: var(--color-naranja-pedal);
+  --bs-secondary-rgb: 245, 158, 11;
+  --bs-dark: var(--color-azul-noche);
+  --bs-dark-rgb: 15, 23, 42;
+  --bs-body-color: var(--color-gris-asfalto);
+  --bs-body-bg: var(--color-crema);
+  --bs-body-font-family: "Open Sans", sans-serif;
+  --bs-link-color: var(--color-azul-noche);
+  --bs-link-hover-color: var(--color-gris-asfalto);
+}
+
+body { font-family: var(--fuente); }
+h1, h2, h3 { font-family: "Montserrat", sans-serif; }
+header { background: var(--color-amarillo-farol); }
+a, #menu a { color: var(--color-azul-noche); }
+#menu a { display: inline-block; }
+#menu a:hover { background: var(--color-azul-noche); color: white; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-azul-noche);
+  outline-offset: 3px;
+}
+button[type="submit"] { background: var(--color-azul-noche); }
+.btn-whatsapp { background: var(--color-azul-noche); color: white; }
+.row > * { min-width: 0; }
+fieldset { min-width: 0; }
+table { border: 1px solid var(--color-gris-asfalto); }
+.campana { min-height: 19rem; background: var(--color-azul-noche); color: white; }
+.campana h2 { color: var(--color-amarillo-farol); }
+.campana a { background: var(--color-amarillo-farol); color: var(--color-azul-noche); }
