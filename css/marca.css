@@ -9,6 +9,7 @@
   --color-oscuro: var(--color-azul-noche);
   --color-texto: var(--color-gris-asfalto);
   --color-fondo: var(--color-crema);
+  --color-borde: var(--color-gris-asfalto);
   --fuente: "Open Sans", sans-serif;
   --bs-primary: var(--color-verde-ruta);
   --bs-primary-rgb: 2, 132, 199;
