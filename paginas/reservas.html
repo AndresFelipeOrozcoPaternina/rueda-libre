@@ -18,6 +18,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <!-- MI CSS: carga después de Bootstrap para conservar los estilos propios; también importan la prioridad y especificidad de cada regla. -->
         <link rel="stylesheet" href="../css/reservas.css">
+        <link rel="stylesheet" href="../css/marca.css">
     </head>
     <!-- GUÍA PARA ESTUDIAR:
         Las palabras dentro de class son clases separadas por espacios; cada una tiene una tarea.
@@ -52,18 +53,10 @@
             -->
             <h1 class="fs-2 mb-0">Rueda Libre</h1>
 
-            <nav>
-                <!-- PASO 4: Clases de este elemento <ul>. Se leen así:
-                    1. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
-                    2. flex-wrap: permite que los hijos pasen a otra línea si no caben en una sola fila.
-                    3. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
-                    4. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
-                    5. gap-2: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 2 equivale a 0.5 rem con la configuración usada.
-                    6. list-unstyled: quita las viñetas y la sangría inicial de la lista.
-                    7. p-0: pone relleno interior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
-                    8. m-0: pone margen exterior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
-                -->
-                <ul id="menu" class="d-flex flex-wrap justify-content-center align-items-center gap-2 list-unstyled p-0 m-0">
+            <nav class="navbar" aria-label="Navegación principal">
+
+                <ul id="menu" class="navbar-nav flex-row flex-wrap justify-content-center align-items-center gap-2 p-0 m-0">
+                    <li><a href="../nocturna/index.html">Rueda Nocturna</a></li>
                     <li><a href="./tarifas.html">Tarifas</a></li>
                     <li><a href="./encuentranos.html">Encuentranos</a></li>
                     <li><a href="../index.html">Inicio</a></li>
@@ -100,7 +93,7 @@
                     -->
                     <section class="columna-formulario p-3 p-lg-4">
                         <h2>Formulario de reserva</h2>
-                        <form action="./reservas.html" method="post">
+                        <form id="formulario-inscripcion" action="#formulario-inscripcion" method="post">
                             <fieldset>
                                 <legend>Tus datos</legend>
 
@@ -256,6 +249,7 @@
 
                             <br>
                             <button type="submit">Reservar</button>
+                            <p id="estado-inscripcion" role="status">El envío de reservas todavía no está habilitado.</p>
                         </form>
                     </section>
                 </div>
@@ -284,7 +278,7 @@
                             <p><strong>Punto de entrega:</strong> Estación Medellín Centro</p>
 
                             <h3>Horario de atención</h3>
-                            <table border="1">
+                            <table>
                                 <thead>
                                     <tr>
                                         <th scope="col">Día</th>
@@ -324,6 +318,8 @@
                 <dd>Rueda Libre</dd>
                 <dt><strong>Correo electrónico</strong></dt>
                 <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
+                <dt>Teléfono</dt>
+                <dd>+57 300 000 0000</dd>
             </dl>
         </footer>
         <!-- PASO 23: Clases de este elemento <a>. Se leen así:
@@ -331,10 +327,7 @@
         -->
         <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">WhatsApp</a>
 
-        <!-- BUNDLE: src carga el JavaScript de Bootstrap con Popper incluido.
-            Las columnas y las utilidades de esta página funcionan con el CSS; este archivo sirve para componentes interactivos.
-            integrity comprueba la huella del archivo y crossorigin permite su carga desde otro dominio sin credenciales.
-        -->
+        <script src="../nocturna/inscripcion.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

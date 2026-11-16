@@ -290,3 +290,39 @@ Bootstrap sigue siendo útil para mantener las páginas actuales sin rehacerlas.
 
 Publicación comprobada: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
 La landing y el CSS devuelven HTTP 200. La guía línea por línea está en GUIA_NOCTURNA.md de andres_pruebas.
+
+
+RETO 9 - Inscripcion
+Tiempo real: 2 min 56 s, limite 40 min
+Agregue los datos personales y los de la salida con fieldset y legend
+probe vacio, nombre corto, correo y celular malos y acompañantes fuera del rango. El navegador los bloquea
+Con Tab, flechas y espacio pude completarlo y enviarlo a un receptor local de prueba
+A 360 queda en una columna, desde md los campos cortos quedan en dos. Tambien probe oscuro
+Falta el correo o servicio real para recibir inscripciones, la pagina avisa y no dice que envio algo cuando no lo hizo
+
+RETO 10 - Unir las paginas
+Tiempo transcurrido: 19 min 38 s, limite 40 min. Incluye la pausa de la interrupcion
+Puse Rueda Nocturna en los menus y arme el carrusel con cuatro diapositivas, antes no habia uno
+El logo vuelve al inicio y Reserva tu bici lleva a reservas
+Deje colores y fuentes en marca.css para Bootstrap, con los mismos valores de Tailwind
+Tambien deje el mismo correo y telefono en los pies, son los datos de ejemplo que ya tenia el proyecto
+Probe las seis paginas a 360, 768 y 1280, sin scroll lateral. El carrusel funciona y revise 18 enlaces y recursos locales sin errores
+
+RETO 11 - Los planes
+Tiempo real: 2 min 19 s, limite 45 min
+Agregue Individual, Pareja y Grupo con los precios y beneficios pedidos
+Use grid para las tres columnas y flex en cada card para dejar el boton abajo
+Pareja lleva un borde arriba de 4 px, otro fondo y la etiqueta Mas elegido en absolute, asi no empuja las otras cards
+En Chrome a 1280 medi 352 px de ancho, 353 de alto y 24 px de relleno en las tres. Los botones quedan a la misma altura
+Probe 360, 768, 1024 y 1280 en claro y oscuro, sin scroll horizontal
+
+RETO 12 - Entrega
+Revise las seis paginas con Chrome a 360, 768 y 1280, tambien la landing y el kit en oscuro
+axe hizo 24 comprobaciones, no encontro problemas de WCAG A y AA ni scroll lateral
+Pase la landing y reservas por el W3C, corregi el autocomplete del celular y quedaron sin errores
+Quite el envio de reservas hacia el mismo html porque GitHub Pages no recibe POST, ahora avisa si falta el servicio
+Deje el README con enlaces, capturas, tecnologias, aprendizajes y la comparacion de frameworks
+El CSS final minificado pesa 14.878 bytes y el JS del formulario 1.278 bytes
+La demo esta en docs/demo.md, organizada para 2 min 50 s. Falta ensayarla con un compañero y poner su opinion, no he hecho ese ensayo
+Tambien falta el correo o la URL real para que lleguen las inscripciones y reservas
+Las explicaciones linea por linea se guardan en andres_pruebas

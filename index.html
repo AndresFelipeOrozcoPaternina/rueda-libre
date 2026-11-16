@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="css/index.css">
         <!-- MI CSS: carga después de Bootstrap para conservar los estilos propios; también importan la prioridad y especificidad de cada regla. -->
         <link rel="stylesheet" href="css/articulos.css">
+        <link rel="stylesheet" href="css/marca.css">
     </head>
     <!-- GUÍA PARA ESTUDIAR:
         Las palabras dentro de class son clases separadas por espacios; cada una tiene una tarea.
@@ -54,18 +55,9 @@
             -->
             <h1 class="fs-2 mb-0">Rueda Libre</h1>
 
-            <nav>
-                <!-- PASO 4: Clases de este elemento <ul>. Se leen así:
-                    1. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
-                    2. flex-wrap: permite que los hijos pasen a otra línea si no caben en una sola fila.
-                    3. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
-                    4. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
-                    5. gap-2: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 2 equivale a 0.5 rem con la configuración usada.
-                    6. list-unstyled: quita las viñetas y la sangría inicial de la lista.
-                    7. p-0: pone relleno interior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
-                    8. m-0: pone margen exterior en los cuatro lados. El nivel 0 equivale a 0 con la configuración usada.
-                -->
-                <ul id="menu" class="d-flex flex-wrap justify-content-center align-items-center gap-2 list-unstyled p-0 m-0">
+            <nav class="navbar" aria-label="Navegación principal">
+
+                <ul id="menu" class="navbar-nav flex-row flex-wrap justify-content-center align-items-center gap-2 p-0 m-0">
                     <li><a href="./paginas/tarifas.html">Tarifas</a></li>
                     <li><a href="./nocturna/index.html">Rueda Nocturna</a></li>
                     <li><a href="./paginas/encuentranos.html">Encuentranos</a></li>
@@ -74,16 +66,45 @@
             </nav>
         </header>
 
-        <!-- ============================================================ -->
-        <!-- CAMBIO 4: Portada. Dos columnas iguales desde md (768 px). -->
-        <!-- Texto a la izquierda y foto a la derecha; texto centrado     -->
-        <!-- ============================================================ -->
-        <!-- PASO 5: Clases de este elemento <section>. Se leen así:
-            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
-            2. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-            3. p-md-4: desde 768 px, pone relleno interior en los cuatro lados. El nivel 4 equivale a 1.5 rem con la configuración usada.
-            4. mb-4: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 4 equivale a 1.5 rem con la configuración usada.
-        -->
+        <main>
+        <section id="campanas" class="container p-3 mb-4" aria-label="Campañas y recorridos">
+            <div id="carrusel-inicio" class="carousel slide" data-bs-interval="false">
+                <div class="carousel-inner rounded">
+                    <div class="carousel-item active">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Explora Medellín</h2>
+                            <p>Conoce la ciudad a tu ritmo en dos ruedas.</p>
+                            <a href="paginas/reservas.html" class="rounded px-4 py-3 fw-bold">Reserva tu bicicleta</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Una ruta para ti</h2>
+                            <p>Escoge entre Río y Parques, Sabores de Barrio y Reto Las Palmas.</p>
+                            <a href="#nuestras-rutas" class="rounded px-4 py-3 fw-bold">Ver rutas</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Elige tu bicicleta</h2>
+                            <p>Consulta los modelos y las tarifas de alquiler.</p>
+                            <a href="paginas/tarifas.html" class="rounded px-4 py-3 fw-bold">Ver tarifas</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="campana d-flex flex-column justify-content-center align-items-center gap-3 p-4 text-center">
+                            <h2>Rueda Nocturna</h2>
+                            <p>Descubre Medellín cuando se encienden las luces.</p>
+                            <a href="nocturna/index.html#inscripcion" class="rounded px-4 py-3 fw-bold">Inscríbete a Rueda Nocturna</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between gap-3 pt-3">
+                    <button type="button" class="btn btn-dark" data-bs-target="#carrusel-inicio" data-bs-slide="prev">Anterior</button>
+                    <button type="button" class="btn btn-dark" data-bs-target="#carrusel-inicio" data-bs-slide="next">Siguiente</button>
+                </div>
+            </div>
+        </section>
         <section id="portada" class="container p-3 p-md-4 mb-4">
             <!-- PASO 6: Clases de este elemento <div>. Se leen así:
                 1. row: crea una fila de la grilla de Bootstrap; dentro van columnas que se reparten 12 partes.
@@ -630,18 +651,7 @@
             <p><a href="./paginas/encuentranos.html">Encuentranos aqui</a></p>
         </section>
 
-        <!-- PASO 78: Clases de este elemento <footer>. Se leen así:
-            1. container: centra el bloque y limita su ancho según el tamaño de la pantalla; contiene las filas.
-            2. d-flex: activa display: flex en este contenedor para organizar sus hijos directos.
-            3. flex-column: con Flexbox activo, coloca los hijos uno debajo del otro; column significa columna.
-            4. flex-md-row: desde 768 px coloca los hijos en una fila horizontal; antes sigue flex-column.
-            5. justify-content-center: centra los hijos en el eje principal: vertical si están en columna y horizontal si están en fila.
-            6. align-items-center: centra los hijos en el eje cruzado: horizontal en columna y vertical en fila.
-            7. gap-3: separa a los hijos de este contenedor flex; con flex-column deja espacio vertical entre ellos. El nivel 3 equivale a 1 rem con la configuración usada.
-            8. p-3: pone relleno interior en los cuatro lados. El nivel 3 equivale a 1 rem con la configuración usada.
-            9. mt-4: pone margen exterior encima del elemento. El nivel 4 equivale a 1.5 rem con la configuración usada.
-            10. text-center: centra el texto dentro del elemento.
-        -->
+        </main>
         <footer class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-3 p-3 mt-4 text-center">
             <!-- PASO 79: Clases de este elemento <dl>. Se leen así:
                 1. mb-0: pone margen exterior debajo del elemento, para separarlo del siguiente bloque. El nivel 0 equivale a 0 con la configuración usada.
@@ -651,6 +661,8 @@
                 <dd>Rueda Libre</dd>
                 <dt><strong>Correo electrónico</strong></dt>
                 <dd><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></dd>
+                <dt>Teléfono</dt>
+                <dd>+57 300 000 0000</dd>
             </dl>
         </footer>
         <!-- PASO 80: Clases de este elemento <a>. Se leen así:

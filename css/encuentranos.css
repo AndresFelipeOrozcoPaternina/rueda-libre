@@ -1,10 +1,4 @@
-@import "tailwindcss";
 
-/* ========================================================================== */
-/* TITULO: HOJA DE ESTILOS MOBILE-FIRST PARA ENCUENTRANOS (ENCUENTRANOS.CSS)   */
-/* ========================================================================== */
-
-/* Variables de diseno y colores globales */
 :root {
   --color-principal: #0284c7; /* Azul institucional */
   --color-oscuro: #0f172a; /* Titulos oscuros */
