@@ -274,7 +274,8 @@ Descargué los mismos archivos de jsDelivr que carga index.html.
 Gzip calculado localmente: Tailwind 3.369 bytes; Bootstrap CSS 30.829 y JS 23.858.
 Estos son tamaños de archivo y gzip local.
 También revisé Network de Chrome mediante DevTools Protocol, sin caché:
-Tailwind transfirió 3.628 bytes y Bootstrap CSS 34.000 bytes (incluyen cabeceras).
+Tailwind transfirió 3.647 bytes; Bootstrap CSS 34.001 y JS 24.866 bytes (incluyen cabeceras).
+Los tres recursos devolvieron HTTP 200. La transferencia puede variar entre solicitudes.
 Encontré un 404 en el JS anterior: faltaba /js/ en la URL. Lo corregí en las cuatro páginas que lo usaban.
 No incluyen imágenes, fuentes ni el CSS propio del sitio Bootstrap.
 
