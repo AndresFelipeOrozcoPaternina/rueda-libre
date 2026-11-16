@@ -1,1 +1,23 @@
 @import "tailwindcss";
+@source "../*.html";
+
+@theme {
+  --color-verde-ruta: #0284c7;
+  --color-azul-noche: #0f172a;
+  --color-naranja-pedal: #f59e0b;
+  --color-gris-asfalto: #334155;
+  --color-crema: #f8fafc;
+  --color-amarillo-farol: #ffd166;
+  --font-titulo: "Montserrat", sans-serif;
+  --font-cuerpo: "Open Sans", sans-serif;
+}
+
+@layer components {
+  .btn-principal {
+    @apply inline-flex items-center justify-center rounded-lg bg-amarillo-farol px-6 py-3 font-titulo font-bold text-azul-noche hover:bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol;
+  }
+
+  .btn-secundario {
+    @apply inline-flex items-center justify-center rounded-lg bg-azul-noche px-6 py-3 font-titulo font-bold text-white hover:bg-gris-asfalto focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-verde-ruta dark:bg-crema dark:text-azul-noche dark:hover:bg-amarillo-farol dark:focus-visible:outline-amarillo-farol;
+  }
+}
