@@ -1,5 +1,11 @@
 @import "tailwindcss";
 @source "../*.html";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root { color-scheme: light; }
+  :root.dark { color-scheme: dark; }
+}
 
 @theme {
   --color-verde-ruta: #0284c7;

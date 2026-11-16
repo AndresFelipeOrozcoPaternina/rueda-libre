@@ -85,7 +85,7 @@ En input.css defini los seis colores con @theme y las dos fuentes
 Verde Ruta #0284C7, Azul Noche #0F172A, Naranja Pedal #F59E0B
 Gris Asfalto #334155, Crema #F8FAFC y Amarillo Farol #FFD166
 Conserve los valores anteriores, aunque el nombre Verde Ruta tiene un valor azul
-Use dark para seguir el tema del sistema, tambien en cards, campos y bordes
+Use dark en cards, campos y bordes. Al abrir se usa el tema del sistema si no hay una elección guardada
 
 Contraste medido, el minimo para texto normal es 4.5:1
 
@@ -165,8 +165,14 @@ Cambie el envio de reservas porque GitHub Pages no recibe POST en un html
 Deje el README con paginas, frameworks, capturas y como abrir el proyecto
 Despues de publicar se revisaron las seis paginas y 25 enlaces y recursos, todos devolvieron 200
 
-La demo esta en docs/demo.md, pensada para 2 min 50 s. Falta ensayarla con un compañero y anotar su opinion y el tiempo real
-Tambien falta configurar el destino de inscripciones y reservas, el correo y telefono siguen siendo ejemplos
-
 Sitio: https://andresfelipeorozcopaternina.github.io/rueda-libre/
 Landing: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
+
+Boton de modo oscuro
+
+Agregue el boton en el encabezado de la landing y en el kit, tambien sirve con teclado
+tema.js cambia la clase dark y guarda la elección en el navegador para conservarla al recargar
+Cambie la variante dark en input.css para que responda al boton y volvi a compilar el CSS
+Se probaron las dos paginas a 360, 768 y 1280 px, con teclado y recarga, sin errores ni scroll lateral
+La elección tambien se conserva al pasar de la landing al kit. El W3C sigue sin errores
+Con este cambio el CSS pesa 15.158 bytes y los dos archivos de JS suman 2.410 bytes, sin comprimir

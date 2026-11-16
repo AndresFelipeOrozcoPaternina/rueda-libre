@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/output.css">
+    <script src="tema.js"></script>
 </head>
 <body class="bg-crema font-cuerpo text-gris-asfalto dark:bg-azul-noche dark:text-crema">
     <header class="border-b border-gris-asfalto dark:border-crema">
@@ -18,13 +19,14 @@
                 <img src="../img/images.jpeg" alt="" width="48" height="48" class="h-12 w-12 rounded-full object-cover">
                 Rueda Libre
             </a>
-            <nav aria-label="Navegación principal" class="flex items-center gap-6">
+            <nav aria-label="Navegación principal" class="flex flex-wrap items-center justify-center gap-3 lg:gap-6">
                 <div class="hidden items-center gap-6 md:flex">
                     <a href="#inicio" class="hover:underline">Inicio</a>
                     <a href="#rutas" class="hover:underline">Rutas</a>
                     <a href="#como-funciona" class="hover:underline">¿Cómo funciona?</a>
                 </div>
                 <a href="#inscripcion" class="btn-principal">Inscríbete</a>
+                <button id="cambiar-tema" type="button" class="btn-secundario">Modo oscuro</button>
             </nav>
         </div>
     </header>
