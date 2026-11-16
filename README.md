@@ -43,9 +43,6 @@ npm run build
 Se revisaron las paginas a 360, 768 y 1280 px, y la landing tambien a 1024 px. El formulario bloquea datos vacios o invalidos y se puede completar con teclado.
 La landing y reservas quedaron sin errores en el W3C. Tambien se revisaron el contraste, el modo oscuro y los enlaces publicados.
 
-Falta configurar el servicio que recibe las inscripciones y reservas. Por ahora solo se probo el envio con un receptor local de prueba, el correo y telefono son ejemplos.
-Falta preparar y ensayar la demo con un compañero.
-
 ## Bootstrap o Tailwind
 
 Bootstrap me ayudo a empezar con las columnas y el carrusel. Con Tailwind tuve que aprender mas clases, pero fue mas facil organizar la landing y personalizarla.

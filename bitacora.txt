@@ -165,8 +165,5 @@ Cambie el envio de reservas porque GitHub Pages no recibe POST en un html
 Deje el README con paginas, frameworks, capturas y como abrir el proyecto
 Despues de publicar se revisaron las seis paginas y 25 enlaces y recursos, todos devolvieron 200
 
-La demo se penso para 2 min 50 s. Falta preparar el guion, ensayarla con un compañero y anotar su opinion y el tiempo real
-Tambien falta configurar el destino de inscripciones y reservas, el correo y telefono siguen siendo ejemplos
-
 Sitio: https://andresfelipeorozcopaternina.github.io/rueda-libre/
 Landing: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
