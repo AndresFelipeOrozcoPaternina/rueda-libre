@@ -326,3 +326,5 @@ El CSS final minificado pesa 14.878 bytes y el JS del formulario 1.278 bytes
 La demo esta en docs/demo.md, organizada para 2 min 50 s. Falta ensayarla con un compañero y poner su opinion, no he hecho ese ensayo
 Tambien falta el correo o la URL real para que lleguen las inscripciones y reservas
 Las explicaciones linea por linea se guardan en andres_pruebas
+Despues de publicar revise las seis paginas y 25 enlaces y recursos en GitHub Pages, todos devolvieron 200
+La rama de estudio tambien paso la prueba local, quedaron GUIA_NOCTURNA.md y GUIA_INTEGRACION.md actualizadas
