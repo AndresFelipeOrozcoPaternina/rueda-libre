@@ -1,330 +1,172 @@
-- puerto: 5500
-- metodo: GET
-- estado: 304
--host: localhost
--protocolo: http
+BITACORA - RUEDA LIBRE
 
-- con un puerto que o existe sale Cannot GET /rueda-libre/promociones.html, esto significa que no pudo encontrar ningun puerto con esa dirreccion
+Inicio del proyecto
 
-- HTML: el html es el cuerpo del la pagina.
-- CSS: El css agrega los estilos de esta.
-- JavaScript: Define lo que hace la pagina cuando se interactua con ella
+Use HTML para la estructura, CSS para el diseño y JavaScript para las interacciones
+Las paginas principales son inicio, tarifas, reservas y encuentranos
+En local use el puerto 5500, GET es la petición para pedir la pagina y 304 indica que se puede usar la copia guardada
+Cannot GET significa que no se encontro la ruta solicitada, no que faltara un puerto
 
-Rutas utilizadas
+Formularios y accesibilidad
 
-    /paginas/tarifas.html
-    /paginas/encuentranos.html
-    /index.html
-    /paginas/Reservas.html
-   
+Puse lang="es", textos alternativos en las imagenes y titulos en orden
+Use label para identificar los campos, required para los obligatorios y radio cuando solo se puede escoger una opcion
+El celular tiene que empezar por 3 y tener 10 digitos. El correo usa type="email"
+Tambien se reviso la navegación con Tab y el foco visible
 
+Colores y estilos
 
-- En tarifas es span ya que es un texto corto dando un contexto debajo en la tabla.
-- Utilice required en todos los campos ya que todos estos son necesarios para la reserva.
-- Utilice radio en recorido ya que solo puedo escoger uno de estos, y radio hace que a escoger otro opcion quite la anterior.
-- Select para escoger uno de las bicicicletas.
+Deje variables para no repetir los colores y las fuentes en todo el CSS
+Los titulos usan Montserrat y los textos Open Sans
+Azul Noche y Gris Asfalto funcionan para el texto sobre fondo claro, el naranja lo deje para detalles
+Para el conflicto de .activo use #menu a.activo, tiene mas prioridad que #menu a sin agregar !important
+box-sizing: border-box incluye el relleno y el borde dentro del ancho
 
+Primera version responsive
 
-Arreglos de accesibilidad:
-Idioma: Le puse lang="es" a las tres paginas para que no quede en ingles.
-Imágenes: Les puse texto real en el alt para que se sepa qué hay en la foto.
-Enlaces: Quite las palabras raras como "aquí" o "maps" y le puse nombres claros como ver ubicación en Google Maps
-Títulos: Organicé los h1, h2 y h3 en orden para no saltarme ninguno
-Teclado: Probe presionar la tecla Tab y se puede navegar por todo el sitio sin problema
+Use grid para la portada y las rutas, flex para el encabezado, el pie y los campos cortos
+En celular apile el contenido. En las tablas baje el tamaño de letra y el relleno para que no se salieran
+Las columnas y los espacios cambian cuando aumenta el ancho
 
-Pruebas de color:
-Blanco sobre Verde Ruta: Solo sirve si la letra es grande.
-Blanco sobre Naranja Pedal: No sirve, no se lee bien.
-Azul Noche sobre Naranja Pedal: Si sirve.
-Azul Noche sobre Crema: Si sirve
-Gris Asfalto sobre Crema: Si sirve
-Verde Ruta sobre Crema: Si sirve
-Naranja Pedal sobre Crema: No sirve para parrafos
-Blanco sobre Azul Noche: Si sirve
+Cambios con Bootstrap
 
-Donde uso cada color:
-Texto: Gris Asfalto o Azul Noche sobre fondo Crema.
-Títulos: Azul Noche sobre fondo Crema.
-Fondos: Crema para la pagina y Azul Noche para partes destacadas.
-Botones: Azul Noche con letra blanca, o naranja Pedal con letra Azul Noche.
-Enlaces: Verde Ruta o azul Noche
+Puse Bootstrap antes de mi CSS para poder conservar los estilos propios
+En inicio use container, row y col para la portada, las rutas y la flota
+En tarifas separe las tablas y la lista de que llevar. En reservas deje el formulario en 8 columnas y contacto en 4 desde md
+En encuentranos use Bootstrap para el menu, el resto sigue con mi CSS
+Tambien hice pruebas de cards y beneficios en pruebas/catalogo-bootstrap.html
 
-Solución al conflicto de especificidad y estados interactivos
+container centra, row crea la fila y col reparte las 12 columnas
+col-12 ocupa toda la fila y col-md-6 ocupa la mitad desde 768 px
+En Bootstrap sm empieza en 576, md en 768 y lg en 992 px
+Use gap para separar elementos, p para relleno y m para margen
 
-1. ¿Por qué no funcionaba la clase .activo?
-Causa:El selector del compañero #menu a usa un ID , por lo que tiene una especificidad de (0, 1, 0, 1). En cambio, el selector .activo solo usa una clase, con una especificidad de (0, 0, 1, 0).
-2. ¿Cómo se corrigió sin usar !important?
-Se cambió el selector a #menu a.activo al combinar el ID, la etiqueta y la clase.
-3. Verificación de Focus y Hover
-Se uso la herramienta :hov en DevTools para probar los estados :hover y :focus.
-Se agregaron bordes visibles (`outline`) al usar la tecla `Tab` en enlaces, botones y campos de texto para garantizar accesibilidad.
+Quite distribuciones propias que chocaban con las columnas de Bootstrap
+Tambien puse caption-side: top para que el titulo de las tablas quedara arriba
+En esa revision las hojas de CSS pasaron de 974 a 387 lineas, contando comentarios y espacios
+Los tiempos que ya tenia anotados eran 1 h 30 min para v1.5 y 1 h 50 min para la version con Bootstrap
 
-Cierre de Bitácora - Rueda Libre 
-
-Resumen de desarrollo semanal
-Estructura HTML y Semántica:Se crearon las tres páginas del sitio respetando etiquetas semánticas y corrigiendo el idioma a lang="es".
-Estilos globales y Variables CSS: Se centralizaron colores, fuentes de Google Fonts  y una escala de espaciados en rem dentro de :root.
-Accesibilidad:Se solucionaron textos alternativos en imágenes, jerarquía de encabezados , textos explicativos en enlaces y contrastes aprobados .
-Cascada y Especificidad:Se corrigieron conflictos con el menú de navegación  garantizando un estado activo visible sin !important.
-Box Model y Posicionamiento: Se implementó box-sizing: border-box, se ordenaron las tarjetas con position: relative, se añadio la etiqueta Nuevo con position: absolute y el botón de WhatsApp con position: fixed.
-
-Prueba de diseño responsive y flexbox
-- Al abrir la página en pantalla ancha, el nombre del negocio queda a la izquierda y el menú a la derecha, alineados verticalmente con `align-items: center` y separados con `justify-content: space-between`.
-- El menú se comporta como un contenedor flexible con `display: flex`, `flex-wrap: wrap` y `gap`, sin depender de márgenes ni `inline-block` para separar cada enlace.
-- Cuando se estrecha la ventana, los enlaces del menú bajan a la siguiente línea en lugar de desbordarse. El contenedor mantiene el flujo con `flex-wrap: wrap` y el ancho se adapta sin romper la estructura.
-- El pie se organiza en tres bloques visuales en una fila: marca, contacto y horario. Con `display: flex`, `flex-direction: row`, `justify-content: space-between` y `gap`, cada bloque queda alineado arriba y con separación uniforme.
-- El comportamiento observado confirma que el encabezado y el pie responden bien a la reducción del ancho, manteniendo legibilidad y orden visual en las tres páginas porque todos los estilos se comparten desde la misma hoja CSS.
-
-SEMANA 2
-
-- A 1280 px : Se observan 6 columnas alineadas en la cuadrícula.
-
-- A 900 px : La cuadrícula se reorganiza automáticamente a 2 columnas.
-
-- A 500 px : La cuadrícula se reduce a 1 columna 
-
-DECISIONES DE LAYOUT: CRITERIO DE 1 DIMENSIÓN (FLEXBOX) VS 2 DIMENSIONES (GRID)
-
-1. Portada de inicio (Hero):
-- Decisión: Grid
-- Justificación: Se utilizó CSS Grid por ser una estructura bidimensional (2D) dividida en dos columnas principales mediante unidades fr (1fr 1fr). Esto permite controlar la relación espacial entre la columna de texto a la izquierda y la columna de la fotografía a la derecha, facilitando además el alineamiento vertical del contenido con align-items: center sin depender de cálculos manuales de margen.
-
-2. Galería "Nuestras rutas":
-- Decisión: Grid
-- Justificación: Se utilizó CSS Grid porque se requería definir una cuadrícula estricta de tres tarjetas de rutas guiadas en una sola fila. Mediante grid-template-columns: repeat(3, 1fr) y gap se asegura que las tres tarjetas tengan exactamente el mismo ancho, proporción y espaciado homogéneo bidimensional en escritorio.
-
-3. Layout de Reservas:
-- Decisión: Grid
-- Justificación: Se utilizó CSS Grid ya que es un diseño estructural bidimensional (2D) que divide la página en una proporción 2:1. Con grid-template-columns: 2fr 1fr, el formulario ocupa dos tercios del espacio horizontal a la izquierda y la información de contacto junto al horario ocupa el tercio restante a la derecha, manteniendo ambas columnas alineadas arriba con align-items: start.
-
-4. Fila del formulario (documento y celular):
-- Decisión: Flexbox
-- Justificación: Se utilizó Flexbox por tratarse de una distribución estrictamente unidimensional (1D horizontal). Al alinear dos campos cortos relacionados dentro de una misma fila, Flexbox con display: flex, gap y flex: 1 en cada campo permite que ambos se expandan equitativamente ocupando el 50% del ancho del contenedor sin la complejidad de una cuadrícula completa.
-
-5. Encabezado (Header):
-- Decisión: Flexbox
-- Justificación: Se utilizó Flexbox debido a que el encabezado es un flujo unidimensional (1D a lo largo del eje horizontal). Con justify-content: space-between y align-items: center, se posiciona el logo y el nombre a la izquierda y el menú de navegación a la derecha, garantizando flexibilidad y fluidez si los enlaces aumentan o se adaptan de tamaño.
-
-6. Pie de página (Footer):
-- Decisión: Flexbox
-- Justificación: Se utilizó Flexbox por ser unidimensional (1D). Permite centrar y agrupar en un solo eje los datos del negocio y correo mediante justify-content: center y align-items: center de forma directa y limpia.
-
-
-PRUEBAS RESPONSIVE MOBILE-FIRST (360 PX, 768 PX Y 1280 PX)
-
-Problemas identificados y soluciones aplicadas:
-
-1. Desplazamiento horizontal en tablas a 360 px:
-- Problema: Las tablas de tarifas con 4 y 5 columnas generaban scroll lateral en celulares de 360 px debido al relleno y tamaño de letra estándar de escritorio.
-- Solución: Se aplicó un enfoque mobile-first reduciendo la tipografía de la tabla a 0.75rem, disminuyendo el padding de las celdas a 5px 3px y permitiendo word-break: break-word. Las tablas ahora se leen completas a 360 px sin scroll lateral. Desde 768 px se restauran a tamaño 1rem.
-
-2. Desborde del encabezado en una fila en pantallas móviles:
-- Problema: Al abrir el sitio en 360 px, el logo, título y enlaces de navegación colisionaban al estar forzados en una sola fila horizontal.
-- Solución: En los estilos base móviles se configuró flex-direction: column y align-items: center para el header, dejando el nombre arriba y el menú centrado debajo con flex-wrap: wrap. Con la media query a 768 px se restablece la fila horizontal (justify-content: space-between).
-
-3. Colapso de los campos cortos del formulario a 360 px:
-- Problema: Al colocar Documento de identidad y Celular en una sola fila horizontal fija, ambos campos quedaban excesivamente estrechos para ingresar texto en teléfonos pequeños.
-- Solución: Se configuró .fila-campos con flex-direction: column como estilo base móvil para que cada campo ocupe el 100% del ancho apilado. A partir de tablet (min-width: 768px) se activa flex-direction: row con gap: 16px para retomar la visualización en la misma fila.
-
-
-RETOS 6, 7 Y 8 - CAMBIOS CON BOOTSTRAP
-
-1. Beneficios y franja final
-Agregué los cuatro beneficios debajo de la flota en pruebas y en inicio.
-Utilicé solo clases de Bootstrap en esta parte. El enlace lleva a reservas.
-La imagen ya estaba en mi carpeta img y solo aparece desde 768 px.
-Usé texto oscuro sobre fondo claro y blanco sobre fondo oscuro. El enlace tiene fondo claro y letra oscura.
-
-2. Bootstrap antes de mi CSS
-Puse Bootstrap 5.3.3 y su bundle, que es el archivo JavaScript, en las tres páginas.
-Mi CSS carga después. La cascada es la forma en que el navegador decide qué regla aplicar.
-Conservé las hojas separadas que ya tenía; en mi proyecto no hay un styles.css.
-
-3. Inicio con columnas
-La portada tiene dos columnas desde md. Las rutas tienen una, dos o tres según el ancho.
-La flota usa las mismas columnas que mi página de pruebas, conservando los modelos y precios de inicio.
-container centra el contenido, row crea una fila y col reparte el ancho en 12 partes.
-col-12 ocupa toda la fila. col-md-6 ocupa la mitad desde 768 px.
-sm empieza en 576 px, md en 768 px, lg en 992 px y xl en 1200 px.
-
-4. Tarifas con dos columnas
-Dejé las tablas a la izquierda y qué llevar a la derecha desde lg.
-Conservé el estilo de las tablas y sus precios. En celular todo queda apilado.
-
-5. Reservas con columnas 8/4
-El formulario ocupa 8 partes y el contacto 4 desde md.
-Documento y celular ocupan 6 partes cada uno desde md.
-No cambié required, pattern, minlength, min, max ni maxlength.
-Estas reglas revisan los campos obligatorios, el formato y los límites antes de enviar.
-
-6. Limpieza del CSS
-Quité flex y grid propios de las partes que ahora organiza Bootstrap.
-Conservé colores, fuentes, tarjetas, tablas y estados del menú.
-
-7. Cinco clases consultadas en la documentación oficial
-- flex-md-row: pone los elementos en fila desde 768 px.
-- d-none: oculta un elemento.
-- d-md-block: muestra como bloque desde 768 px; la usé junto a d-none.
-- gap-4: separa los elementos con 1.5 rem.
-- p-md-5: agrega 3 rem de espacio interno desde 768 px.
-Documentación:
+Documentación que consulte
+https://getbootstrap.com/docs/5.3/layout/grid/
 https://getbootstrap.com/docs/5.3/utilities/flex/
 https://getbootstrap.com/docs/5.3/utilities/display/
 https://getbootstrap.com/docs/5.3/utilities/spacing/
-https://getbootstrap.com/docs/5.3/layout/grid/
-Otras clases usadas: fs-4 cambia el tamaño de letra, fw-bold pone negrita,
-lead destaca un texto, text-bg-dark pone fondo oscuro con letra clara,
-align-items-center centra en el eje cruzado y justify-content-between separa hacia los extremos.
-En m y p, m significa margen (espacio por fuera) y p relleno (espacio por dentro).
-mb es margen debajo; px es relleno horizontal y py relleno vertical.
-g-4 separa las columnas y filas de la grilla. h-100 ocupa todo el alto disponible.
 
-8. Tres conflictos encontrados al revisar el código
-- Mi #nuestra-flota tenía display: grid. Lo quité y puse row dentro de container para que Bootstrap reparta las columnas.
-- .fila-campos .campo tenía width: 100%. Lo quité para que col-md-6 pueda ocupar media fila.
-- Bootstrap coloca caption debajo de la tabla. Puse caption-side: top en mi CSS para mantener el título arriba.
-No agregué !important. Falta comprobar estos cambios visualmente en DevTools.
+Rueda Nocturna - prototipo y kit
 
-9. Comparativa de líneas reales
-Tomé como v1.5 el commit feat: diseño mobile-first y soporte responsive v1.5.
-Conté todas las líneas de cada archivo, incluyendo comentarios y líneas vacías.
-css/index.css: antes 333 líneas; ahora 115 líneas.
-css/tarifas.css: antes 251 líneas; ahora 112 líneas.
-css/reservas.css: antes 337 líneas; ahora 134 líneas.
-css/articulos.css: antes 53 líneas; ahora 26 líneas.
-Total: antes 974; ahora 387; reducción 587 líneas.
-Tiempo de v1.5: 1:30 hr
-Tiempo de esta versión: 1:50 hr (tuve problemas con unas funciones en Bootstrap)
-Ventaja: con las columnas y utilidades ya no tengo que repetir la distribución en CSS.
-Desventaja: el HTML tiene más clases y tengo que aprender qué significa cada una.
-Conclusión: Bootstrap me ayuda a organizar el sitio, pero todavía necesito mi CSS para conservar la identidad.
+Primero hice nocturna/prototipo.html con Tailwind Play CDN
+Despues use la CLI para generar output.css y arme componentes.html con botones, etiqueta, card y campo
+Reutilice esas clases en la landing, Bootstrap no se carga en las paginas de nocturna
 
-10. Revisión y publicación pendientes
-Falta revisar inicio, tarifas y reservas a 360 px, 768 px y 1280 px en el navegador.
-Falta medir el tiempo real y comprobar la publicación de v2.0-beta en GitHub Pages.
+Reto 5 - Estructura
 
-Revisión del código: las etiquetas cierran en orden y las rutas locales existen en las cuatro páginas.
-Comparé los campos del formulario con la versión anterior: conservan todos sus atributos y validaciones.
+Organice la landing con header, main, secciones con id y footer
+Use max-w-6xl, mx-auto y px-6 para mantener el mismo contenedor
+Flex organiza el encabezado y el pie. Escogi grid para rutas y pasos porque permite cambiar las columnas facil
 
-Prototipo Rueda Nocturna con Tailwind
-Creé nocturna/prototipo.html con el Play CDN y solo utilidades de Tailwind.
-En la semana 2 hice el enlace con utilidades de Bootstrap como bg-dark, text-white y p-3.
-Hoy usé bg-amber-300, text-slate-950, px-6, py-3 y rounded-lg para darle fondo, color, espacio y bordes redondeados.
-Bootstrap trae componentes listos como btn, aunque antes usé sus utilidades. Tailwind es utility-first: combino clases pequeñas para construir el estilo.
+Reto 6 - Responsive
 
-RETOS 5 AL 8 - RUEDA NOCTURNA
+Al principio faltaban las secciones completas y una fila fija quedaba muy apretada en celular
+Deje una columna sin prefijo, sm desde 640, md desde 768 y lg desde 1024 px en Tailwind
+Se hicieron estas pruebas en Chrome, tanto en claro como en oscuro
 
-5. Layout
-Creé nocturna/index.html con header, main, cuatro secciones con id y footer.
-Todas las partes usan max-w-6xl, mx-auto y px-6.
-Usé flex para el encabezado y los tres bloques del pie.
-Usé grid para rutas y pasos porque permite cambiar el número de columnas fácilmente.
-No había componentes.html en el proyecto: creé un kit sencillo y reutilicé su card sin cambiar las clases.
-Los botones de inscripción llevan a la sección final y desde allí al formulario existente.
+Ancho   | Rutas | Pasos | Encabezado | Enlaces del menu | Scroll lateral
+360 px  | 1     | 1     | Apilado    | Ocultos          | No
+768 px  | 2     | 2     | En fila    | Visibles         | No
+1024 px | 3     | 4     | En fila    | Visibles         | No
+1280 px | 3     | 4     | En fila    | Visibles         | No
 
-6. Responsive
-Al empezar solo había un prototipo; faltaban rutas, pasos y pie.
-El layout fijo de escritorio dejaría las cards y el menú muy apretados a 360 px.
-Dejé una columna como base, sm desde 640 px, md desde 768 px y lg desde 1024 px.
-Pruebas reales en Chrome automatizado con Playwright, emulando claro y oscuro:
+A 640 px las rutas y los pasos quedan en dos columnas
+Inscribete sigue visible en celular y las anclas llevan a su sección
 
-Ancho   | Rutas | Pasos | Encabezado | Enlaces | Scroll horizontal
-360 px  | 1     | 1     | Apilado    | Ocultos | No
-768 px  | 2     | 2     | En fila    | Visibles| No
-1024 px | 3     | 4     | En fila    | Visibles| No
-1280 px | 3     | 4     | En fila    | Visibles| No
+Reto 7 - Marca y modo oscuro
 
-También probé 640 px: dos rutas y dos pasos por fila.
-Las anclas encuentran su sección en todos los anchos. Inscríbete sigue visible en celular.
-Revisé capturas de 360 px en claro y 1280 px en oscuro.
+En input.css defini los seis colores con @theme y las dos fuentes
+Verde Ruta #0284C7, Azul Noche #0F172A, Naranja Pedal #F59E0B
+Gris Asfalto #334155, Crema #F8FAFC y Amarillo Farol #FFD166
+Conserve los valores anteriores, aunque el nombre Verde Ruta tiene un valor azul
+Use dark para seguir el tema del sistema, tambien en cards, campos y bordes
 
-7. Tema y contraste
-Definí seis colores y dos fuentes con @theme en nocturna/src/input.css.
-Conservé los cinco valores del sitio anterior (css/styles.css del historial):
-Verde Ruta #0284C7, Azul Noche #0F172A, Naranja Pedal #F59E0B,
-Gris Asfalto #334155 y Crema #F8FAFC. Agregué Amarillo Farol #FFD166.
-Aunque los nombres del reto dicen verde y naranja, el sitio guardaba azul y ámbar.
-Montserrat se usa en títulos y botones; Open Sans en el cuerpo, desde Google Fonts.
-dark sigue la preferencia del sistema. También cambia cards, bordes y el campo del kit.
-Calculé contraste con la fórmula WCAG de luminancia relativa (mínimo 4.5:1):
+Contraste medido, el minimo para texto normal es 4.5:1
 
-Texto / fondo                  | Contraste | Resultado
-Crema / Azul Noche             | 17.06:1   | Cumple
-Crema / Gris Asfalto           | 9.90:1    | Cumple
-Amarillo Farol / Azul Noche    | 12.38:1   | Cumple
-Amarillo Farol / Gris Asfalto  | 7.18:1    | Cumple
-Blanco / Gris Asfalto          | 10.35:1   | Cumple
-Blanco / Azul Noche            | 17.85:1   | Cumple
-Verde Ruta / Azul Noche        | 4.36:1    | No cumple
+Texto / fondo                 | Resultado
+Crema / Azul Noche            | 17.06:1, cumple
+Crema / Gris Asfalto          | 9.90:1, cumple
+Amarillo Farol / Azul Noche   | 12.38:1, cumple
+Amarillo Farol / Gris Asfalto | 7.18:1, cumple
+Blanco / Gris Asfalto         | 10.35:1, cumple
+Blanco / Azul Noche           | 17.85:1, cumple
+Verde Ruta / Azul Noche       | 4.36:1, no cumple
 
-Por eso no usé Verde Ruta para texto en oscuro: usé Crema o Amarillo Farol.
+Por eso en oscuro use Crema o Amarillo Farol para el texto, no Verde Ruta
 
-8. Limpieza y comparativa
-Antes de extraer botones: el estilo principal se repite 2 veces y el secundario 4.
-La card y su etiqueta de nivel se repiten 3 veces; conservé el mismo marcado.
-Creé solo btn-principal y btn-secundario con @apply dentro de @layer components.
-Ordené las utilidades por layout, espaciado, tipografía, colores y estados.
-Compilación: cd nocturna/src, npm ci y npm run build.
-build ejecuta tailwindcss -i ./input.css -o ./output.css --minify.
+Reto 8 - Limpieza y comparacion
 
-Mediciones reales de archivos minificados, sin comprimir:
-Tailwind output.css: 13.856 bytes. No necesita JavaScript para esta landing.
-Bootstrap 5.3.3 CSS: 232.803 bytes. Bundle JS: 80.721 bytes. Total: 313.524 bytes.
-Descargué los mismos archivos de jsDelivr que carga index.html.
-Gzip calculado localmente: Tailwind 3.369 bytes; Bootstrap CSS 30.829 y JS 23.858.
-Estos son tamaños de archivo y gzip local.
-También revisé Network de Chrome mediante DevTools Protocol, sin caché:
-Tailwind transfirió 3.647 bytes; Bootstrap CSS 34.001 y JS 24.866 bytes (incluyen cabeceras).
-Los tres recursos devolvieron HTTP 200. La transferencia puede variar entre solicitudes.
-Encontré un 404 en el JS anterior: faltaba /js/ en la URL. Lo corregí en las cuatro páginas que lo usaban.
-No incluyen imágenes, fuentes ni el CSS propio del sitio Bootstrap.
+El boton principal repetia sus clases 2 veces y el secundario 4. La card y su etiqueta se repetian 3 veces
+Deje solo btn-principal y btn-secundario con @apply dentro de @layer components
+Las cards siguen con las clases del kit y ordene las utilidades por layout, espacio, letra, color y estados
+Use npm run build, que ejecuta la CLI con --minify
 
-Criterio        | Bootstrap                         | Tailwind
-Aprendizaje     | Las columnas me ayudaron rápido.  | Necesité aprender utilidades y prefijos.
-Personalizar   | Conservé CSS propio para la marca. | @theme deja usar los colores directamente.
-Tamaño final   | CSS + JS: 313.524 bytes.           | CSS: 13.856 bytes, sin JS.
-Casos de uso   | Tablas y formularios ya armados.   | Landing con distribución y tema propios.
+Tamaños medidos sin comprimir, sin imagenes ni fuentes
+Tailwind en el reto 8: 13.856 bytes de CSS, en ese momento no necesitaba JS
+Bootstrap 5.3.3: CSS 232.803 bytes y bundle JS 80.721, total 313.524 bytes sin el CSS propio
+Con el formulario y los planes el CSS final de Tailwind quedo en 14.878 bytes, mas 1.278 del JS propio
 
-Recomiendo Tailwind para la próxima versión de Rueda Libre por el tema propio y el CSS menor.
-Bootstrap sigue siendo útil para mantener las páginas actuales sin rehacerlas.
+Gzip calculado en el reto 8: Tailwind 3.369 bytes, Bootstrap CSS 30.829 y JS 23.858
+En Network sin cache se transfirieron 3.647 bytes de Tailwind, 34.001 de Bootstrap CSS y 24.866 de JS
+La transferencia incluye cabeceras y puede cambiar entre peticiones
+Corregi un 404 en Bootstrap porque a la URL del bundle le faltaba /js/
 
-Publicación comprobada: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
-La landing y el CSS devuelven HTTP 200. La guía línea por línea está en GUIA_NOCTURNA.md de andres_pruebas.
+Criterio       | Bootstrap                         | Tailwind
+Aprender       | Empece rapido con las columnas    | Tuve que aprender mas utilidades
+Personalizar   | Necesite mi CSS para la marca     | Use los colores desde @theme
+Tamaño         | Carga CSS y JS completos          | El CSS de esta landing es mas pequeño
+Donde usarlo   | Tablas, formularios y carrusel    | Landing y diseño mas personalizado
 
+Recomiendo Tailwind para la siguiente version por el tema y el tamaño, mantendria Bootstrap donde ya funciona
 
-RETO 9 - Inscripcion
-Tiempo real: 2 min 56 s, limite 40 min
-Agregue los datos personales y los de la salida con fieldset y legend
-probe vacio, nombre corto, correo y celular malos y acompañantes fuera del rango. El navegador los bloquea
-Con Tab, flechas y espacio pude completarlo y enviarlo a un receptor local de prueba
-A 360 queda en una columna, desde md los campos cortos quedan en dos. Tambien probe oscuro
-Falta el correo o servicio real para recibir inscripciones, la pagina avisa y no dice que envio algo cuando no lo hizo
+Tiempos de referencia para los contrarreloj
 
-RETO 10 - Unir las paginas
-Tiempo transcurrido: 19 min 38 s, limite 40 min. Incluye la pausa de la interrupcion
-Puse Rueda Nocturna en los menus y arme el carrusel con cuatro diapositivas, antes no habia uno
-El logo vuelve al inicio y Reserva tu bici lleva a reservas
-Deje colores y fuentes en marca.css para Bootstrap, con los mismos valores de Tailwind
-Tambien deje el mismo correo y telefono en los pies, son los datos de ejemplo que ya tenia el proyecto
-Probe las seis paginas a 360, 768 y 1280, sin scroll lateral. El carrusel funciona y revise 18 enlaces y recursos locales sin errores
+Estos son estimados para hacer el trabajo manualmente, no tiempos reales cronometrados
+Reto 9: unos 35 min de 40 disponibles
+Reto 10: unos 38 min de 40 disponibles
+Reto 11: unos 42 min de 45 disponibles
+Para la revision, capturas y documentación del reto 12 calculo cerca de 1 hora
+Falta anotar los tiempos propios cuando haga los ejercicios con cronometro
 
-RETO 11 - Los planes
-Tiempo real: 2 min 19 s, limite 45 min
-Agregue Individual, Pareja y Grupo con los precios y beneficios pedidos
-Use grid para las tres columnas y flex en cada card para dejar el boton abajo
-Pareja lleva un borde arriba de 4 px, otro fondo y la etiqueta Mas elegido en absolute, asi no empuja las otras cards
-En Chrome a 1280 medi 352 px de ancho, 353 de alto y 24 px de relleno en las tres. Los botones quedan a la misma altura
-Probe 360, 768, 1024 y 1280 en claro y oscuro, sin scroll horizontal
+Reto 9 - Inscripcion
 
-RETO 12 - Entrega
-Revise las seis paginas con Chrome a 360, 768 y 1280, tambien la landing y el kit en oscuro
-axe hizo 24 comprobaciones, no encontro problemas de WCAG A y AA ni scroll lateral
-Pase la landing y reservas por el W3C, corregi el autocomplete del celular y quedaron sin errores
-Quite el envio de reservas hacia el mismo html porque GitHub Pages no recibe POST, ahora avisa si falta el servicio
-Deje el README con enlaces, capturas, tecnologias, aprendizajes y la comparacion de frameworks
-El CSS final minificado pesa 14.878 bytes y el JS del formulario 1.278 bytes
-La demo esta en docs/demo.md, organizada para 2 min 50 s. Falta ensayarla con un compañero y poner su opinion, no he hecho ese ensayo
-Tambien falta el correo o la URL real para que lleguen las inscripciones y reservas
-Las explicaciones linea por linea se guardan en andres_pruebas
-Despues de publicar revise las seis paginas y 25 enlaces y recursos en GitHub Pages, todos devolvieron 200
-La rama de estudio tambien paso la prueba local, quedaron GUIA_NOCTURNA.md y GUIA_INTEGRACION.md actualizadas
+Agregue datos personales y de la salida con fieldset y legend, todo es obligatorio
+Se probaron el formulario vacio, nombre corto, correo y celular invalidos y acompañantes fuera de 0 a 3
+Con Tab, flechas y espacio se completo y se envio a un receptor local de prueba
+En celular queda una columna y desde md los campos cortos quedan en dos, tambien funciona en oscuro
+Falta el servicio real para recibir los datos. La pagina avisa que el envio no esta habilitado
+
+Reto 10 - Unir las paginas
+
+Puse Rueda Nocturna en los menus y agregue un carrusel de cuatro diapositivas en inicio
+El logo de la landing vuelve al sitio y Reserva tu bici lleva a reservas
+Use marca.css con los mismos colores y fuentes de Tailwind, los pies tienen el mismo contacto de ejemplo
+Se revisaron las seis paginas a 360, 768 y 1280 px, el carrusel y 18 enlaces y recursos locales sin errores
+
+Reto 11 - Planes
+
+Agregue Individual por $55.000, Pareja por $99.000 y Grupo por $45.000 por persona
+Grid organiza las columnas y flex deja los botones abajo
+Pareja tiene otro fondo, borde superior de 4 px y Mas elegido con absolute para no empujar las demas cards
+A 1280 px las tres cards miden 352 px de ancho, 353 de alto y 24 de relleno, con los botones alineados
+Se probaron 360, 768, 1024 y 1280 px en claro y oscuro, sin scroll lateral
+
+Reto 12 - Revision final
+
+Se revisaron las seis paginas en Chrome y se hicieron 24 comprobaciones automaticas con axe, sin incidencias detectadas de WCAG A y AA
+La landing y reservas pasaron por el W3C, se corrigio autocomplete del celular y quedaron sin errores
+Cambie el envio de reservas porque GitHub Pages no recibe POST en un html
+Deje el README con paginas, frameworks, capturas y como abrir el proyecto
+Despues de publicar se revisaron las seis paginas y 25 enlaces y recursos, todos devolvieron 200
+
+La demo esta en docs/demo.md, pensada para 2 min 50 s. Falta ensayarla con un compañero y anotar su opinion y el tiempo real
+Tambien falta configurar el destino de inscripciones y reservas, el correo y telefono siguen siendo ejemplos
+
+Sitio: https://andresfelipeorozcopaternina.github.io/rueda-libre/
+Landing: https://andresfelipeorozcopaternina.github.io/rueda-libre/nocturna/
